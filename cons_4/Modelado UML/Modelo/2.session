@@ -1,0 +1,8 @@
+window_sizes 1362 705 115 1242 605 54
+
+show_stereotypes
+selected class_ref 128514 // C4File
+open
+  class_ref 128770 // asciiGenerator
+end
+end

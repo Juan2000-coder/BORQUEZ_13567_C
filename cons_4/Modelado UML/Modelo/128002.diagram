@@ -1,0 +1,71 @@
+format 224
+
+classcanvas 128002 class_ref 128002 // C4Text
+  classdiagramsettings member_max_width 0 end
+  xyz 88.1327 107.807 2000
+end
+classcanvas 128130 class_ref 128130 // cmd
+  classdiagramsettings member_max_width 0 end
+  xyz 244.977 23.168 2000
+end
+classcanvas 128258 class_ref 128258 // C4Element
+  classdiagramsettings member_max_width 0 end
+  xyz 49.1434 376.921 2005
+end
+classcanvas 128386 class_ref 128386 // C4
+  classdiagramsettings member_max_width 0 end
+  xyz 339.585 89.6881 2000
+end
+classcanvas 128898 class_ref 128514 // C4File
+  classdiagramsettings member_max_width 0 end
+  xyz 335.509 363.279 2000
+end
+classcanvas 131074 class_ref 128642 // main
+  classdiagramsettings member_max_width 0 end
+  xyz 561.012 15.0677 2000
+end
+classcanvas 132098 class_ref 128770 // asciiGenerator
+  classdiagramsettings member_max_width 0 end
+  xyz 572.411 339.416 2000
+end
+relationcanvas 131586 relation_ref 129538 // <generalisation>
+  from ref 128386 z 2001 to point 298.485 139.788
+  line 133378 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134530 relation_ref 137474 // <unidirectional association>
+  decenter_begin 490
+  from ref 128386 z 2001 to ref 128898
+  no_role_a no_role_b
+  multiplicity_a_pos 418 350 3000 no_multiplicity_b
+end
+relationcanvas 134658 relation_ref 137602 // <dependency>
+  decenter_end 416
+  from ref 128002 z 2001 to point 306 344
+  line 136322 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134786 relation_ref 137730 // <unidirectional association>
+  decenter_end 97
+  from ref 128386 z 2001 to ref 132098
+  no_role_a no_role_b
+  multiplicity_a_pos 576 357 3000 no_multiplicity_b
+end
+relationcanvas 135938 relation_ref 137858 // <unidirectional association>
+  from ref 131074 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136066 relation_ref 137986 // <unidirectional association>
+  from ref 128386 z 2001 to ref 128002
+  no_role_a no_role_b
+  multiplicity_a_pos 245 203 3000 no_multiplicity_b
+end
+relationcanvas 136194 relation_ref 138114 // <composition>
+  from ref 128002 z 2006 to ref 128258
+  no_role_a no_role_b
+  multiplicity_a_pos 151 362 3000 no_multiplicity_b
+end
+end

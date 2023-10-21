@@ -1,0 +1,12 @@
+window_sizes 1280 637 320 955 537 54
+
+diagrams
+  active  classdiagram_ref 128002 // Diagrama de Clases
+    945 500 130 A4 0 95
+end
+show_stereotypes
+selected 
+package_ref 129 // C5
+open
+end
+end
