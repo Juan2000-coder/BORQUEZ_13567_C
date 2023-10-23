@@ -35,3 +35,22 @@ long C5Requirement::getCurrentStamp() const{
     long timestamp = duracion.count();
     return timestamp;
 }
+
+Stats C5Requirement::getStats()const{
+    //No sabemos si puede tirar excepciones a priori esta llamada
+    double sum = 0;
+    double mean = 0;
+
+    if(!this->numbers.empty()){
+        for(auto number: this->numbers){
+            if(std::holds_alternative<C5Number<int>>(number)){
+                sum += std::get<C5Number<int>>(number).getValue();
+            }
+            else{
+                sum += std::get<C5Number<double>>(number).getValue();
+            }
+        }
+        mean = sum/this->numbers.size();
+    }
+    return Stats(sum, mean, this->numbers.size());
+}

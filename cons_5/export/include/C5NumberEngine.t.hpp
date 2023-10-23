@@ -7,4 +7,7 @@ const C5Number<Type> &C5NumberEngine::getNumberOld(int userId, int ordinal)const
         auto requirement = this->requirements.at(this->requirementIndex);
         return requirement.getNumber<Type>(ordinal);
     }
+    else{
+        throw C5NumberEngineException(2);
+    }
 }

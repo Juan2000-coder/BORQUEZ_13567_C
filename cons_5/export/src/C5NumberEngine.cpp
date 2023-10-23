@@ -38,7 +38,7 @@ bool C5NumberEngine::userValidate(int userId){
 /*La siguiente verifica en cada función que la validación se haya realizado.*/
 bool C5NumberEngine::validationDone(int userId)const{
     if(this->requirements.at(this->requirementIndex).getUserId() != userId){
-        throw C5NumberEngineException(2);
+        return false;
     }
     return true;
 }
@@ -50,6 +50,9 @@ int C5NumberEngine::getInt(int userId, int bmin, int bmax){
         requirement.appendNumber<int>(bmin, bmax);
         return requirement.getNumber<int>().getValue();
     }
+    else{
+        throw C5NumberEngineException(2);
+    }
 }
 
 int C5NumberEngine::getInt(int userId){
@@ -57,6 +60,9 @@ int C5NumberEngine::getInt(int userId){
         auto requirement = this->requirements.at(this->requirementIndex);
         requirement.appendNumber<int>();
         return requirement.getNumber<int>().getValue();
+    }
+    else{
+        throw C5NumberEngineException(2);
     }
 }
 
@@ -67,6 +73,9 @@ double C5NumberEngine::getReal(int userId, double bmin, double bmax){
         requirement.appendNumber<double>(bmin, bmax);
         return requirement.getNumber<double>().getValue();
     }
+    else{
+        throw C5NumberEngineException(2);
+    }
 }
 double C5NumberEngine::getReal(int userId){
     if (this->validationDone(userId)){
@@ -75,6 +84,9 @@ double C5NumberEngine::getReal(int userId){
         requirement.appendNumber<double>();
         return requirement.getNumber<double>().getValue();
     }
+    else{
+        throw C5NumberEngineException(2);
+    }
 }
 Stats C5NumberEngine::getStat(int userId) const{
     if (this->validationDone(userId)){
@@ -82,12 +94,17 @@ Stats C5NumberEngine::getStat(int userId) const{
         auto requirement = this->requirements.at(this->requirementIndex);
         return requirement.getStats();
     }
+    else{
+        throw C5NumberEngineException(2);
+    }
 }
 //A la mierda, devolvemos el vector de variants y a la chota.
 const C5Requirement& C5NumberEngine::getNumberList(int userId) const{
     if (this->validationDone(userId)){
         //La verificación lanza una excepción en caso de que no se haya realizado.
-        auto requirement = this->requirements.at(this->requirementIndex);
-        return requirement;
+        return this->requirements.at(this->requirementIndex);
+    }
+    else{
+        throw C5NumberEngineException(2);
     }
 }
