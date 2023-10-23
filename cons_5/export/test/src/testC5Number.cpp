@@ -6,8 +6,8 @@ using namespace std;
 
 int main(void){
     try{
-        C5Number<int> number1(1, 2);
-        C5Number<double> number2(3.3, 5.5);
+        C5Number<int> number1(1, 2, 30);
+        C5Number<double> number2(3.3, 5.5, 30);
         cout << number1.getValue() << endl;
         cout << number2.getValue() << endl;
         cout << number1.getBmin() << endl;
