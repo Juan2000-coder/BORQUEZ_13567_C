@@ -5,14 +5,14 @@
 
 using namespace XmlRpc;
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
   if (argc != 2) {
     std::cerr << "Usage: HelloServer serverPort\n";
     return -1;
   }
 
   int port = atoi(argv[1]);
+
   C5Server myServer;
 
   XmlRpc::setVerbosity(5);
@@ -20,6 +20,7 @@ int main(int argc, char* argv[])
   myServer.bindAndListen(port);
   myServer.enableIntrospection(true);
   myServer.work(-1.0);
+
   return 0;
 }
 

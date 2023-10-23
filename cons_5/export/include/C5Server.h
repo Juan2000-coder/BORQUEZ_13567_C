@@ -59,9 +59,11 @@ class GetNumberList : public XmlRpcServerMethod{
 };
 
 class C5Server: public XmlRpcServer{
+  private:
+    C5NumberEngine engine;
   public:
     //Constructor
-    C5Server():XmlRpcServer(), engine(), userValidate(this, engine), getInt(this, engine),
+    C5Server(): XmlRpcServer(), engine(), userValidate(this, engine), getInt(this, engine),
     getReal(this, engine), getNumberOld(this, engine), getStat(this, engine),
     getNumberList(this, engine) {};
 
@@ -84,9 +86,6 @@ class C5Server: public XmlRpcServer{
 
     //getNumberList(int userid);
     GetNumberList getNumberList;
-
-  private:
-    C5NumberEngine engine;
 };
 
 #endif

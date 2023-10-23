@@ -350,10 +350,3 @@ void GetNumberList::execute(XmlRpcValue& params, XmlRpcValue& result){
         result = ss.str();
     }
 }
-C5Server::C5Server(){
-    this->engine = C5NumberEngine();
-    userValidate(this, this->engine);
-    getInt(this, engine);
-    getReal(this, engine), getNumberOld(this, engine), getStat(this, engine);
-    getNumberList(this, engine);
-}
