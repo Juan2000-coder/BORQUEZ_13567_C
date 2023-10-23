@@ -13,7 +13,7 @@
                 "-I./export/include/xmlrpc/",
                 "./export/src/*.cpp",
                 "./export/build/libXmlRpc.a",
-                "-lws232",
+                "-lws2_32",
                 "-o",
                 "./export/build/Server",
             ],
