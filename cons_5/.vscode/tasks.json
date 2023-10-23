@@ -9,13 +9,13 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "-Wall",
-                "-I./include/",
-                "-I./include/xmlrpc/",
-                "./src/*.cpp",
-                "./build/libXmlRpc.a",
+                "-I./export/include/",
+                "-I./export/include/xmlrpc/",
+                "./export/src/*.cpp",
+                "./export/build/libXmlRpc.a",
                 "-lws232",
                 "-o",
-                "./build/Server",
+                "./export/build/Server",
             ],
             "problemMatcher": [
                 "$gcc"
@@ -39,10 +39,10 @@
                 "-Wall",
                 "-I./include/",
                 "-o",
-                "./test/build/${fileBasenameNoExtension}.exe",
-                "./src/C5Requirement.cpp",
-                "./src/C5Exceptions.cpp",
-                "./test/src/${fileBasename}"
+                "./export/test/build/${fileBasenameNoExtension}.exe",
+                "./export/src/C5Requirement.cpp",
+                "./export/src/C5Exceptions.cpp",
+                "./export/test/src/${fileBasename}"
             ],
             "problemMatcher": [
                 "$gcc"
