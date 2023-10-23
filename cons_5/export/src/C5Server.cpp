@@ -296,7 +296,7 @@ void GetNumberList::execute(XmlRpcValue& params, XmlRpcValue& result){
                         result1[i][3] = std::to_string(number.getTime());
                         result1[i][4] = number.getType();
                     }
-                    catch(std::bad_variant_access){
+                    catch(std::bad_variant_access &e){
                         auto number = list.getNumber<int>(i);
                         result1[i][0] = number.getValue();
                         result1[i][1] = number.getBmin();
@@ -349,4 +349,11 @@ void GetNumberList::execute(XmlRpcValue& params, XmlRpcValue& result){
         std::cerr << ss.str();
         result = ss.str();
     }
+}
+C5Server::C5Server(){
+    this->engine = C5NumberEngine();
+    userValidate(this, this->engine);
+    getInt(this, engine);
+    getReal(this, engine), getNumberOld(this, engine), getStat(this, engine);
+    getNumberList(this, engine);
 }
