@@ -1,32 +1,34 @@
 # makefile written for gnu make
-CXX		= g++ 
-INCLUDE1	= ./include
-INCLUDE2	= ./include/xmlrcp	
-CPPFLAGS	= -I$(INCLUDE1) -I$(INCLUDE2)
+SRCDIR = ./src
+BUILDDIR = ./build
+INCLDIR = ./include
+CXX		= g++
+CPPFLAGS	= -I$(INCLDIR) -I$(INCLDIR)/xmlrpc
 DEBUG		= -g
 OPTIMIZE	= -O2
 GCCWARN		= -Wall
-CXXFLAGS	= $(DEBUG) $(GCCWARN) $(OPTIMIZE) $(CPPFLAGS)
+CXXFLAGS	= $(DEBUG) $(GCCWARN) $(OPTIMIZE)
 
 LIB		= ./build/libXmlRpc.a
-
-# Add your system-dependent network libs here
-# Solaris: -lsocket -lnsl
 SYSTEMLIBS	= -lws2_32
 
 LDLIBS		= $(LIB) $(SYSTEMLIBS)
 
-SRCS		= $(wildcard ./src/*.cpp)
-OBJS 		= $(SRCS:src/.cpp=build/.o)
-EXE			= ./Server
+SOURCES		= $(wildcard $(SRCDIR)/*cpp)
+OBJECTS		= $(patsubst $(SRCDIR)/%.cpp, $(BUILDDIR)/%.o, $(SOURCES))
+EXECUTABLE	= ./Server
 
-all:		$(EXE)
+$(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
 
-$(OBJS): $(SRCS)
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-$(EXE):	$(OBJS) $(LIB)
-	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OBJS) $(LDLIBS) -o $@
+$(EXECUTABLE):	$(OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDLIBS)
+
+
+.PHONY: all clean
+
+all:		$(OBJECTS)
 
 clean:
-	rm -f $(OBJS) $(EXE)
+	rm -f $(BUILDDIR)/*.o $(EXE)
