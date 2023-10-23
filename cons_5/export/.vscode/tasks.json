@@ -10,16 +10,19 @@
                 "-g",
                 "-Wall",
                 "-I./include/",
+                "-I./include/xmlrpc/",
+                "./src/*.cpp",
+                "./build/libXmlRpc.a",
+                "-lws232",
                 "-o",
-                "./build/Servidor",
-                "./src/*.cpp"
+                "./build/Server",
             ],
             "problemMatcher": [
                 "$gcc"
             ],
             "group": {
                 "kind": "build",
-                "isDefault": false
+                "isDefault": true
             },
             "presentation": {
                 "reveal": "always",
@@ -53,6 +56,5 @@
                 "panel": "new"
             }
         },
-
     ]
 }

@@ -3,6 +3,7 @@
 
 #include "XmlRpc.h"
 #include "C5NumberEngine.h"
+#include "C5Number.h"
 
 #include <string>
 #include <vector>
@@ -11,45 +12,58 @@ using namespace XmlRpc;
 
 class UserValidate : public XmlRpcServerMethod{
   public:
-    UserValidate(XmlRpcServer* s) : XmlRpcServerMethod("userValidate", s) {};
+    UserValidate(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("userValidate", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
+  private:
+    C5NumberEngine &engine;
 };
 
 class GetInt : public XmlRpcServerMethod{
   public:
-    GetInt(XmlRpcServer* s) : XmlRpcServerMethod("getInt", s) {};
+    GetInt(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getInt", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
+  private:
+    C5NumberEngine &engine;
 };
 
 class GetReal : public XmlRpcServerMethod{
   public:
-    GetReal(XmlRpcServer* s) : XmlRpcServerMethod("getReal", s) {};
+    GetReal(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getReal", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
+  private:
+    C5NumberEngine &engine;
 };
 
 class GetNumberOld : public XmlRpcServerMethod{
   public:
-    GetNumberOld(XmlRpcServer* s) : XmlRpcServerMethod("getNumberOld", s) {};
+    GetNumberOld(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getNumberOld", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
+  private:
+    C5NumberEngine &engine;
 };
 
 class GetStat : public XmlRpcServerMethod{
   public:
-    GetStat(XmlRpcServer* s) : XmlRpcServerMethod("getStat", s) {};
+    GetStat(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getStat", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
+  private:
+    C5NumberEngine &engine;
 };
 
 class GetNumberList : public XmlRpcServerMethod{
   public:
-    GetNumberList(XmlRpcServer* s) : XmlRpcServerMethod("getNumberList", s) {};
+    GetNumberList(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getNumberList", s), engine(_engine) {};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
+  private:
+    C5NumberEngine &engine;
 };
 
 class C5Server: public XmlRpcServer{
   public:
     //Constructor
-    C5Server():userValidate(this), getInt(this), getReal(this), getNumberOld(this), getStat(this),
-    getNumberList(this), engine(){};
+    C5Server():XmlRpcServer(), engine(), userValidate(this, engine), getInt(this, engine),
+    getReal(this, engine), getNumberOld(this, engine), getStat(this, engine),
+    getNumberList(this, engine) {};
 
     //bool userValidate(int userdId);
     UserValidate userValidate;
@@ -74,4 +88,5 @@ class C5Server: public XmlRpcServer{
   private:
     C5NumberEngine engine;
 };
+
 #endif

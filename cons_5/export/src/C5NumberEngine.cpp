@@ -1,89 +1,93 @@
 #include "C5NumberEngine.h"
 #include <cstdlib>
 #include <ctime>
+#include <fstream>
 #include <utility>//ver después si realmente hace falta su inclusión
 
-bool C5NumberEngine::userValidate(int userdId){
-    std::ifstream validUsers(this->validUsersFile);
-    std::string idRequest = std::to_string(userId);
+bool C5NumberEngine::userValidate(int userId){
+    //Primero verifica en la lista de requerimientos
+    int index = 0;
+    for(C5Requirement &requirement: this->requirements){
+        if (requirement.getUserId() == userId){
+            this->requirementIndex = index;
+            return true;
+        }
+        index++;
+    }
 
-    while std::getline(validUsers, id){
+    //Luego verifica en el archivo
+    std::ifstream validUsers(this->validUsersFile);
+    if (!validUsers.is_open()){
+        throw C5NumberEngineException(1);
+    }
+    std::string idRequest = std::to_string(userId);
+    std::string id;
+
+    while (std::getline(validUsers, id)){
         if (id == idRequest){
+            /*Si es valido también creamos un request correspondiente*/
+            this->requirements.push_back(C5Requirement(userId));
+            this->requirementIndex = this->requirements.size() - 1;
             return true;
         }
     }
     return false;
 }
 
-int C5NumberEngine::getInt(int bmin, int bmax, int userId){
-    if (bmax < bmin){//esto tiene que ver con la generación del numero en si
-        throw std::__throw_invalid_argument("bmin debe ser menor o igual a bmax.");
+/*La validación se hace llamando al método anterior. Se encarga el engine.*/
+/*La siguiente verifica en cada función que la validación se haya realizado.*/
+bool C5NumberEngine::validationDone(int userId)const{
+    if(this->requirements.at(this->requirementIndex).getUserId() != userId){
+        throw C5NumberEngineException(2);
     }
-    std::srand(std::time(nullptr));
-    int value = std::rand()%(bmax-bmin + 1);
+    return true;
+}
 
-    //esto que sigue tiene que ver con la gestión de requerimientos
-    for(C5Requirement &requirement: this->requirements){
-        if (requirement.getUserId() == userId){
-            requirement.appendNumber(value, bmin, bmax);
-            return value;
-        }
+int C5NumberEngine::getInt(int userId, int bmin, int bmax){
+    if (this->validationDone(userId)){
+        //La verificación lanza una excepción en caso de que no se haya realizado.
+        auto requirement = this->requirements.at(this->requirementIndex);
+        requirement.appendNumber<int>(bmin, bmax);
+        return requirement.getNumber<int>().getValue();
     }
-    this->requirements.push_back(C5Requirement(userId));//nuevo usuario
-    this->requirements.back().appendNumber(value, bmin, bmax);
-    return value;
 }
 
 int C5NumberEngine::getInt(int userId){
-    /*Ver si lo siguiente después funciona cuando hay un vector vacio de requerimientos
-    if (this->requirements.empty()){
-        throw std::__throw_runtime_error("Sin rango previo para nueva solicitud.");
-    }*/
-
-    for(C5Requirement &requirement: this->requirements){
-        if (requirement.getUserId() == userId){
-            std::pair<int, int> boundary = requirement.getBoundary("entero");//obtiene el rango de la última petición entera, una tupla
-            int bmmin = boundary.fist;
-            int bmax = boundary.second;
-
-            //hay que modificar las funciones para poder hacer esto:
-            //this->getInt(boundary.first, boundary.second);
-
-            std::srand(std::time(nullptr)); //en lugar de volver a repetir el código
-            int value = std::rand()%(bmax-bmin + 1);
-            requirement.appendNumber(value, bmin, bmax);
-            return value;
-        }
+    if (this->validationDone(userId)){
+        auto requirement = this->requirements.at(this->requirementIndex);
+        requirement.appendNumber<int>();
+        return requirement.getNumber<int>().getValue();
     }
-    throw std::__throw_runtime_error("Sin rango previo para nueva solicitud.");
-};
+}
 
-double C5NumberEngine::getReal(double bmin, double bmax, int userId){
-    if (bmax < bmin){
-        throw std::__throw_invalid_argument("bmin debe ser menor o igual a bmax.");
+double C5NumberEngine::getReal(int userId, double bmin, double bmax){
+    if (this->validationDone(userId)){
+        //La verificación lanza una excepción en caso de que no se haya realizado.
+        auto requirement = this->requirements.at(this->requirementIndex);
+        requirement.appendNumber<double>(bmin, bmax);
+        return requirement.getNumber<double>().getValue();
     }
-    std::srand(std::time(nullptr));
-    double value = bmin + static_cast<double>(std::rand())*(bmax-bmin)/RAND_MAX;
-
-    for(C5Requirement &requirement: this->requirements){
-        if (requirement.getUserId() == userId){
-            requirement.appendNumber(value, bmin, bmax);
-            return value;
-        }
-    }
-    this->requirements.push_back(C5Requirement(userId));//nuevo usuario
-    this->requirements.back().appendNumber(value, bmin, bmax);
-    return value;
 }
 double C5NumberEngine::getReal(int userId){
-
+    if (this->validationDone(userId)){
+        //La verificación lanza una excepción en caso de que no se haya realizado.
+        auto requirement = this->requirements.at(this->requirementIndex);
+        requirement.appendNumber<double>();
+        return requirement.getNumber<double>().getValue();
+    }
 }
-C5NumberEngine::getNumberOld(int ordinal, int userId){
-
+Stats C5NumberEngine::getStat(int userId) const{
+    if (this->validationDone(userId)){
+        //La verificación lanza una excepción en caso de que no se haya realizado.
+        auto requirement = this->requirements.at(this->requirementIndex);
+        return requirement.getStats();
+    }
 }
-C5NumberEngine::getStat(int userId){
-
-}
-C5NumberEngine::getNumberList(int userid){
-
+//A la mierda, devolvemos el vector de variants y a la chota.
+const C5Requirement& C5NumberEngine::getNumberList(int userId) const{
+    if (this->validationDone(userId)){
+        //La verificación lanza una excepción en caso de que no se haya realizado.
+        auto requirement = this->requirements.at(this->requirementIndex);
+        return requirement;
+    }
 }

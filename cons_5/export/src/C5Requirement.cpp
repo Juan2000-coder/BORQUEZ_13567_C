@@ -1,10 +1,10 @@
 #include "C5Requirement.h"
 #include "C5Number.h"
-#include <ctime>
+#include <chrono>
 
 //constructors
 C5Requirement::C5Requirement(){
-    this->initialTime = static_cast<long>(std::time(nullptr));
+    this->initialTime = std::chrono::high_resolution_clock::now();
 }
 
 C5Requirement::C5Requirement(int userId): C5Requirement(){
@@ -21,6 +21,17 @@ int C5Requirement::getUserId() const{
     return this->userId;
 }
 
-long C5Requirement::getInitialTime() const{
+std::chrono::_V2::system_clock::time_point C5Requirement::getInitialTime() const{
     return this->initialTime;
+}
+
+int C5Requirement::getNumbersCount() const{
+    return this->numbers.size();
+}
+
+long C5Requirement::getCurrentStamp() const{
+    auto checkpoint = std::chrono::high_resolution_clock::now();
+    auto duracion = std::chrono::duration_cast<std::chrono::seconds>(checkpoint-this->getInitialTime());
+    long timestamp = duracion.count();
+    return timestamp;
 }

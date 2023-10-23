@@ -14,7 +14,7 @@ C5NumberException::C5NumberException(int exceptionCode){
     }
 }
 
-C5ReqirementException::C5ReqirementException(int exceptionCode){
+C5RequirementException::C5RequirementException(int exceptionCode){
     this->exceptionCode = exceptionCode;
     switch(exceptionCode){
         case 1:
@@ -29,4 +29,30 @@ C5ReqirementException::C5ReqirementException(int exceptionCode){
         default:
             this->message = "Excepcion no especificada.";
     }
+}
+C5NumberEngineException::C5NumberEngineException(int exceptionCode){
+    this->exceptionCode = exceptionCode;
+    switch(exceptionCode){
+        case 1:
+            this->message = "No se pudo abrir el archivo de validación.";
+            break;
+        case 2:
+            this->message = "Se requiere validacion de usuario antes del llamado.";
+            break;
+        default:
+            this->message = "Excepcion no especificada.";
+    }
+}
+ServerExceptions::ServerExceptions(int exceptionCode){
+    this->exceptionCode = exceptionCode;
+    switch(exceptionCode){
+        case 1:
+            this->message = "Sintáxis de orden incorrecta.";
+            break;
+        case 2:
+            this->message = "Se requiere validacion de usuario antes del llamado.";
+            break;
+        default:
+            this->message = "Excepcion no especificada.";
+    }   
 }

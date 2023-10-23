@@ -2,9 +2,11 @@
 #define _C5REQUIREMENT_H
 
 #include "C5Number.h"
+#include "Stats.h"
 #include <vector>
 #include <variant>
 #include <string>
+#include <chrono>
 
 class C5Requirement {
   public:
@@ -19,7 +21,10 @@ class C5Requirement {
 
     //getters
     int getUserId() const;
-    long getInitialTime() const;
+    std::chrono::_V2::system_clock::time_point getInitialTime() const;
+    long getCurrentStamp() const;
+    int getNumbersCount() const;
+    Stats getStats() const;
 
     template<typename Type> const C5Number<Type> &getNumber(int ordinal) const;
     template<typename Type> const C5Number<Type> &getNumber() const;
@@ -27,7 +32,7 @@ class C5Requirement {
 
   private:
     int userId;
-    long initialTime;
+    std::chrono::_V2::system_clock::time_point initialTime;
     std::vector<std::variant<C5Number<int>, C5Number<double>>>numbers;
 };
 #include "C5Requirement.t.hpp"

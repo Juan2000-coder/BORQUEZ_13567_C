@@ -1,13 +1,14 @@
 # makefile written for gnu make
 CXX		= g++ 
-INCLUDE		= ./include
-CPPFLAGS	= -I$(INCLUDE)
+INCLUDE1	= ./include
+INCLUDE2	= ./include/xmlrcp	
+CPPFLAGS	= -I$(INCLUDE1) -I$(INCLUDE2)
 DEBUG		= -g
 OPTIMIZE	= -O2
 GCCWARN		= -Wall
 CXXFLAGS	= $(DEBUG) $(GCCWARN) $(OPTIMIZE) $(CPPFLAGS)
 
-LIB		= ./libXmlRpc.a
+LIB		= ./build/libXmlRpc.a
 
 # Add your system-dependent network libs here
 # Solaris: -lsocket -lnsl
@@ -16,8 +17,8 @@ SYSTEMLIBS	= -lws2_32
 LDLIBS		= $(LIB) $(SYSTEMLIBS)
 
 SRCS		= $(wildcard ./src/*.cpp)
-OBJS 		= $(SRCS:.cpp=.o)
-EXE			= ./build/HolaServer
+OBJS 		= $(SRCS:src/.cpp=build/.o)
+EXE			= ./Server
 
 all:		$(EXE)
 

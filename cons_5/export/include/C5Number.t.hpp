@@ -3,9 +3,8 @@
 #include <ctime>
 
 template<class Type>
-C5Number<Type>::C5Number(Type bmin, Type bmax){
+C5Number<Type>::C5Number(Type bmin, Type bmax, long time){
     std::srand(std::time(nullptr));
-    this->time = static_cast<long>(std::time(nullptr));
 
     if (std::is_same<Type, double>::value){
         this->type = "real";
@@ -28,6 +27,7 @@ C5Number<Type>::C5Number(Type bmin, Type bmax){
     else{
         throw C5NumberException(2);
     }
+    this->time = time;
     this->bmin = bmin;
     this->bmax = bmax;
 }

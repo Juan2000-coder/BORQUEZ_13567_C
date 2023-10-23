@@ -4,20 +4,15 @@
 
 template<typename Type>
 void C5Requirement::appendNumber(Type bmin, Type bmax){
-    C5Number<Type> number(bmin, bmax);
+    C5Number<Type> number(bmin, bmax, this->getCurrentStamp());
     number.setOrdinal(this->numbers.size() + 1);
     this->numbers.push_back(number);
 }
 
 template<typename Type>
 void C5Requirement::appendNumber(){
-    try{
-        const C5Number<Type>& number = this->getRecent<Type>();
-        this->appendNumber(number.getBmin(), number.getBmax());
-    }
-    catch(C5ReqirementException &e){
-        throw;//vuelve a tirar la excepción de getRecent
-    }
+    const C5Number<Type>& number = this->getRecent<Type>();
+    this->appendNumber(number.getBmin(), number.getBmax(), this->getCurrentStamp());
 }
 
 template<typename Type>
@@ -48,4 +43,23 @@ const C5Number<Type> &C5Requirement::getRecent()const{
         }
     }
     throw C5ReqirementException(3);
+}
+
+Stats C5Requirement::getStats()const{
+    //No sabemos si puede tirar excepciones a priori esta llamada
+    double sum = 0;
+    double mean = 0;
+
+    if(!this->numbers.empty()){
+        for(auto number: this->numbers){
+            if(std::holds_alternative<C5Number<int>>(number)){
+                sum += std::get<C5Number<int>>(number).getValue();
+            }
+            else{
+                sum += std::get<C5Number<double>>(number).getValue();
+            }
+        }
+        mean = sum/this->numbers.size();
+    }
+    return Stats(sum, mean, this->numbers.size());
 }

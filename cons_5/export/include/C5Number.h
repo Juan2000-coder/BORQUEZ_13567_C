@@ -5,7 +5,7 @@
 
 template <class Type> class C5Number {
   public:
-    C5Number(Type bmin, Type bmax);
+    C5Number(Type bmin, Type bmax, long time);
 
     void setOrdinal(int ordinal);
 

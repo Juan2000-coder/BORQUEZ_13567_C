@@ -49,6 +49,19 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp",
         "ctime": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "sstream": "cpp",
+        "any": "cpp",
+        "charconv": "cpp",
+        "chrono": "cpp",
+        "codecvt": "cpp",
+        "cstring": "cpp",
+        "forward_list": "cpp",
+        "ratio": "cpp",
+        "format": "cpp",
+        "iomanip": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "valarray": "cpp"
     }
 }
