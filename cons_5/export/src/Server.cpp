@@ -7,7 +7,7 @@ using namespace XmlRpc;
 
 int main(int argc, char* argv[]) {
   if (argc != 2) {
-    std::cerr << "Usage: HelloServer serverPort\n";
+    std::cerr << "Usage: Server serverPort\n";
     return -1;
   }
 

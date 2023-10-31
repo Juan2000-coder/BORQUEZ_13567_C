@@ -1,4 +1,2 @@
 tareas:
-Tomar en cuenta la conversión del tipo de dato de tiempo  a uno mas legible.
 Comentar correctamente todo el código
-Ver la clase del motor en si.
