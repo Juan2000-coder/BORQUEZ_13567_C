@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
 
   C5Server myServer;
 
-  XmlRpc::setVerbosity(5);
+  XmlRpc::setVerbosity(0);
 
   myServer.bindAndListen(port);
   myServer.enableIntrospection(true);
