@@ -1,6 +1,7 @@
 // HelloClient.cpp : A simple xmlrpc client. Usage: HelloClient serverHost serverPort
 // Link against xmlrpc lib and whatever socket libs your system needs (ws2_32.lib 
 // on windows)
+
 #include "XmlRpc.h"
 #include <iostream>
 using namespace XmlRpc;
@@ -31,36 +32,22 @@ int main(int argc, char* argv[])
     std::cout << "Error calling 'methodHelp'\n\n";
 
   // Call the Hello method
-  if (c.execute("Hello", noArgs, result))
+  oneArg[0] = "yo";
+  if (c.execute("userValidate", oneArg, result))
     std::cout << result << "\n\n";
   else
-    std::cout << "Error calling 'Hello'\n\n";
+    std::cout << "Error calling 'userValidate'\n\n";
 
-  // Call the HelloName method
-  oneArg[0] = "Chris";
-  if (c.execute("HelloName", oneArg, result))
-    std::cout << result << "\n\n";
-  else
-    std::cout << "Error calling 'HelloName'\n\n";
-
-  // Add up an array of numbers
-  XmlRpcValue numbers;
-  numbers[0] = 33.33;
-  numbers[1] = 112.57;
-  numbers[2] = 76.1;
-  std::cout << "numbers.size() is " << numbers.size() << std::endl;
-  if (c.execute("Sum", numbers, result))
-    std::cout << "Sum = " << double(result) << "\n\n";
-  else
-    std::cout << "Error calling 'Sum'\n\n";
 
   // Test the "no such method" fault
-  if (c.execute("NoSuchMethod", numbers, result))
+  if (c.execute("NoSuchMethod", noArgs, result))
     std::cout << "NoSuchMethod call: fault: " << c.isFault() << ", result = " << result << std::endl;
   else
-    std::cout << "Error calling 'Sum'\n";
+    std::cout << "Error calling 'NoSuchMethod'\n";
 
   // Test the multicall method. It accepts one arg, an array of structs
+  
+  /*
   XmlRpcValue multicall;
   multicall[0][0]["methodName"] = "Sum";
   multicall[0][0]["params"][0] = 5.0;
@@ -80,6 +67,6 @@ int main(int argc, char* argv[])
     std::cout << "\nmulticall  result = " << result << std::endl;
   else
     std::cout << "\nError calling 'system.multicall'\n";
-
+  */
   return 0;
 }

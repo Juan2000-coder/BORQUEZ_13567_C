@@ -1,6 +1,7 @@
 # makefile written for gnu make
 SRCDIR = ./src
-BUILDDIR = ./bin
+BINDIR = ./bin
+BUILDDIR = ./build
 INCLDIR = ./include
 CXX		= g++
 CPPFLAGS	= -I$(INCLDIR) -I$(INCLDIR)/xmlrpc
@@ -15,10 +16,10 @@ SYSTEMLIBS	= -lws2_32
 LDLIBS		= $(LIB) $(SYSTEMLIBS)
 
 SOURCES		= $(wildcard $(SRCDIR)/*cpp)
-OBJECTS		= $(patsubst $(SRCDIR)/%.cpp, $(BUILDDIR)/%.o, $(SOURCES))
-EXECUTABLE	= ./build/server
+OBJECTS		= $(patsubst $(SRCDIR)/%.cpp, $(BINDIR)/%.o, $(SOURCES))
+EXECUTABLE	= $(BUILDDIR)/server
 
-$(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
+$(BINDIR)/%.o: $(SRCDIR)/%.cpp
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
 
 
@@ -31,4 +32,4 @@ $(EXECUTABLE):	$(OBJECTS)
 all:		$(OBJECTS)
 
 clean:
-	rm -f $(BUILDDIR)/*.o $(EXE)
+	rm -f $(BINDIR)/*.o $(EXECUTABLE)

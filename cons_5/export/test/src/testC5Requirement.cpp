@@ -1,5 +1,6 @@
 #include <iostream>
 #include "C5Requirement.h"
+#include <ctime>
 
 using namespace std;
 
@@ -7,11 +8,13 @@ int main(){
     try{
         //Prueba de Constructores
         C5Requirement req1;
-        cout << req1.getInitialTime() << endl;
+        time_t currentTime_t = chrono::system_clock::to_time_t(req1.getInitialTime());
+        cout << ctime(&currentTime_t) <<endl;
         req1.setUserId(3);
         cout << req1.getUserId()<<endl;
         C5Requirement req2;
-        cout << req2.getInitialTime() << endl;
+        currentTime_t = chrono::system_clock::to_time_t(req2.getInitialTime());
+        cout << ctime(&currentTime_t) <<endl;
         req2.setUserId(3);
         cout << req2.getUserId()<<endl;
         //auto numbere1 = req1.getNumber<int>();
