@@ -25,11 +25,6 @@ int main(int argc, char* argv[])
 
   // Use introspection API to get the help string for the Hello method
   XmlRpcValue oneArg;
-  oneArg[0] = "Hello";
-  if (c.execute("system.methodHelp", oneArg, result))
-    std::cout << "Help for 'Hello' method: " << result << "\n\n";
-  else
-    std::cout << "Error calling 'methodHelp'\n\n";
 
   oneArg[0] = "getNumberOld";
   if (c.execute("system.methodHelp", oneArg, result))
