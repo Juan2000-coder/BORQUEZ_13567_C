@@ -31,8 +31,14 @@ int main(int argc, char* argv[])
   else
     std::cout << "Error calling 'methodHelp'\n\n";
 
+  oneArg[0] = "getNumberOld";
+  if (c.execute("system.methodHelp", oneArg, result))
+    std::cout << "Help for 'getNumberOld' method: " << result << "\n\n";
+  else
+    std::cout << "Error calling 'methodHelp'\n\n";
+
   // Call the Hello method
-  oneArg[0] = "yo";
+  oneArg[0] = 13;
   if (c.execute("userValidate", oneArg, result))
     std::cout << result << "\n\n";
   else
