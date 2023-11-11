@@ -7,3 +7,9 @@ Utilizar enums para los códigos de errores.
 
 Comentar correctamente todo el c�digo
 
+Ver si hay otra manera de acceder a los elementos del vector
+de Variant que no sea a través de levantar la excepción.
+Porque en este caso solamente tenemos dos tipos de datos, pero en otro
+caso podríamos tener una banda.
+
+Cambiar el tipo de archivo para los usuarios.
