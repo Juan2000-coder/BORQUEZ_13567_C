@@ -10,6 +10,16 @@ void C5Requirement::appendNumber(Type bmin, Type bmax){
 }
 
 template<typename Type>
+const C5Number<Type> &C5Requirement::getRecent()const{
+    for(auto rit = this->numbers.rbegin(); rit != numbers.rend(); rit++){
+        if(std::holds_alternative<C5Number<Type>>(*rit)){
+            return std::get<C5Number<Type>>(*rit);
+        }
+    }
+    throw C5RequirementException(3);
+}
+
+template<typename Type>
 void C5Requirement::appendNumber(){
     const C5Number<Type>& number = this->getRecent<Type>();
     this->appendNumber(number.getBmin(), number.getBmax());
@@ -33,14 +43,4 @@ const C5Number<Type> &C5Requirement::getNumber()const{
         return std::get<C5Number<Type>>(this->numbers.back());
     }
     throw C5RequirementException(2);
-}
-
-template<typename Type>
-const C5Number<Type> &C5Requirement::getRecent()const{
-    for(auto rit = this->numbers.rbegin(); rit != numbers.rend(); rit++){
-        if(std::holds_alternative<C5Number<Type>>(*rit)){
-            return std::get<C5Number<Type>>(*rit);
-        }
-    }
-    throw C5RequirementException(3);
 }

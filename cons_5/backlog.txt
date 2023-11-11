@@ -1,2 +1,9 @@
 tareas:
-Comentar correctamente todo el c�digo
+
+Pasar el control de excepciones a un lado mas externo
+tipo que se haga de forma automática como en el log de python.
+
+Utilizar enums para los códigos de errores.
+
+Comentar correctamente todo el c�digo
+

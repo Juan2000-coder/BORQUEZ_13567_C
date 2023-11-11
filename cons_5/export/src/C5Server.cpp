@@ -63,7 +63,7 @@ void GetInt::execute(XmlRpcValue& params, XmlRpcValue& result){
     try{
         if (params.size() == 1){
             if(this->engine.userValidate(params[0])){
-                result = this->engine.getInt(params[0]);
+                result = this->engine.getInt();
             }
             else{
                 result = "Usuario No Válido.";
@@ -71,7 +71,7 @@ void GetInt::execute(XmlRpcValue& params, XmlRpcValue& result){
         }
         else if(params.size() == 3){
             if(this->engine.userValidate(params[0])){
-                result = this->engine.getInt(params[0], params[1], params[2]);
+                result = this->engine.getInt(params[1], params[2]);
             }
             else{
                 result = "Usuario No Válido.";
@@ -119,7 +119,7 @@ void GetReal::execute(XmlRpcValue& params, XmlRpcValue& result){
     try{
         if (params.size() == 1){
             if(this->engine.userValidate(params[0])){
-                result = this->engine.getReal(params[0]);
+                result = this->engine.getReal();
             }
             else{
                 result = "Usuario No Válido.";
@@ -127,7 +127,7 @@ void GetReal::execute(XmlRpcValue& params, XmlRpcValue& result){
         }
         else if(params.size() == 3){
             if(this->engine.userValidate(params[0])){
-                result = this->engine.getReal(params[0], params[1], params[2]);
+                result = this->engine.getReal(params[1], params[2]);
             }
             else{
                 result = "Usuario No Válido.";
@@ -175,7 +175,7 @@ void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
         if (params.size() == 2){
             if(this->engine.userValidate(params[0])){
                 try{
-                    auto number = this->engine.getNumberOld<int>(params[0], params[1]);
+                    auto number = this->engine.getNumberOld<int>(params[1]);
                     result[0] = number.getValue();
                     result[1] = number.getBmin();
                     result[2] = number.getBmax();
@@ -183,7 +183,7 @@ void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
                     
                 }
                 catch(std::bad_variant_access()){
-                    auto number = this->engine.getNumberOld<double>(params[0], params[1]);
+                    auto number = this->engine.getNumberOld<double>(params[1]);
                     result[0] = number.getValue();
                     result[1] = number.getBmin();
                     result[2] = number.getBmax();
@@ -235,7 +235,7 @@ void GetStat::execute(XmlRpcValue& params, XmlRpcValue& result){
     try{
         if (params.size() == 1){
             if(this->engine.userValidate(params[0])){
-                auto stat = this->engine.getStat(params[0]);
+                auto stat = this->engine.getStat();
                 result[0] = stat.getCount();
                 result[1] = stat.getMean();
                 result[2] = stat.getSum();
@@ -284,7 +284,7 @@ void GetNumberList::execute(XmlRpcValue& params, XmlRpcValue& result){
     try{
         if (params.size() == 1){
             if(this->engine.userValidate(params[0])){
-                auto list = this->engine.getNumberList(params[0]);
+                auto list = this->engine.getNumberList();
                 XmlRpcValue result1;
                 XmlRpcValue result2;
                 for(int i = 0; i < list.getNumbersCount(); i++){

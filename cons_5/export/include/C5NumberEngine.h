@@ -14,15 +14,14 @@ class C5NumberEngine{
 
     //methods
     bool userValidate(int userId);
-    bool validationDone(int userId) const;
     
-    int getInt(int userId, int bmin, int bmax);
-    int getInt(int userId);
-    double getReal(int userId, double bmin, double bmax);
-    double getReal(int userId);
-    template<typename Type> const C5Number<Type> &getNumberOld(int userId, int ordinal) const;//esto también podría ser un string
-    Stats getStat(int userId) const;//esto puede ser una nueva clase de estadística
-    const C5Requirement &getNumberList(int userid) const;//me parece que con ese tipo ocupa menos espacio
+    int getInt(int bmin, int bmax);
+    int getInt();
+    double getReal(double bmin, double bmax);
+    double getReal();
+    template<typename Type> const C5Number<Type> &getNumberOld(int ordinal) const;//esto también podría ser un string
+    Stats getStat() const;//esto puede ser una nueva clase de estadística
+    const C5Requirement &getNumberList() const;//me parece que con ese tipo ocupa menos espacio
 
   private:
     std::vector<C5Requirement> requirements;

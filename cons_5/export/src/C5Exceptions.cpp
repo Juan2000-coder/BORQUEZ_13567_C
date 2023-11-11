@@ -36,9 +36,6 @@ C5NumberEngineException::C5NumberEngineException(int exceptionCode){
         case 1:
             this->message = "No se pudo abrir el archivo de validación.";
             break;
-        case 2:
-            this->message = "Se requiere validacion de usuario antes del llamado.";
-            break;
         default:
             this->message = "Excepcion no especificada.";
     }

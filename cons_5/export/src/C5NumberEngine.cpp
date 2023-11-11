@@ -34,77 +34,39 @@ bool C5NumberEngine::userValidate(int userId){
     return false;
 }
 
-/*La validación se hace llamando al método anterior. Se encarga el engine.*/
-/*La siguiente verifica en cada función que la validación se haya realizado.*/
-bool C5NumberEngine::validationDone(int userId)const{
-    if(this->requirements.at(this->requirementIndex).getUserId() != userId){
-        return false;
-    }
-    return true;
+
+int C5NumberEngine::getInt(int bmin, int bmax){
+    //La verificación lanza una excepción en caso de que no se haya realizado.
+    auto requirement = this->requirements.at(this->requirementIndex);
+    requirement.appendNumber<int>(bmin, bmax);
+    return requirement.getNumber<int>().getValue();
 }
 
-int C5NumberEngine::getInt(int userId, int bmin, int bmax){
-    if (this->validationDone(userId)){
-        //La verificación lanza una excepción en caso de que no se haya realizado.
-        auto requirement = this->requirements.at(this->requirementIndex);
-        requirement.appendNumber<int>(bmin, bmax);
-        return requirement.getNumber<int>().getValue();
-    }
-    else{
-        throw C5NumberEngineException(2);
-    }
+int C5NumberEngine::getInt(){
+    auto requirement = this->requirements.at(this->requirementIndex);
+    requirement.appendNumber<int>();
+    return requirement.getNumber<int>().getValue();
 }
 
-int C5NumberEngine::getInt(int userId){
-    if (this->validationDone(userId)){
-        auto requirement = this->requirements.at(this->requirementIndex);
-        requirement.appendNumber<int>();
-        return requirement.getNumber<int>().getValue();
-    }
-    else{
-        throw C5NumberEngineException(2);
-    }
+double C5NumberEngine::getReal(double bmin, double bmax){
+    //La verificación lanza una excepción en caso de que no se haya realizado.
+    auto requirement = this->requirements.at(this->requirementIndex);
+    requirement.appendNumber<double>(bmin, bmax);
+    return requirement.getNumber<double>().getValue();
 }
-
-double C5NumberEngine::getReal(int userId, double bmin, double bmax){
-    if (this->validationDone(userId)){
+double C5NumberEngine::getReal(){
         //La verificación lanza una excepción en caso de que no se haya realizado.
-        auto requirement = this->requirements.at(this->requirementIndex);
-        requirement.appendNumber<double>(bmin, bmax);
-        return requirement.getNumber<double>().getValue();
-    }
-    else{
-        throw C5NumberEngineException(2);
-    }
+    auto requirement = this->requirements.at(this->requirementIndex);
+    requirement.appendNumber<double>();
+    return requirement.getNumber<double>().getValue();
 }
-double C5NumberEngine::getReal(int userId){
-    if (this->validationDone(userId)){
-        //La verificación lanza una excepción en caso de que no se haya realizado.
-        auto requirement = this->requirements.at(this->requirementIndex);
-        requirement.appendNumber<double>();
-        return requirement.getNumber<double>().getValue();
-    }
-    else{
-        throw C5NumberEngineException(2);
-    }
-}
-Stats C5NumberEngine::getStat(int userId) const{
-    if (this->validationDone(userId)){
-        //La verificación lanza una excepción en caso de que no se haya realizado.
-        auto requirement = this->requirements.at(this->requirementIndex);
-        return requirement.getStats();
-    }
-    else{
-        throw C5NumberEngineException(2);
-    }
+Stats C5NumberEngine::getStat() const{
+    //La verificación lanza una excepción en caso de que no se haya realizado.
+    auto requirement = this->requirements.at(this->requirementIndex);
+    return requirement.getStats();
 }
 //A la mierda, devolvemos el vector de variants y a la chota.
-const C5Requirement& C5NumberEngine::getNumberList(int userId) const{
-    if (this->validationDone(userId)){
-        //La verificación lanza una excepción en caso de que no se haya realizado.
-        return this->requirements.at(this->requirementIndex);
-    }
-    else{
-        throw C5NumberEngineException(2);
-    }
+const C5Requirement& C5NumberEngine::getNumberList() const{
+    //La verificación lanza una excepción en caso de que no se haya realizado.
+    return this->requirements.at(this->requirementIndex);
 }

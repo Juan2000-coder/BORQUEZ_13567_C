@@ -1,6 +1,6 @@
 # makefile written for gnu make
 SRCDIR = ./src
-BUILDDIR = ./build
+BUILDDIR = ./bin
 INCLDIR = ./include
 CXX		= g++
 CPPFLAGS	= -I$(INCLDIR) -I$(INCLDIR)/xmlrpc
@@ -9,14 +9,14 @@ OPTIMIZE	= -O2
 GCCWARN		= -Wall
 CXXFLAGS	= $(DEBUG) $(GCCWARN) $(OPTIMIZE)
 
-LIB		= ./build/libXmlRpc.a
+LIB		= ./lib/libXmlRpc.a
 SYSTEMLIBS	= -lws2_32
 
 LDLIBS		= $(LIB) $(SYSTEMLIBS)
 
 SOURCES		= $(wildcard $(SRCDIR)/*cpp)
 OBJECTS		= $(patsubst $(SRCDIR)/%.cpp, $(BUILDDIR)/%.o, $(SOURCES))
-EXECUTABLE	= ./Server
+EXECUTABLE	= ./build/server
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
