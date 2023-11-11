@@ -10,7 +10,7 @@ OPTIMIZE	= -O2
 GCCWARN		= -Wall
 CXXFLAGS	= $(DEBUG) $(GCCWARN) $(OPTIMIZE)
 
-LIB		= ./lib/libXmlRpc.a
+LIB		= ./lib/xmlrpc.a
 SYSTEMLIBS	= -lws2_32
 
 LDLIBS		= $(LIB) $(SYSTEMLIBS)
@@ -19,17 +19,22 @@ SOURCES		= $(wildcard $(SRCDIR)/*cpp)
 OBJECTS		= $(patsubst $(SRCDIR)/%.cpp, $(BINDIR)/%.o, $(SOURCES))
 EXECUTABLE	= $(BUILDDIR)/server
 
+
 $(BINDIR)/%.o: $(SRCDIR)/%.cpp
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
 
 
-$(EXECUTABLE):	$(OBJECTS)
+$(EXECUTABLE):	$(OBJECTS) $(LIB)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDLIBS)
 
 
 .PHONY: all clean
 
-all:		$(OBJECTS)
+all:	lib $(OBJECTS)
+
+$(LIB):
+	cd lib && $(MAKE)
 
 clean:
 	rm -f $(BINDIR)/*.o $(EXECUTABLE)
+	cd lib && $(MAKE) clean

@@ -15,4 +15,6 @@ caso podríamos tener una banda.
 Cambiar el tipo de archivo para los usuarios.
 
 Mirar los tests de la libreria con los ejemplos para el envío, recepción de archivos
-y verfiicaicón de métodos del servidor
+y verfiicaicón de métodos del servidor.
+
+Debuggear el codigo para ver donde se generan los encabezados para las ayudas de los metodos.
