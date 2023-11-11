@@ -14,6 +14,7 @@ class UserValidate : public XmlRpcServerMethod{
   public:
     UserValidate(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("userValidate", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
+    std::string help() override;
   private:
     C5NumberEngine &engine;
 };
@@ -22,6 +23,7 @@ class GetInt : public XmlRpcServerMethod{
   public:
     GetInt(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getInt", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
+    std::string help() override;
   private:
     C5NumberEngine &engine;
 };
@@ -30,6 +32,7 @@ class GetReal : public XmlRpcServerMethod{
   public:
     GetReal(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getReal", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
+    std::string help() override;
   private:
     C5NumberEngine &engine;
 };
@@ -38,6 +41,7 @@ class GetNumberOld : public XmlRpcServerMethod{
   public:
     GetNumberOld(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getNumberOld", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
+    std::string help() override;
   private:
     C5NumberEngine &engine;
 };
@@ -46,6 +50,7 @@ class GetStat : public XmlRpcServerMethod{
   public:
     GetStat(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getStat", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
+    std::string help() override;
   private:
     C5NumberEngine &engine;
 };
@@ -54,6 +59,7 @@ class GetNumberList : public XmlRpcServerMethod{
   public:
     GetNumberList(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getNumberList", s), engine(_engine) {};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
+    std::string help() override;
   private:
     C5NumberEngine &engine;
 };

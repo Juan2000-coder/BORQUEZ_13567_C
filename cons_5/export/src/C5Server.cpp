@@ -10,6 +10,9 @@
 
 using namespace XmlRpc;
 
+std::string UserValidate::help(){
+    return "Valida al usuario segun un numero de id.";
+}
 void UserValidate::execute(XmlRpcValue& params, XmlRpcValue& result){
     /*FALTA: falta ver excepciones por numero de parámetros y por tipo de dato de entrada*/
     try{
@@ -57,7 +60,12 @@ void UserValidate::execute(XmlRpcValue& params, XmlRpcValue& result){
     }
 }
 
-
+std::string GetInt::help(){
+    std::stringstream ayuda;
+    ayuda <<  "Genera un numero entero aleatorio en un rango especificado (bmin, bmax).\n"
+           << "Si no se indica un rango se toma el correspondiente a la ultima solicitud.";
+    return ayuda.str();
+}
 void GetInt::execute(XmlRpcValue& params, XmlRpcValue& result){
     /*FALTA: Falta verificación del número de parámetros y verificación de tipos*/
     try{
@@ -114,6 +122,12 @@ void GetInt::execute(XmlRpcValue& params, XmlRpcValue& result){
 
 }
 
+std::string GetReal::help(){
+    std::stringstream ayuda;
+    ayuda <<  "Genera un numero real aleatorio en un rango especificado (bmin, bmax).\n"
+           << "Si no se indica un rango se toma el correspondiente a la ultima solicitud.";
+    return ayuda.str();
+}
 void GetReal::execute(XmlRpcValue& params, XmlRpcValue& result){
     /*FALTA: Falta verificación del número de parámetros y verificación de tipos*/
     try{
@@ -169,6 +183,12 @@ void GetReal::execute(XmlRpcValue& params, XmlRpcValue& result){
     }
 }
 
+std::string GetNumberOld::help(){
+    std::stringstream ayuda;
+    ayuda << "Devuelve un numero previamente generado dado un numero"
+          << " que indica el orden de la solicitud (ordinal).";
+    return ayuda.str();
+}
 void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
     /*FALTA: Falta verificación del número de parámetros y verificación de tipos*/
     try{
@@ -230,6 +250,9 @@ void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
     }
 }
 
+std::string GetStat::help(){
+    return "Devuelve la estadistica basica de los numeros generados.";
+}
 void GetStat::execute(XmlRpcValue& params, XmlRpcValue& result){
     /*FALTA: Falta verificación del número de parámetros y verificación de tipos*/
     try{
@@ -280,6 +303,9 @@ void GetStat::execute(XmlRpcValue& params, XmlRpcValue& result){
     }
 }
 
+std::string GetNumberList::help(){
+    return "Devuelve el listado de numeros generados.";
+}
 void GetNumberList::execute(XmlRpcValue& params, XmlRpcValue& result){
     try{
         if (params.size() == 1){

@@ -62,6 +62,7 @@
         "iomanip": "cpp",
         "ranges": "cpp",
         "span": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "cstdarg": "cpp"
     }
 }
