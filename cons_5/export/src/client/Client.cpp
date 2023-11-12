@@ -15,18 +15,18 @@ int main(int argc, char* argv[]){
     User user(atoi(argv[3]));
     XmlRpcValue validation;
     if (client.execute("userValidate", user.getId(), validation)){
-        if (validation){
+        if (int(validation) == 1){
             CLI cli;
             if (cli.loop(client, user))
                 return 0;
             else
                 return -1;
         }
-        cout << "Usuario no valido.";
+        cout << "Usuario no valido.\n";
         return 0;
     }
     else{
-        cout << "Error al validar";
+        cout << "Error al validar\n";
         return -1;
     }
 }
