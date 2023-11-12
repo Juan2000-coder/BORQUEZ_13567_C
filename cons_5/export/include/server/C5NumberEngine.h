@@ -10,7 +10,7 @@
 class C5NumberEngine{
   public:
     //constructor
-    C5NumberEngine():validUsersFile("../files/users.txt"), requirementIndex(-1){};
+    C5NumberEngine():validUsersFile("../../files/users.txt"), requirementIndex(-1){};
 
     //methods
     bool userValidate(int userId);
