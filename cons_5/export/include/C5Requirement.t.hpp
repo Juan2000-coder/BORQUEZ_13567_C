@@ -16,7 +16,7 @@ const C5Number<Type> &C5Requirement::getRecent()const{
             return std::get<C5Number<Type>>(*rit);
         }
     }
-    throw C5RequirementException(3);
+    throw C5RequirementException(C5RequirementException::exceptionCodes::NO_PREV_REQ_TYPE);
 }
 
 template<typename Type>
@@ -32,7 +32,7 @@ const C5Number<Type> &C5Requirement:: getNumber(int ordinal) const{
     if ((ordinal > 0)&&(this->numbers.size() >= ordinal)){
         return std::get<C5Number<Type>>(this->numbers.at(ordinal-1));
     }
-    throw C5RequirementException(1);
+    throw C5RequirementException(C5RequirementException::exceptionCodes::OUT_OF_RNG);
 
 }
 
@@ -42,5 +42,5 @@ const C5Number<Type> &C5Requirement::getNumber()const{
         /*Eto todavía puede lanzar una exceptión de bad access*/
         return std::get<C5Number<Type>>(this->numbers.back());
     }
-    throw C5RequirementException(2);
+    throw C5RequirementException(C5RequirementException::exceptionCodes::NO_PREV_REQ);
 }

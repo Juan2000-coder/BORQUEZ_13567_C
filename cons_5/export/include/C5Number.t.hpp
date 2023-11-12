@@ -12,7 +12,7 @@ C5Number<Type>::C5Number(Type bmin, Type bmax, long time){
             this->value = bmin + double(std::rand())*(bmax - bmin)/RAND_MAX;
         }
         else{
-            throw C5NumberException(1);
+            throw C5NumberException(C5NumberException::exceptionCodes::LIMIT);
         }
     }
     else if(std::is_same<Type, int>::value){
@@ -21,11 +21,11 @@ C5Number<Type>::C5Number(Type bmin, Type bmax, long time){
             this->value = bmin + std::rand()%static_cast<int>(bmax-bmin + 1);
         }
         else{
-            throw C5NumberException(1);
+            throw C5NumberException(C5NumberException::exceptionCodes::LIMIT);
         }
     }
     else{
-        throw C5NumberException(2);
+        throw C5NumberException(C5NumberException::exceptionCodes::TYPE);
     }
     this->time = time;
     this->bmin = bmin;

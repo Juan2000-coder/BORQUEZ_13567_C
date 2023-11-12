@@ -18,7 +18,7 @@ bool C5NumberEngine::userValidate(int userId){
     //Luego verifica en el archivo
     std::ifstream validUsers(this->validUsersFile);
     if (!validUsers.is_open()){
-        throw C5NumberEngineException(1);
+        throw C5NumberEngineException(C5NumberEngineException::exceptionCodes::AT_OPEN);
     }
     std::string idRequest = std::to_string(userId);
     std::string id;

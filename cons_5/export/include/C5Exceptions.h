@@ -6,7 +6,7 @@
 #include <iostream>
 #include <sstream>
 
-class C5Exceptions: public::std::exception{
+class C5Exceptions: public std::exception{
   public:
     enum exceptionCodes{NOID};
     C5Exceptions(const char* _message): message(_message), code(static_cast<unsigned int>(NOID)){}
@@ -14,7 +14,7 @@ class C5Exceptions: public::std::exception{
     const char* what() const noexcept override{
       return message;
     }
-    virtual const char* where() const;
+    virtual const char* where() const{return "base";}
     unsigned int getCode() const {return this->code;}
     friend std::ostream& operator<<(std::ostream& os, const C5Exceptions& myExceptions);
 
