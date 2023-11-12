@@ -5,7 +5,7 @@ BUILDDIR = ./build
 INCLDIR = ./include
 LIBDIR = ./lib
 CXX = g++
-CPPFLAGS = -I$(INCLDIR) -I$(INCLDIR)/xmlrpc
+CPPFLAGS = -I$(INCLDIR)/server -I$(INCLDIR)/client -I$(INCLDIR)/xmlrpc
 DEBUG = -g
 OPTIMIZE = -O2
 GCCWARN = -Wall
@@ -16,23 +16,32 @@ SYSTEMLIBS = -lws2_32
 
 LDLIBS = $(LIB) $(SYSTEMLIBS)
 
-SOURCES = $(wildcard $(SRCDIR)/*.cpp)
-OBJECTS = $(patsubst $(SRCDIR)/%.cpp, $(BINDIR)/%.o, $(SOURCES))
-EXECUTABLE = $(BUILDDIR)/server
+SERVERSOURCES = $(wildcard $(SRCDIR)/server/*.cpp)
+CLIENTSOURCES = $(wildcard $(SRCDIR)/client/*.cpp)
+SERVEROBJECTS = $(patsubst $(SRCDIR)/server/%.cpp, $(BINDIR)/server/%.o, $(SERVERSOURCES))
+CLIENTOBJECTS = $(patsubst $(SRCDIR)/client/%.cpp, $(BINDIR)/client/%.o, $(CLIENTSOURCES))
+SERVEREXECUTABLE = $(BUILDDIR)/server
+CLIENTEXECUTABLE = $(BUILDDIR)/client
 
-all: $(LIB) $(EXECUTABLE)
+all: $(LIB) $(SERVEREXECUTABLE) $(CLIENTEXECUTABLE)
 
 $(LIB):
 	cd $(LIBDIR) && $(MAKE)
 
-$(BINDIR)/%.o: $(SRCDIR)/%.cpp
+$(BINDIR)/server/%.o: $(SRCDIR)/server/%.cpp
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
 
-$(EXECUTABLE): $(OBJECTS)
+$(BINDIR)/client/%.o: $(SRCDIR)/client/%.cpp
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
+
+$(SERVEREXECUTABLE): $(SERVEROBJECTS)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDLIBS)
 
+$(CLIENTEXECUTABLE): $(CLIENTOBJECTS)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDLIBS)
 .PHONY: all clean
 
 clean:
-	rm -f $(BINDIR)/*.o $(EXECUTABLE)
+	rm -f $(BINDIR)/server/*.o $(SERVEREXECUTABLE)
+	rm -f $(BINDIR)/client/*.o $(CLIENTEXECUTABLE)
 	cd $(LIBDIR) && $(MAKE) clean
