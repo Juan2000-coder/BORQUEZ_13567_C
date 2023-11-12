@@ -3,9 +3,9 @@
 #include <string>
 class User{
     public:
-        User(std::string _id): id(_id){}
-        std::string getId() const {return id;}
+        User(int _id): id(_id){}
+        int getId() const {return id;}
     private:
-        std::string id;
+        int id;
 };
 #endif

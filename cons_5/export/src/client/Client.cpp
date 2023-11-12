@@ -11,10 +11,10 @@ int main(int argc, char* argv[]){
         cerr << "Uso: Client IP PUERTO ID\n";
         return -1;
     }
-    XmlRpcClient client(argv[1], int(argv[2]));
-    User user(argv[3]);
-    XmlRpcValue validation, id;
-    if (client.execute("userValidate", id, validation)){
+    XmlRpcClient client(argv[1], atoi(argv[2]));
+    User user(atoi(argv[3]));
+    XmlRpcValue validation;
+    if (client.execute("userValidate", user.getId(), validation)){
         if (validation){
             CLI cli;
             if (cli.loop(client, user))

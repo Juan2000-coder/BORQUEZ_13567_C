@@ -14,7 +14,7 @@ class CLI{
     public:
         bool loop(XmlRpcClient& client, User& user) const;
         void menu() const;
-        bool parse(string& method, XmlRpcValue& args, string& line, string id) const;
+        bool parse(string& method, XmlRpcValue& args, string& line, int id) const;
     private:
         static const map<string, string> methods;
 };

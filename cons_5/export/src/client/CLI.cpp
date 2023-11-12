@@ -23,7 +23,7 @@ bool CLI::loop(XmlRpcClient& client, User& user)const{
     XmlRpcValue args;
     XmlRpcValue result;
     bool service = true;
-    string id = user.getId();
+    int id = user.getId();
     
     while(service) {
         this->menu();
@@ -67,7 +67,7 @@ void CLI::menu()const{
     cout << "=====================\n";
 }
 
-bool CLI::parse(string& method, XmlRpcValue& args, string& line, string id)const{
+bool CLI::parse(string& method, XmlRpcValue& args, string& line, int id)const{
     stringstream input(line);
     string arg;
 
