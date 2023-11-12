@@ -14,7 +14,7 @@ C5ServerConnection* C5Server::createConnection(int socket){
 }
 
 std::string UserValidate::help(){
-    return "Valida al usuario segun un numero de id (valido = true, no valido = false)";
+    return "Valida al usuario segun su id (valido = 1) (no valido = 0)";
 }
 void UserValidate::execute(XmlRpcValue& params, XmlRpcValue& result){
     if (params.size() == 1){
@@ -90,8 +90,7 @@ void GetReal::execute(XmlRpcValue& params, XmlRpcValue& result){
 
 std::string GetNumberOld::help(){
     std::stringstream ayuda;
-    ayuda << "Devuelve un numero previamente generado dado un numero"
-          << " que indica el orden de la solicitud (ordinal).";
+    ayuda << "Devuelve el numero generado en el orden indicado por un ordinal.";
     return ayuda.str();
 }
 void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
