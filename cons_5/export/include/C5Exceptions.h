@@ -2,55 +2,46 @@
 #define _C5EXCEPTIONS_H
 
 #include <exception>
+#include <typeinfo>
 
-class C5NumberException: public std::exception{
+class C5Exceptions: public::std::exception{
   public:
-    C5NumberException(const char* _message): message(_message){};
-    C5NumberException(int exceptionCode);
-
+    C5Exceptions(const char* _message): message(_message){};
+    C5Exceptions():message("No dentificada"){}
     const char* what() const noexcept override{
       return message;
     }
+    virtual const char* where() const;
 
-  private:
-    const char* message;
-    int exceptionCode;
-};
-
-class C5RequirementException: public std::exception{
-  public:
-    C5RequirementException(const char* _message): message(_message){};
-    C5RequirementException(int exceptionCode);
-    const char* what() const noexcept override{
-      return message;
-    };
-
-  private:
-    int exceptionCode;
+  protected:
     const char* message;
 };
 
-class C5NumberEngineException: public std::exception{
+class C5NumberException: public C5Exceptions{
   public:
-    C5NumberEngineException(const char* _message): message(_message){};
-    C5NumberEngineException(int exceptionCode);
-    const char* what() const noexcept override{
-      return message;
-    };
-  private:
-    int exceptionCode;
-    const char* message;
+    enum exceptionCodes {LIMIT, TYPE};
+    C5NumberException(exceptionCodes code);
+    const char* where() const override {return "C5Number";}
 };
 
-class ServerExceptions: public std::exception{
+class C5RequirementException: public C5Exceptions{
   public:
-    ServerExceptions(const char* _message): message(_message){};
-    ServerExceptions(int exceptionCode);
-    const char* what() const noexcept override{
-      return message;
-    };
-  private:
-    int exceptionCode;
-    const char* message;
+    enum exceptionCodes {OUT_OF_RNG, NO_PREV_REQ, NO_PREV_REQ_TYPE};
+    C5RequirementException(exceptionCodes code);
+    const char* where() const override {return "C5Requirement";}
+};
+
+class C5NumberEngineException: public C5Exceptions{
+  public:
+    enum exceptionCodes {AT_OPEN};
+    C5NumberEngineException(exceptionCodes code);
+    const char* where() const override{return "C5NumberEngine";}
+};
+
+class ServerExceptions: public C5Exceptions{
+  public:
+    enum exceptionCodes {INV_SYN};
+    ServerExceptions(exceptionCodes code);
+    const char* where() const override{return "Server";}
 };
 #endif
