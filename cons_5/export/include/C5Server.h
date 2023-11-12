@@ -4,6 +4,7 @@
 #include "XmlRpc.h"
 #include "C5NumberEngine.h"
 #include "C5Number.h"
+#include "C5ServerConnection.h"
 
 #include <string>
 #include <vector>
@@ -92,6 +93,8 @@ class C5Server: public XmlRpcServer{
 
     //getNumberList(int userid);
     GetNumberList getNumberList;
+
+    C5ServerConnection* createConnection(int socket);
 };
 
 #endif

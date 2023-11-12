@@ -44,10 +44,10 @@ class C5NumberEngineException: public C5Exceptions{
     const char* where() const override{return "C5NumberEngine";}
 };
 
-class ServerExceptions: public C5Exceptions{
+class ServerException: public C5Exceptions{
   public:
     enum exceptionCodes {INV_SYN};
-    ServerExceptions(exceptionCodes code);
+    ServerException(exceptionCodes code);
     const char* where() const override{return "Server";}
 };
 #endif
