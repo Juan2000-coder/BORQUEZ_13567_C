@@ -6,11 +6,13 @@
 #include "Stats.h"
 #include <string>
 #include <vector>
+#include <fstream>
+
 
 class C5NumberEngine{
   public:
     //constructor
-    C5NumberEngine():validUsersFile("../../files/users.txt"), requirementIndex(-1){};
+    C5NumberEngine();
 
     //methods
     bool userValidate(int userId);

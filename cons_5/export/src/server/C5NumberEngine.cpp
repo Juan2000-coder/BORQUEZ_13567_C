@@ -1,9 +1,12 @@
 #include "C5NumberEngine.h"
 #include <cstdlib>
 #include <ctime>
-#include <fstream>
 #include <utility>//ver después si realmente hace falta su inclusión
+#include <iostream>
 
+C5NumberEngine::C5NumberEngine(){
+    this->validUsersFile = "../files/users.txt";
+}
 bool C5NumberEngine::userValidate(int userId){
     //Primero verifica en la lista de requerimientos
     int index = 0;
@@ -14,8 +17,6 @@ bool C5NumberEngine::userValidate(int userId){
         }
         index++;
     }
-
-    //Luego verifica en el archivo
     std::ifstream validUsers(this->validUsersFile);
     if (!validUsers.is_open()){
         throw C5NumberEngineException(C5NumberEngineException::exceptionCodes::AT_OPEN);
@@ -31,6 +32,7 @@ bool C5NumberEngine::userValidate(int userId){
             return true;
         }
     }
+    std::cout <<"false\n";
     return false;
 }
 
