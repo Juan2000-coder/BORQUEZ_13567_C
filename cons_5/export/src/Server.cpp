@@ -14,12 +14,12 @@ int main(int argc, char* argv[]) {
   int port = atoi(argv[1]);
 
   C5Server myServer;
-  XmlRpc::setVerbosity(0);
+  XmlRpc::setVerbosity(3);
 
   myServer.bindAndListen(port);
   myServer.enableIntrospection(true);
   myServer.work(-1.0);
-
+  //myServer.shutdown(); Método para terminar con el servidor
   return 0;
 }
 
