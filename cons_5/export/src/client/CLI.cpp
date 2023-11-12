@@ -6,15 +6,13 @@
 
 
 const map<string, string> CLI::methods = {
-    {"validacion", "userValidate"},
+    {"validar", "userValidate"},
     {"entero", "getInt"},
     {"real", "getReal"},
     {"anterior", "getNumberOld"},
-    {"listar", "list"},
     {"estadistica", "getStat"},
-    {"validar", "getNumberList"},
-    {"h", "system.methodHelp"},
-    {"q", "salir"}
+    {"listar", "getNumberList"},
+    {"h", "system.methodHelp"}
 };
 
 bool CLI::loop(XmlRpcClient& client, User& user)const{
@@ -22,49 +20,53 @@ bool CLI::loop(XmlRpcClient& client, User& user)const{
     string method;
     XmlRpcValue args;
     XmlRpcValue result;
-    bool service = true;
     int id = user.getId();
-    
-    while(service) {
+
+    system("clear || cls");
+    while(true) {
         this->menu();
 
-        cout << "Seleccione una opcion: ";
+        cout << '\n' <<">>> ";
         getline(cin, line);
+        if (line == "q"){
+            break;
+        }
 
         args.clear();
         if (this->parse(method, args, line, id)){
-            if (method == "salir"){
-                service = false;
-            }
-            else{
-                result.clear();
-                if (client.execute(method.c_str(), args, result)){
-                    cout << method <<": fault: " << client.isFault() << ", result = " << result << std::endl;
+            result.clear();
+            if (client.execute(method.c_str(), args, result)){
+                if (int(client.isFault()) == 0){
+                    cout << '\n' << "- Respuesta del servidor: "<< result << endl;
                 }
                 else{
-                    cout << "Error en la llamada al metodo " << method << endl;
+                    cout << '\n' << "- Se recibio una respuesta con error: "<< result << endl;
                 }
-                cout << "Presione Enter para continuar...";
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cin.get();
+            }
+            else{
+                cout << "Error en la llamada al metodo " << method << endl;
             }
         }
         else{
             cout << "Sintaxis de comando incorrecta.";
         }
+        cout << "\nPresione Enter para continuar...";
+        std::cin.clear();
+        cin.get();
         system("clear || cls"); // Limpiar la pantalla
     }
-
-    cout << "¡Hasta luego!" <<endl;
+    cout << "\nHasta luego!" <<endl;
 
     return true;
 }
+
 void CLI::menu()const{
-    cout << "======= Comandos =======\n";
+    cout << "============= Comandos ===========\n";
     for (const auto &option: this->methods){
-        cout << option.first << "\n";
+        cout <<"- "<<option.first << "\n";
     }
-    cout << "=====================\n";
+    cout << "===================================\n";
+    cout << "Ingrese 'q' para salir.\n";
 }
 
 bool CLI::parse(string& method, XmlRpcValue& args, string& line, int id)const{
@@ -74,12 +76,12 @@ bool CLI::parse(string& method, XmlRpcValue& args, string& line, int id)const{
     input >> method;
     auto it = this->methods.find(method);
     if (it == this->methods.end()){
-        cout << "Opcion no valida. Por favor, seleccione una opcion valida.\n";
         return false;
     }
+    method = it->second;
 
     unsigned int i = 0;
-    if ((method != "system.methodHelp")&&(method != "salir")){
+    if (method != "system.methodHelp"){
         args[0] = id;
         i++;
     }
@@ -87,11 +89,22 @@ bool CLI::parse(string& method, XmlRpcValue& args, string& line, int id)const{
         args[i] = arg;
         i++;
     }
-
-    if ((method == "salir")&&(args.size())){
-        return false;
+    if (method == "system.methodHelp"){
+        if (!args.valid()){
+            args[0] = "system.methodHelp";
+        }
+        else if(args.size() == 1){
+            it = this->methods.find(args[0]);
+            if (it != this->methods.end()){
+                args[0] = it->second;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
     }
-
-    cout << "Seleccionaste " << method << endl;
     return true;
 }
