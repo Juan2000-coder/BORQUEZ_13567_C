@@ -1,14 +1,14 @@
 # makefile written for gnu make
 CXX		= g++
 SRCDIR	= ../src/xmlrpc
-INCDIR = ../include/xmlrpc
+INCDIR	= ../include
 BINDIR = ../bin/xmlrpc
 LIBDIR = ../lib
-CPPFLAGS	= -I$(INCDIR)
+CPPFLAGS	= -I$(INCDIR) -I$(INCDIR)/xmlrpc
 DEBUG		= -g
 OPTIMIZE	= -O2
 GCCWARN		= -Wall -Wstrict-prototypes
-CXXFLAGS	= $(DEBUG) $(GCCWARN) $(OPTIMIZE) $(INCLUDES)
+CXXFLAGS	= $(DEBUG) $(GCCWARN) $(OPTIMIZE)
 
 LIB		= $(LIBDIR)/xmlrpc.a
 

@@ -94,7 +94,7 @@ class C5Server: public XmlRpcServer{
     //getNumberList(int userid);
     GetNumberList getNumberList;
 
-    C5ServerConnection* createConnection(int socket);
+    C5ServerConnection* createConnection(int socket) override;
 };
 
 #endif

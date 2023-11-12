@@ -3,38 +3,36 @@ SRCDIR = ./src
 BINDIR = ./bin
 BUILDDIR = ./build
 INCLDIR = ./include
-CXX		= g++
-CPPFLAGS	= -I$(INCLDIR) -I$(INCLDIR)/xmlrpc
-DEBUG		= -g
-OPTIMIZE	= -O2
-GCCWARN		= -Wall
-CXXFLAGS	= $(DEBUG) $(GCCWARN) $(OPTIMIZE)
+LIBDIR = ./lib
+CXX = g++
+CPPFLAGS = -I$(INCLDIR) -I$(INCLDIR)/xmlrpc
+DEBUG = -g
+OPTIMIZE = -O2
+GCCWARN = -Wall
+CXXFLAGS = $(DEBUG) $(GCCWARN) $(OPTIMIZE)
 
-LIB		= ./lib/xmlrpc.a
-SYSTEMLIBS	= -lws2_32
+LIB = $(LIBDIR)/xmlrpc.a
+SYSTEMLIBS = -lws2_32
 
-LDLIBS		= $(LIB) $(SYSTEMLIBS)
+LDLIBS = $(LIB) $(SYSTEMLIBS)
 
-SOURCES		= $(wildcard $(SRCDIR)/*cpp)
-OBJECTS		= $(patsubst $(SRCDIR)/%.cpp, $(BINDIR)/%.o, $(SOURCES))
-EXECUTABLE	= $(BUILDDIR)/server
+SOURCES = $(wildcard $(SRCDIR)/*.cpp)
+OBJECTS = $(patsubst $(SRCDIR)/%.cpp, $(BINDIR)/%.o, $(SOURCES))
+EXECUTABLE = $(BUILDDIR)/server
 
+all: $(LIB) $(EXECUTABLE)
+
+$(LIB):
+	cd $(LIBDIR) && $(MAKE)
 
 $(BINDIR)/%.o: $(SRCDIR)/%.cpp
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
 
-
-$(EXECUTABLE):	$(OBJECTS) $(LIB)
+$(EXECUTABLE): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDLIBS)
-
 
 .PHONY: all clean
 
-all:	lib $(OBJECTS)
-
-$(LIB):
-	cd lib && $(MAKE)
-
 clean:
 	rm -f $(BINDIR)/*.o $(EXECUTABLE)
-	cd lib && $(MAKE) clean
+	cd $(LIBDIR) && $(MAKE) clean
