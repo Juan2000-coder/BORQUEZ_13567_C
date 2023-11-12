@@ -1,11 +1,9 @@
 ﻿tareas:
 
-Pasar el control de excepciones a un lado mas externo
-tipo que se haga de forma automática como en el log de python.
-
-Utilizar enums para los códigos de errores.
-
 Comentar correctamente todo el c�digo
+
+
+Cosas que se podrían hacer:
 
 Ver si hay otra manera de acceder a los elementos del vector
 de Variant que no sea a través de levantar la excepción.
@@ -14,7 +12,6 @@ caso podríamos tener una banda.
 
 Cambiar el tipo de archivo para los usuarios.
 
-Mirar los tests de la libreria con los ejemplos para el envío, recepción de archivos
-y verfiicaicón de métodos del servidor.
+Validacion de usuario también en un lado mas externo.
 
-Debuggear el codigo para ver donde se generan los encabezados para las ayudas de los metodos.
+Utilizar Boost.option para hace una CLI en c++.

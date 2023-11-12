@@ -10,7 +10,7 @@ OPTIMIZE	= -O2
 GCCWARN		= -Wall
 CXXFLAGS	= $(DEBUG) $(GCCWARN) $(OPTIMIZE)
 
-LIB		= ../lib/libXmlRpc.a
+LIB		= ../lib/xmlrpc.a
 SYSTEMLIBS	= -lws2_32
 
 LDLIBS		= $(LIB) $(SYSTEMLIBS)

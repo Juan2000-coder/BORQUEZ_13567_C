@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
   // Call the Hello method
   oneArg[0] = 13;
   if (c.execute("userValidate", oneArg, result))
-    std::cout << result << "\n\n";
+    std::cout << result << std::endl;
   else
     std::cout << "Error calling 'userValidate'\n\n";
 
@@ -45,29 +45,5 @@ int main(int argc, char* argv[])
     std::cout << "NoSuchMethod call: fault: " << c.isFault() << ", result = " << result << std::endl;
   else
     std::cout << "Error calling 'NoSuchMethod'\n";
-
-  // Test the multicall method. It accepts one arg, an array of structs
-  
-  /*
-  XmlRpcValue multicall;
-  multicall[0][0]["methodName"] = "Sum";
-  multicall[0][0]["params"][0] = 5.0;
-  multicall[0][0]["params"][1] = 9.0;
-
-  multicall[0][1]["methodName"] = "NoSuchMethod";
-  multicall[0][1]["params"][0] = "";
-
-  multicall[0][2]["methodName"] = "Sum";
-  // Missing params
-
-  multicall[0][3]["methodName"] = "Sum";
-  multicall[0][3]["params"][0] = 10.5;
-  multicall[0][3]["params"][1] = 12.5;
-
-  if (c.execute("system.multicall", multicall, result))
-    std::cout << "\nmulticall  result = " << result << std::endl;
-  else
-    std::cout << "\nError calling 'system.multicall'\n";
-  */
   return 0;
 }
