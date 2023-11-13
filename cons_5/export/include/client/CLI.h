@@ -16,6 +16,7 @@ class CLI{
         void menu() const;
         bool parse(string& method, XmlRpcValue& args, string& line, int id) const;
         bool validateArgs(string& method, XmlRpcValue& args) const;
+        void prompt()const;
     private:
         static const map<string, string> methods;
 };

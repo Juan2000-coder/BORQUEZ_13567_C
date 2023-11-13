@@ -25,8 +25,8 @@ bool CLI::loop(XmlRpcClient& client, User& user)const{
     system("clear || cls");
     while(true) {
         this->menu();
+        this->prompt();
 
-        cout << '\n' <<">>> ";
         getline(cin, line);
         if (line == "q"){
             break;
@@ -37,25 +37,27 @@ bool CLI::loop(XmlRpcClient& client, User& user)const{
             result.clear();
             if (client.execute(method.c_str(), args, result)){
                 if (int(client.isFault()) == 0){
-                    cout << '\n' << "- Respuesta del servidor: "<< result << endl;
+                    cout << "\n- Respuesta del servidor: "<< result <<"\n";
                 }
                 else{
-                    cout << '\n' << "- Se recibio una respuesta con error: "<< result << endl;
+                    cout << "\n- Se recibio una respuesta con error: "<< result << "\n";
                 }
             }
             else{
-                cout << "Error en la llamada al metodo " << method << endl;
+                cout << "\n- Error en la llamada al metodo " << method << "\n";
             }
         }
         else{
-            cout << "Sintaxis de comando incorrecta.";
+            cout << "\n- Sintaxis de comando incorrecta.\n";
         }
-        cout << "\nPresione Enter para continuar...";
+        cout << "\n- Presione Enter para continuar...\n";
+        this->prompt();
+
         std::cin.clear();
         cin.get();
         system("clear || cls"); // Limpiar la pantalla
     }
-    cout << "\nHasta luego!" <<endl;
+    cout << "\n- Hasta luego!\n" <<endl;
 
     return true;
 }
@@ -65,11 +67,11 @@ void CLI::menu()const{
     for (const auto &option: this->methods){
         cout <<"- "<<option.first << "\n";
     }
-    cout << "===================================\n";
-    cout << "Ingrese 'q' para salir.\n";
+    cout << "- Ingrese q para salir.\n";
+    cout << "===================================\n\n";
 }
 
-bool CLI::parse(string& method, XmlRpcValue& args, string& line, int id)const{
+bool CLI::parse(string& method, XmlRpcValue& args, string& line, int id) const{
     stringstream input(line);
     string arg;
 
@@ -110,13 +112,13 @@ bool CLI::parse(string& method, XmlRpcValue& args, string& line, int id)const{
 }
 bool CLI::validateArgs(string& method, XmlRpcValue& args) const{
     if (method == this->methods.at("entero")){
-        if(!args.valid()){
+        if(args.size() == 1){
             return true;
         }
         else{
             try{
-                for(unsigned int i = 0; i < args.size(); i++){
-                    args[i] = std::stoi(args[i]);
+                for(unsigned int i = 1; i < args.size(); i++){
+                    args[i] = stoi(args[i]);
                 }
                 return true;
             }
@@ -132,11 +134,11 @@ bool CLI::validateArgs(string& method, XmlRpcValue& args) const{
         else{
             try{
                 for(unsigned int i = 0; i < args.size(); i++){
-                    args[i] = std::stof(args[i]);
+                    args[i] = stof(args[i]);
                 }
                 return true;
             }
-            catch(const std::invalid_argument& e){
+            catch(const invalid_argument& e){
                 return false;
             }
         }
@@ -148,14 +150,17 @@ bool CLI::validateArgs(string& method, XmlRpcValue& args) const{
         else{
             try{
                 for(unsigned int i = 0; i < args.size(); i++){
-                    args[i] = std::stoi(args[i]);
+                    args[i] = stoi(args[i]);
                 }
                 return true;
             }
-            catch(const std::invalid_argument& e){
+            catch(const invalid_argument& e){
                 return false;
             }
         }
     }
     return true;
+}
+void CLI::prompt() const{
+    cout << '\n' <<">>> ";
 }
