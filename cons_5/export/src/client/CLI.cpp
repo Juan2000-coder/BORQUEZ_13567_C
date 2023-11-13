@@ -68,6 +68,7 @@ void CLI::menu()const{
     for (const auto &option: this->methods){
         cout <<"- "<<option.first << "\n";
     }
+    cout << "\n";
     cout << "  Ingrese 'q' para salir.\n";
     cout << "  Ingrese 'm' para mostrar este menu.\n";
     cout << "  Ingrese 'l' para limipiar la pantalla.\n";
