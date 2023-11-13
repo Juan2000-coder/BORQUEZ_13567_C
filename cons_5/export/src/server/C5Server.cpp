@@ -15,11 +15,11 @@ C5ServerConnection* C5Server::createConnection(int socket){
 
 std::string UserValidate::help(){
     std::stringstream ayuda;
-    ayuda << "Valida al usuario segun su id.\n"
-          << "parametros:\n"
-          << "id (int)\n"
-          << "returns:\n"
-          << "validacion: (1 == vaildo) | (0 == no valido)\n";
+    ayuda << "Descripcion: valida al usuario segun su id.\n"
+          << "Parametros: "
+          << "{id (int)}.\n"
+          << "Returns: "
+          << "{validacion - (1 == vaildo) | (0 == no valido)}.";
     return ayuda.str();
 }
 void UserValidate::execute(XmlRpcValue& params, XmlRpcValue& result){
@@ -38,13 +38,13 @@ void UserValidate::execute(XmlRpcValue& params, XmlRpcValue& result){
 
 std::string GetInt::help(){
     std::stringstream ayuda;
-    ayuda << "Genera un numero entero aleatorio en un rango especificado.\n"
-          << "parametros:\n"
-          << "bmin(int): limite inferior\n"
-          << "bmax(int): limite superior\n"
-          << "returns:\n"
-          << "resultado(int)\n"
-          << "Nota: Si no se indica un rango se asume el de la ultima peticion.\n";
+    ayuda << "Descripcion: genera un numero entero aleatorio en un rango especificado.\n"
+          << "Parametros: "
+          << "{bmin(int) - limite inferior,"
+          << " bmax(int) - limite superior}.\n"
+          << "Returns: "
+          << "{resultado(int)}.\n"
+          << "Nota: si no se indica un rango se asume el de la ultima peticion.";
     return ayuda.str();
 }
 void GetInt::execute(XmlRpcValue& params, XmlRpcValue& result){
@@ -72,13 +72,13 @@ void GetInt::execute(XmlRpcValue& params, XmlRpcValue& result){
 
 std::string GetReal::help(){
     std::stringstream ayuda;
-    ayuda << "Genera un numero real aleatorio en un rango especificado.\n"
-          << "parametros:\n"
-          << "bmin(double): limite inferior\n"
-          << "bmax(double): limite superior\n"
-          << "returns:\n"
-          << "resultado(double)\n"
-          << "Nota: Si no se indica un rango se asume el de la ultima peticion.\n";
+    ayuda << "Descripcion: genera un numero real aleatorio en un rango especificado.\n"
+          << "Parametros: "
+          << "{bmin(double) - limite inferior,"
+          << " bmax(double) - limite superior}.\n"
+          << "Returns:"
+          << "{resultado(double)}.\n"
+          << "Nota: si no se indica un rango se asume el de la ultima peticion.";
     return ayuda.str();
 }
 void GetReal::execute(XmlRpcValue& params, XmlRpcValue& result){
@@ -106,16 +106,16 @@ void GetReal::execute(XmlRpcValue& params, XmlRpcValue& result){
 
 std::string GetNumberOld::help(){
     std::stringstream ayuda;
-    ayuda << "Devuelve informacion de un numero anterior.\n"
-          << "parametros:\n"
-          << "ordinal(int): el orden de la peticion\n"
-          << "returns:\n"
-          << "{valor(int|double),"
+    ayuda << "Descripcion: devuelve informacion de un numero anterior.\n"
+          << "Parametros: "
+          << " {ordinal(int) - orden de la peticion}.\n"
+          << "Returns:"
+          << "{{valor(int|double),"
           << " bmin(int|double),"
           << " bmax(int|double),"
           << " bmin(int|double),"
           << " tipo(real|entero),"
-          << " timeStamp(string)}";
+          << " timeStamp(string)}}.";
     return ayuda.str();
 }
 void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
@@ -151,11 +151,11 @@ void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
 
 std::string GetStat::help(){
     std::stringstream ayuda;
-    ayuda << "Devuelve la estadistica basica de los numeros generados.\n"
-          << "returns:\n"
-          << "{cantidad(int),"
+    ayuda << "Descripcion: devuelve la estadistica basica de los numeros generados.\n"
+          << "Returns: "
+          << "{estadistica - {cantidad(int),"
           << " media(double),"
-          << " suma(int|double)}\n";
+          << " suma(int|double)}}.";
     return ayuda.str();
 }
 void GetStat::execute(XmlRpcValue& params, XmlRpcValue& result){
@@ -178,14 +178,14 @@ void GetStat::execute(XmlRpcValue& params, XmlRpcValue& result){
 
 std::string GetNumberList::help(){
     std::stringstream ayuda;
-    ayuda << "Devuelve la lista de los numeros generados.\n"
-          << "returns:\n"
-          << "{{valor(int|double),"
+    ayuda << "Descripcion: devuelve la lista de los numeros generados.\n"
+          << "Returns: "
+          << "{lista - {{valor(int|double),"
           << " bmin(int|double),"
           << " bmax(int|double),"
           << " timeStamp(string),"
           << " tipo(entero|real)},"
-          << "...}\n";
+          << "...}}.";
     return ayuda.str();
 }
 void GetNumberList::execute(XmlRpcValue& params, XmlRpcValue& result){
