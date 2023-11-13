@@ -23,39 +23,40 @@ bool CLI::loop(XmlRpcClient& client, User& user)const{
     int id = user.getId();
 
     system("clear || cls");
+    this->menu();
     while(true) {
-        this->menu();
         this->prompt();
 
         getline(cin, line);
         if (line == "q"){
             break;
         }
-
-        args.clear();
-        if (this->parse(method, args, line, id)){
-            result.clear();
-            if (client.execute(method.c_str(), args, result)){
-                if (int(client.isFault()) == 0){
-                    cout << "\n- Respuesta del servidor: "<< result <<"\n";
+        else if(line == "m"){
+            this->menu();
+        }
+        else if(line == "l"){
+            system("clear || cls");
+        }
+        else{
+            args.clear();
+            if (this->parse(method, args, line, id)){
+                result.clear();
+                if (client.execute(method.c_str(), args, result)){
+                    if (int(client.isFault()) == 0){
+                        cout << "\n- Respuesta del servidor: "<< result <<"\n";
+                    }
+                    else{
+                        cout << "\n- Se recibio una respuesta con error: "<< result << "\n";
+                    }
                 }
                 else{
-                    cout << "\n- Se recibio una respuesta con error: "<< result << "\n";
+                    cout << "\n- Error en la llamada al metodo " << method << "\n";
                 }
             }
             else{
-                cout << "\n- Error en la llamada al metodo " << method << "\n";
+                cout << "\n- Sintaxis de comando incorrecta.\n";
             }
         }
-        else{
-            cout << "\n- Sintaxis de comando incorrecta.\n";
-        }
-        cout << "\n- Presione Enter para continuar...\n";
-        this->prompt();
-
-        std::cin.clear();
-        cin.get();
-        system("clear || cls"); // Limpiar la pantalla
     }
     cout << "\n- Hasta luego!\n" <<endl;
 
@@ -63,12 +64,14 @@ bool CLI::loop(XmlRpcClient& client, User& user)const{
 }
 
 void CLI::menu()const{
-    cout << "============= Comandos ===========\n";
+    cout << "==================Comandos ======================\n";
     for (const auto &option: this->methods){
         cout <<"- "<<option.first << "\n";
     }
-    cout << "- Ingrese q para salir.\n";
-    cout << "===================================\n\n";
+    cout << "  Ingrese 'q' para salir.\n";
+    cout << "  Ingrese 'm' para mostrar este menu.\n";
+    cout << "  Ingrese 'l' para limipiar la pantalla.\n";
+    cout << "=================================================\n\n";
 }
 
 bool CLI::parse(string& method, XmlRpcValue& args, string& line, int id) const{
