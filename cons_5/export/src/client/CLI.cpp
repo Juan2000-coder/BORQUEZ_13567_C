@@ -132,12 +132,12 @@ bool CLI::validateArgs(string& method, XmlRpcValue& args) const{
         }
     }
     else if (method == this->methods.at("real")){
-        if(!args.valid()){
+        if(args.size() == 1){
             return true;
         }
         else{
             try{
-                for(unsigned int i = 0; i < args.size(); i++){
+                for(unsigned int i = 1; i < args.size(); i++){
                     args[i] = stof(args[i]);
                 }
                 return true;
@@ -148,12 +148,12 @@ bool CLI::validateArgs(string& method, XmlRpcValue& args) const{
         }
     }
     else if (method == this->methods.at("anterior")){
-        if(!args.valid()){
+        if(args.size() == 1){
             return true;
         }
         else{
             try{
-                for(unsigned int i = 0; i < args.size(); i++){
+                for(unsigned int i = 1; i < args.size(); i++){
                     args[i] = stoi(args[i]);
                 }
                 return true;
