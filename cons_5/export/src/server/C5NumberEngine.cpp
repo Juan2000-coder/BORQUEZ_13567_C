@@ -37,27 +37,26 @@ bool C5NumberEngine::userValidate(int userId){
 
 
 int C5NumberEngine::getInt(int bmin, int bmax){
-    //La verificación lanza una excepción en caso de que no se haya realizado.
-    auto requirement = this->requirements.at(this->requirementIndex);
+    auto &requirement = this->requirements.at(this->requirementIndex);
     requirement.appendNumber<int>(bmin, bmax);
     return requirement.getNumber<int>().getValue();
 }
 
 int C5NumberEngine::getInt(){
-    auto requirement = this->requirements.at(this->requirementIndex);
+    auto &requirement = this->requirements.at(this->requirementIndex);
     requirement.appendNumber<int>();
     return requirement.getNumber<int>().getValue();
 }
 
 double C5NumberEngine::getReal(double bmin, double bmax){
     //La verificación lanza una excepción en caso de que no se haya realizado.
-    auto requirement = this->requirements.at(this->requirementIndex);
+    auto &requirement = this->requirements.at(this->requirementIndex);
     requirement.appendNumber<double>(bmin, bmax);
     return requirement.getNumber<double>().getValue();
 }
 double C5NumberEngine::getReal(){
         //La verificación lanza una excepción en caso de que no se haya realizado.
-    auto requirement = this->requirements.at(this->requirementIndex);
+    auto &requirement = this->requirements.at(this->requirementIndex);
     requirement.appendNumber<double>();
     return requirement.getNumber<double>().getValue();
 }
