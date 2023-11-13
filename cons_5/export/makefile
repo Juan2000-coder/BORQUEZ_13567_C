@@ -18,10 +18,17 @@ LDLIBS = $(LIB) $(SYSTEMLIBS)
 
 SERVERSOURCES = $(wildcard $(SRCDIR)/server/*.cpp)
 CLIENTSOURCES = $(wildcard $(SRCDIR)/client/*.cpp)
+
+
 SERVEROBJECTS = $(patsubst $(SRCDIR)/server/%.cpp, $(BINDIR)/server/%.o, $(SERVERSOURCES))
 CLIENTOBJECTS = $(patsubst $(SRCDIR)/client/%.cpp, $(BINDIR)/client/%.o, $(CLIENTSOURCES))
+
+
+
 SERVEREXECUTABLE = $(BUILDDIR)/server
 CLIENTEXECUTABLE = $(BUILDDIR)/client
+
+
 
 all: $(LIB) $(SERVEREXECUTABLE) $(CLIENTEXECUTABLE)
 
@@ -39,6 +46,8 @@ $(SERVEREXECUTABLE): $(SERVEROBJECTS)
 
 $(CLIENTEXECUTABLE): $(CLIENTOBJECTS)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDLIBS)
+
+$(XMLRPCOBJECTS):$(LIB)
 .PHONY: all clean
 
 clean:

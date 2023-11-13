@@ -12,7 +12,7 @@ C5Number<Type>::C5Number(Type bmin, Type bmax, long time){
         if (bmin <= bmax){
             std::uniform_real_distribution<double> doubleDistribution(bmin, bmax);
             this->value = doubleDistribution(generator);
-            //this->value = bmin + double(std::rand())*(bmax - bmin)/RAND_MAX;
+
         }
         else{
             throw C5NumberException(C5NumberException::exceptionCodes::LIMIT);
@@ -23,7 +23,7 @@ C5Number<Type>::C5Number(Type bmin, Type bmax, long time){
         if (bmin <= bmax){
             std::uniform_int_distribution<int> intDistribution(bmin, bmax);
             this->value = intDistribution(generator);
-            //this->value = bmin + std::rand()%static_cast<int>(bmax-bmin + 1);
+
         }
         else{
             throw C5NumberException(C5NumberException::exceptionCodes::LIMIT);
