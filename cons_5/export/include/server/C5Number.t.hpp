@@ -1,15 +1,18 @@
 #include "C5Number.h"
 #include "C5Exceptions.h"
-#include <ctime>
+#include <random>
 
 template<class Type>
 C5Number<Type>::C5Number(Type bmin, Type bmax, long time){
-    std::srand(std::time(nullptr));
+    std::random_device rd;
+    std::mt19937 generator(rd());
 
     if (std::is_same<Type, double>::value){
         this->type = "real";
         if (bmin <= bmax){
-            this->value = bmin + double(std::rand())*(bmax - bmin)/RAND_MAX;
+            std::uniform_real_distribution<double> doubleDistribution(bmin, bmax);
+            this->value = doubleDistribution(generator);
+            //this->value = bmin + double(std::rand())*(bmax - bmin)/RAND_MAX;
         }
         else{
             throw C5NumberException(C5NumberException::exceptionCodes::LIMIT);
@@ -18,7 +21,9 @@ C5Number<Type>::C5Number(Type bmin, Type bmax, long time){
     else if(std::is_same<Type, int>::value){
         this->type = "entero";
         if (bmin <= bmax){
-            this->value = bmin + std::rand()%static_cast<int>(bmax-bmin + 1);
+            std::uniform_int_distribution<int> intDistribution(bmin, bmax);
+            this->value = intDistribution(generator);
+            //this->value = bmin + std::rand()%static_cast<int>(bmax-bmin + 1);
         }
         else{
             throw C5NumberException(C5NumberException::exceptionCodes::LIMIT);
