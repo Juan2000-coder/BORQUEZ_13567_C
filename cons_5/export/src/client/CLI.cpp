@@ -106,5 +106,56 @@ bool CLI::parse(string& method, XmlRpcValue& args, string& line, int id)const{
             return false;
         }
     }
+    return this->validateArgs(method, args);
+}
+bool CLI::validateArgs(string& method, XmlRpcValue& args) const{
+    if (method == this->methods.at("entero")){
+        if(!args.valid()){
+            return true;
+        }
+        else{
+            try{
+                for(unsigned int i = 0; i < args.size(); i++){
+                    args[i] = std::stoi(args[i]);
+                }
+                return true;
+            }
+            catch(const std::invalid_argument& e){
+                return false;
+            }
+        }
+    }
+    else if (method == this->methods.at("real")){
+        if(!args.valid()){
+            return true;
+        }
+        else{
+            try{
+                for(unsigned int i = 0; i < args.size(); i++){
+                    args[i] = std::stof(args[i]);
+                }
+                return true;
+            }
+            catch(const std::invalid_argument& e){
+                return false;
+            }
+        }
+    }
+    else if (method == this->methods.at("anterior")){
+        if(!args.valid()){
+            return true;
+        }
+        else{
+            try{
+                for(unsigned int i = 0; i < args.size(); i++){
+                    args[i] = std::stoi(args[i]);
+                }
+                return true;
+            }
+            catch(const std::invalid_argument& e){
+                return false;
+            }
+        }
+    }
     return true;
 }

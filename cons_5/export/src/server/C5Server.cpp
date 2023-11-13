@@ -48,7 +48,7 @@ void GetInt::execute(XmlRpcValue& params, XmlRpcValue& result){
     }
     else if(params.size() == 3){
         if(this->engine.userValidate(params[0])){
-            result = this->engine.getInt(params[1], params[2]);
+            result  = this->engine.getInt(params[1], params[2]);
         }
         else{
             result = false;

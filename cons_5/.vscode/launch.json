@@ -59,7 +59,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}\\export\\build\\client.exe",
-            "args": ["127.0.0.1","8000","yo"],
+            "args": ["127.0.0.1","8000","122"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

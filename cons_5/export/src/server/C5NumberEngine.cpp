@@ -32,7 +32,6 @@ bool C5NumberEngine::userValidate(int userId){
             return true;
         }
     }
-    std::cout <<"false\n";
     return false;
 }
 

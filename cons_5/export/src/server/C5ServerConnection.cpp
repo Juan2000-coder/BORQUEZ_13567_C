@@ -2,6 +2,7 @@
 #include "XmlRpcUtil.h"
 #include "XmlRpcException.h"
 #include "C5Exceptions.h"
+#include <iostream>
 
 using namespace XmlRpc;
 
