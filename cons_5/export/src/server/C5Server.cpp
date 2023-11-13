@@ -14,7 +14,12 @@ C5ServerConnection* C5Server::createConnection(int socket){
 }
 
 std::string UserValidate::help(){
-    return "Valida al usuario segun su id (valido = 1) (no valido = 0)";
+    std::stringstream ayuda;
+    ayuda << "Valida al usuario segun su id\n"
+          << "parametros:\n"
+          << "id (int)\n"
+          << "returns:\n"
+          << "validacion: (1 == vaildo) | (0 == no valido)\n";
 }
 void UserValidate::execute(XmlRpcValue& params, XmlRpcValue& result){
     if (params.size() == 1){
@@ -32,8 +37,13 @@ void UserValidate::execute(XmlRpcValue& params, XmlRpcValue& result){
 
 std::string GetInt::help(){
     std::stringstream ayuda;
-    ayuda <<  "Genera un numero entero aleatorio en un rango especificado (bmin, bmax).\n"
-           << "Si no se indica un rango se toma el correspondiente a la ultima solicitud.";
+    ayuda << "Genera un numero entero aleatorio en un rango especificado\n"
+          << "parametros:\n"
+          << "bmin(int): limite inferior\n"
+          << "bmax(int): limite superior\n"
+          << "returns:\n"
+          << "resultado(int)\n"
+          << "Nota: Si no se indica un rango se asume el de la ultima peticion.\n";
     return ayuda.str();
 }
 void GetInt::execute(XmlRpcValue& params, XmlRpcValue& result){
@@ -61,8 +71,13 @@ void GetInt::execute(XmlRpcValue& params, XmlRpcValue& result){
 
 std::string GetReal::help(){
     std::stringstream ayuda;
-    ayuda <<  "Genera un numero real aleatorio en un rango especificado (bmin, bmax).\n"
-           << "Si no se indica un rango se toma el correspondiente a la ultima solicitud.";
+    ayuda << "Genera un numero real aleatorio en un rango especificado\n"
+          << "parametros:\n"
+          << "bmin(double): limite inferior\n"
+          << "bmax(double): limite superior\n"
+          << "returns:\n"
+          << "resultado(double)\n"
+          << "Nota: Si no se indica un rango se asume el de la ultima peticion.\n";
     return ayuda.str();
 }
 void GetReal::execute(XmlRpcValue& params, XmlRpcValue& result){
@@ -90,7 +105,16 @@ void GetReal::execute(XmlRpcValue& params, XmlRpcValue& result){
 
 std::string GetNumberOld::help(){
     std::stringstream ayuda;
-    ayuda << "Devuelve el numero generado en el orden indicado por un ordinal.";
+    ayuda << "Devuelve un numero generado anteriormente\n"
+          << "parametros:\n"
+          << "ordinal(int): el orden de la peticion.\n"
+          << "returns:\n"
+          << "{valor(int|double),"
+          << " bmin(int|double),"
+          << " bmax(int|double),"
+          << " bmin(int|double),"
+          << " tipo(real|entero),"
+          << " timeStamp(string)}";
     return ayuda.str();
 }
 void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
@@ -103,6 +127,7 @@ void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
                 result[1] = number.getBmin();
                 result[2] = number.getBmax();
                 result[3] = std::to_string(number.getTime());
+                result[4] = number.getType();
                 
             }
             catch(std::bad_variant_access()){
@@ -111,6 +136,7 @@ void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
                 result[1] = number.getBmin();
                 result[2] = number.getBmax();
                 result[3] = std::to_string(number.getTime());
+                result[4] = number.getType();
             }
         }
         else{
@@ -123,7 +149,13 @@ void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
 }
 
 std::string GetStat::help(){
-    return "Devuelve la estadistica basica de los numeros generados.";
+    std::stringstream ayuda;
+    ayuda << "Devuelve la estadistica basica de los numeros generados\n"
+          << "returns:\n"
+          << "{cantidad(int),"
+          << " media(double),"
+          << " suma(int|double)}\n";
+    return ayuda.str();
 }
 void GetStat::execute(XmlRpcValue& params, XmlRpcValue& result){
     /*FALTA: Falta verificación del número de parámetros y verificación de tipos*/
@@ -144,37 +176,42 @@ void GetStat::execute(XmlRpcValue& params, XmlRpcValue& result){
 }
 
 std::string GetNumberList::help(){
-    return "Devuelve el listado de numeros generados.";
+    std::stringstream ayuda;
+    ayuda << "Devuelve la lista de los numeros generados\n"
+          << "returns:\n"
+          << "{{valor(int|double),"
+          << " bmin(int|double),"
+          << " bmax(int|double),"
+          << " timeStamp(string),"
+          << " tipo(entero|real)},"
+          << "...}\n";
+    return ayuda.str();
 }
 void GetNumberList::execute(XmlRpcValue& params, XmlRpcValue& result){
     if (params.size() == 1){
         if(this->engine.userValidate(params[0])){
             auto list = this->engine.getNumberList();
-            XmlRpcValue result1;
-            XmlRpcValue result2;
-            for(int i = 0; i < list.getNumbersCount(); i++){
+            for(int i = 1; i <= list.getNumbersCount(); i++){
                 try{
                     auto number = list.getNumber<int>(i);
-                    result1[i][0] = number.getValue();
-                    result1[i][1] = number.getBmin();
-                    result1[i][2] = number.getBmax();
-                    result1[i][3] = std::to_string(number.getTime());
-                    result1[i][4] = number.getType();
+                    result[i][0] = number.getValue();
+                    result[i][1] = number.getBmin();
+                    result[i][2] = number.getBmax();
+                    result[i][3] = std::to_string(number.getTime());
+                    result[i][4] = number.getType();
                 }
                 catch(std::bad_variant_access &e){
-                    auto number = list.getNumber<int>(i);
-                    result1[i][0] = number.getValue();
-                    result1[i][1] = number.getBmin();
-                    result1[i][2] = number.getBmax();
-                    result1[i][3] = std::to_string(number.getTime());
-                    result1[i][4] = number.getType();
+                    auto number = list.getNumber<double>(i);
+                    result[i][0] = number.getValue();
+                    result[i][1] = number.getBmin();
+                    result[i][2] = number.getBmax();
+                    result[i][3] = std::to_string(number.getTime());
+                    result[i][4] = number.getType();
                 }
             }
             auto stamp = std::chrono::high_resolution_clock::now();
-            auto duration = std::chrono::duration_cast<std::chrono::seconds>(list.getInitialTime()-stamp);
-            result2 = std::to_string(duration.count());
-            result[0] = result1;
-            result[1] = result2;
+            auto duration = std::chrono::duration_cast<std::chrono::seconds>(stamp-list.getInitialTime());
+            result[5] = std::to_string(duration.count());
         }
         else{
             result = false;
