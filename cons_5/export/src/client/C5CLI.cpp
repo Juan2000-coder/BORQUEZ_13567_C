@@ -37,7 +37,7 @@ bool C5CLI::loop(C5Client& client, C5User& user)const{
         }
         else if(line == "clear"){
             system("clear || cls");
-            this->menu();
+            cout << this->menu();
         }
         else{
             args.clear();
@@ -67,7 +67,7 @@ bool C5CLI::loop(C5Client& client, C5User& user)const{
 
 string C5CLI::menu()const{
     stringstream menu;
-    menu << "==================Comandos ======================\n";
+    menu << "================================ Comandos =============================\n";
     for (const auto &option: this->methods){
         menu <<"- "<<option.first << "\n";
     }
@@ -75,8 +75,8 @@ string C5CLI::menu()const{
     menu << "  Ingrese 'q' para salir.\n";
     menu << "  Ingrese 'menu' para mostrar este menu.\n";
     menu << "  Ingrese 'clear' para limipiar la pantalla.\n";
-    menu << "  Sintaxis de orden: 'comando' 'parametros separados por espacios.'\n";
-    menu << "=================================================";
+    menu << "\n  Sintaxis de orden: 'comando' 'parametros separados por espacios.'\n";
+    menu << "=======================================================================";
     return menu.str();
 }
 
@@ -195,14 +195,14 @@ string C5CLI::parseResponse(string& method, XmlRpcValue& result) const{
 
         stringstream header;
         stringstream separator;
-        int wid = 8;
+        int wid = 9;
 
         header  << '\n'
                 << margin2.str()
                 << setw(wid) << internal << setfill(' ') << "valor "<< '|'
                 << setw(wid) << internal << setfill(' ') << "bmin " << '|'
                 << setw(wid) << internal << setfill(' ') << "bmax " << '|'
-                << setw(wid) << internal << setfill(' ') << "stamp "<< '|'
+                << setw(wid) << internal << setfill(' ') << "stamp(s) "<< '|'
                 << setw(wid) << internal << setfill(' ') << "tipo " << '\n';
 
         separator << margin2.str()
@@ -227,7 +227,7 @@ string C5CLI::parseResponse(string& method, XmlRpcValue& result) const{
                          << setw(wid) << internal << setfill(' ') << result[i][3] << '|'
                          << setw(wid) << internal << setfill(' ') << result[i][4] << '\n';
             }
-            response << "\n" << margin2.str() <<"Tiempo transcurrido: " << result[result.size() - 1];
+            response << "\n" << margin2.str() <<"Tiempo transcurrido(s): " << result[result.size() - 1];
         }
     }
     else if (method == this->methods.at("estadistica")){

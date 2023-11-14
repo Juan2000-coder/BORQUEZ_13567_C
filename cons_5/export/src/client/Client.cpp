@@ -12,12 +12,12 @@ int main(int argc, char* argv[]){
         return -1;
     }
     C5Client client(argv[1], atoi(argv[2]));
+    client.setXmlFile("Xmlfile.xml");
     C5User user(atoi(argv[3]));
     XmlRpcValue validation;
     if (client.execute("userValidate", user.getId(), validation)){
         if (int(validation) == 1){
             C5CLI cli;
-            client.setXmlFile("Xmlfile.xml");
             if (cli.loop(client, user))
                 return 0;
             else

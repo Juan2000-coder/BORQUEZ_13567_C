@@ -36,7 +36,9 @@ bool C5Client::dumToFile(std::string response){
     if (file.is_open()) {
         file << response; 
         file.close();
+        return true;
     } else {
         std::cerr << "Error al abrir el archivo." << std::endl;
+        return false;
     }
 }

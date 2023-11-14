@@ -114,7 +114,8 @@ std::string GetNumberOld::help(){
           << " bmin(int|double),"
           << " bmax(int|double),"
           << " timeStamp(string),"
-          << " tipo(real|entero)}}.";
+          << " tipo(real|entero)}}.\n"
+          << "Nota: timeStamp en segundos desde el inicio del proceso.";
     return ayuda.str();
 }
 void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
@@ -185,7 +186,8 @@ std::string GetNumberList::help(){
           << " timeStamp(string),"
           << " tipo(entero|real)},"
           << "...},"
-          << " timeStamp(string)}.";
+          << " timeStamp(string)}.\n"
+          << "Nota: timeStamp en segundos desde el inicio del proceso.";
     return ayuda.str();
 }
 void GetNumberList::execute(XmlRpcValue& params, XmlRpcValue& result){
