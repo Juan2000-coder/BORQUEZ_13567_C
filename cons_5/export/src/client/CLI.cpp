@@ -217,14 +217,15 @@ string CLI::parseResponse(string& method, XmlRpcValue& result) const{
                      << setw(wid) << internal << setfill(' ') << result[4];
         }
         else if(method == this->methods.at("listar")){
-            for(unsigned int i = 0; i < result.size(); i++){
+            for(unsigned int i = 0; i < result.size() - 1; i++){
                 response << margin2.str()
                          << setw(wid) << internal << setfill(' ') << fixed << setprecision(2) << result[i][0] << '|'
                          << setw(wid) << internal << setfill(' ') << fixed << setprecision(2) << result[i][1] << '|'
                          << setw(wid) << internal << setfill(' ') << fixed << setprecision(2) << result[i][2] << '|'
                          << setw(wid) << internal << setfill(' ') << result[i][3] << '|'
-                         << setw(wid) << internal << setfill(' ') << result[i][4];
+                         << setw(wid) << internal << setfill(' ') << result[i][4] << '\n';
             }
+            response << "\n" << margin2.str() <<"Tiempo transcurrido: " << result[result.size() - 1];
         }
     }
     else if (method == this->methods.at("estadistica")){

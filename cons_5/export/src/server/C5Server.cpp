@@ -184,24 +184,25 @@ std::string GetNumberList::help(){
           << " bmax(int|double),"
           << " timeStamp(string),"
           << " tipo(entero|real)},"
-          << "...}}.";
+          << "...},"
+          << " timeStamp(string)}.";
     return ayuda.str();
 }
 void GetNumberList::execute(XmlRpcValue& params, XmlRpcValue& result){
     if (params.size() == 1){
         if(this->engine.userValidate(params[0])){
-            auto list = this->engine.getNumberList();
-            for(int i = 1; i <= list.getNumbersCount(); i++){
+            const C5Requirement & list = this->engine.getNumberList();
+            for(int i = 0; i < list.getNumbersCount(); i++){
                 try{
-                    auto number = list.getNumber<int>(i);
+                    const C5Number<int> & number = list.getNumber<int>(i + 1);
                     result[i][0] = number.getValue();
                     result[i][1] = number.getBmin();
                     result[i][2] = number.getBmax();
                     result[i][3] = std::to_string(number.getTime());
                     result[i][4] = number.getType();
                 }
-                catch(std::bad_variant_access &e){
-                    auto number = list.getNumber<double>(i);
+                catch(std::bad_variant_access){
+                    const C5Number<double> & number = list.getNumber<double>(i + 1);
                     result[i][0] = number.getValue();
                     result[i][1] = number.getBmin();
                     result[i][2] = number.getBmax();
@@ -211,7 +212,7 @@ void GetNumberList::execute(XmlRpcValue& params, XmlRpcValue& result){
             }
             auto stamp = std::chrono::high_resolution_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::seconds>(stamp-list.getInitialTime());
-            result[5] = std::to_string(duration.count());
+            result[result.size()] = std::to_string(duration.count());
         }
         else{
             result = false;
