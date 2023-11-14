@@ -3,6 +3,7 @@
 #include <cstdlib> 
 #include <iostream>
 #include <sstream>
+#include <iomanip>
 
 
 const map<string, string> CLI::methods = {
@@ -23,30 +24,30 @@ bool CLI::loop(XmlRpcClient& client, User& user)const{
     int id = user.getId();
 
     system("clear || cls");
-    this->menu();
+    cout << this->menu();
     while(true) {
-        this->prompt();
+        cout << this->prompt();
 
         getline(cin, line);
         if (line == "q"){
             break;
         }
         else if(line == "m"){
-            this->menu();
+            cout << this->menu();
         }
         else if(line == "l"){
             system("clear || cls");
         }
         else{
             args.clear();
-            if (this->parse(method, args, line, id)){
+            if (this->parseRequest(method, args, line, id)){
                 result.clear();
                 if (client.execute(method.c_str(), args, result)){
                     if (int(client.isFault()) == 0){
-                        cout << "\n- Respuesta del servidor: "<< result <<"\n";
+                        cout << this->parseResponse(method, result);
                     }
                     else{
-                        cout << "\n- Se recibio una respuesta con error: "<< result << "\n";
+                        cout << this->parseFaultResponse(method, result);
                     }
                 }
                 else{
@@ -63,19 +64,21 @@ bool CLI::loop(XmlRpcClient& client, User& user)const{
     return true;
 }
 
-void CLI::menu()const{
-    cout << "==================Comandos ======================\n";
+string CLI::menu()const{
+    stringstream menu;
+    menu << "==================Comandos ======================\n";
     for (const auto &option: this->methods){
-        cout <<"- "<<option.first << "\n";
+        menu <<"- "<<option.first << "\n";
     }
-    cout << "\n";
-    cout << "  Ingrese 'q' para salir.\n";
-    cout << "  Ingrese 'm' para mostrar este menu.\n";
-    cout << "  Ingrese 'l' para limipiar la pantalla.\n";
-    cout << "=================================================\n\n";
+    menu << "\n";
+    menu << "  Ingrese 'q' para salir.\n";
+    menu << "  Ingrese 'm' para mostrar este menu.\n";
+    menu << "  Ingrese 'l' para limipiar la pantalla.\n";
+    menu << "=================================================";
+    return menu.str();
 }
 
-bool CLI::parse(string& method, XmlRpcValue& args, string& line, int id) const{
+bool CLI::parseRequest(string& method, XmlRpcValue& args, string& line, int id) const{
     stringstream input(line);
     string arg;
 
@@ -165,6 +168,97 @@ bool CLI::validateArgs(string& method, XmlRpcValue& args) const{
     }
     return true;
 }
-void CLI::prompt() const{
-    cout << '\n' <<">>> ";
+string CLI::prompt() const{
+    stringstream prompt;
+    prompt << '\n' <<">>> ";
+    return prompt.str();
+}
+
+string CLI::parseResponse(string& method, XmlRpcValue& result) const{
+    stringstream response;
+    stringstream margin1, margin2;
+    margin1 << setw(4) << right << setfill(' ') << ' ';
+    margin2 << setw(8) << right << setfill(' ') << ' ';
+
+    response << margin1.str() <<"respuesta:";
+
+    if (method == this->methods.at("entero")||
+        method == this->methods.at("real")  ||
+        method == this->methods.at("validar")){
+
+        response << margin1.str() << fixed << setprecision(2) << result;
+    }
+    else if (method == this->methods.at("anterior")
+            ||method == this->methods.at("listar")){
+
+        stringstream header;
+        stringstream separator;
+        int wid = 8;
+
+        header  << '\n'
+                << margin2.str()
+                << setw(wid) << internal << setfill(' ') << "valor "<< '|'
+                << setw(wid) << internal << setfill(' ') << "bmin " << '|'
+                << setw(wid) << internal << setfill(' ') << "bmax " << '|'
+                << setw(wid) << internal << setfill(' ') << "stamp "<< '|'
+                << setw(wid) << internal << setfill(' ') << "tipo " << '\n';
+
+        separator << margin2.str()
+                  << setw(6*wid) << internal << setfill('-')
+                  << '\n';
+
+        response << '\n' << header.str() << separator.str();
+        if (method == this->methods.at("anterior")){
+            response << margin2.str()
+                     << setw(wid) << internal << setfill(' ') << fixed << setprecision(2) << result[0] << '|'
+                     << setw(wid) << internal << setfill(' ') << fixed << setprecision(2) << result[1] << '|'
+                     << setw(wid) << internal << setfill(' ') << fixed << setprecision(2) << result[2] << '|'
+                     << setw(wid) << internal << setfill(' ') << result[3] << '|'
+                     << setw(wid) << internal << setfill(' ') << result[4];
+        }
+        else if(method == this->methods.at("listar")){
+            for(unsigned int i = 0; i < result.size(); i++){
+                response << margin2.str()
+                         << setw(wid) << internal << setfill(' ') << fixed << setprecision(2) << result[i][0] << '|'
+                         << setw(wid) << internal << setfill(' ') << fixed << setprecision(2) << result[i][1] << '|'
+                         << setw(wid) << internal << setfill(' ') << fixed << setprecision(2) << result[i][2] << '|'
+                         << setw(wid) << internal << setfill(' ') << result[i][3] << '|'
+                         << setw(wid) << internal << setfill(' ') << result[i][4];
+            }
+        }
+    }
+    else if (method == this->methods.at("estadistica")){
+        int wid = 10;
+        response << "\n\n"
+                 << margin2.str()
+                 << setw(wid) << internal << setfill(' ') << "cantidad "<< '|'
+                 << setw(wid) << internal << setfill(' ') << "media "   << '|'
+                 << setw(wid) << internal << setfill(' ') << "suma "    << '\n'
+                 << margin2.str() << setw(4*wid) << internal << setfill('-') << '\n'
+                 << margin2.str()
+                 << setw(wid) << internal << setfill(' ') << result[0]  << '|'
+                 << setw(wid) << internal << setfill(' ') << fixed << setprecision(2) << result[1]  << '|'
+                 << setw(wid) << internal << setfill(' ') << fixed << setprecision(2) << result[2];
+    }
+    else if(method == this->methods.at("h")){
+        stringstream lineas(result);
+        string linea;
+        response << '\n';
+        while(getline(lineas, linea,'\n')){
+            response << margin2.str()
+                     << linea <<'\n';
+        }
+    }
+    return response.str();
+}
+string CLI::parseFaultResponse(string& method, XmlRpcValue& result) const{
+    stringstream response;
+    stringstream margin1;
+    stringstream margin2;
+    margin1 << setw(4) << right << setfill(' ') << ' ';
+    margin2 << setw(8) << right << setfill(' ') << ' ';
+    response << margin1.str() << "ocurrio una excepcion !!\n"
+             << margin2.str() <<"codigo  - " << result["faultCode"] << "\n"
+             << margin2.str() <<"mensaje - " << result["faultString"];
+    return response.str();
 }

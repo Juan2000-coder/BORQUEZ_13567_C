@@ -13,10 +13,12 @@ using namespace std;
 class CLI{
     public:
         bool loop(XmlRpcClient& client, User& user) const;
-        void menu() const;
-        bool parse(string& method, XmlRpcValue& args, string& line, int id) const;
+        string menu() const;
+        bool parseRequest(string& method, XmlRpcValue& args, string& line, int id) const;
+        string parseResponse(string& method, XmlRpcValue& result) const;
+        string parseFaultResponse(string& method, XmlRpcValue& result) const;
         bool validateArgs(string& method, XmlRpcValue& args) const;
-        void prompt()const;
+        string prompt()const;
     private:
         static const map<string, string> methods;
 };
