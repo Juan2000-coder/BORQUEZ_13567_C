@@ -113,9 +113,8 @@ std::string GetNumberOld::help(){
           << "{{valor(int|double),"
           << " bmin(int|double),"
           << " bmax(int|double),"
-          << " bmin(int|double),"
-          << " tipo(real|entero),"
-          << " timeStamp(string)}}.";
+          << " timeStamp(string),"
+          << " tipo(real|entero)}}.";
     return ayuda.str();
 }
 void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
@@ -123,7 +122,7 @@ void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
     if (params.size() == 2){
         if(this->engine.userValidate(params[0])){
             try{
-                auto number = this->engine.getNumberOld<int>(params[1]);
+                const C5Number<int>& number = this->engine.getNumberOld<int>(params[1]);
                 result[0] = number.getValue();
                 result[1] = number.getBmin();
                 result[2] = number.getBmax();
@@ -131,8 +130,8 @@ void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
                 result[4] = number.getType();
                 
             }
-            catch(std::bad_variant_access()){
-                auto number = this->engine.getNumberOld<double>(params[1]);
+            catch(std::bad_variant_access){
+                const C5Number<double>& number = this->engine.getNumberOld<double>(params[1]);
                 result[0] = number.getValue();
                 result[1] = number.getBmin();
                 result[2] = number.getBmax();

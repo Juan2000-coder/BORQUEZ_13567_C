@@ -18,10 +18,10 @@ void C5ServerConnection::executeRequest(){
         else
             generateResponse(resultValue.toXml());
     }
-    catch(C5Exceptions &e){
+    catch(const C5Exceptions &e){
         std::cerr << e;
         resultValue = e.what();
-        generateResponse(resultValue.toXml());
+        generateFaultResponse(e.what(), e.getCode());
     }
     catch (const XmlRpcException& fault) {
         XmlRpcUtil::log(2, "XmlRpcServerConnection::executeRequest: fault %s.",
