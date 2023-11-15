@@ -1,3 +1,16 @@
+/**
+ * @file C5Server.cpp
+ * @brief Implementation of the C5Server class and its associated XmlRpcServerMethod objects.
+ * 
+ * @details This file contains the implementation of the C5Server class,
+ * including the execute and help methods for each XmlRpcServerMethod object.
+ * 
+ * @version 1.0
+ * @date    2023-11-15
+ * @author  Juan Manuel Borquez
+ * @contact borquez.juan00@gmail.com
+ */
+
 #include "XmlRpc.h"
 #include "C5Server.h"
 #include "C5Exceptions.h"
