@@ -35,7 +35,8 @@ class C5Requirement {
     void setUserId(int id);
 
     /**
-     * @brief Appends a number of the specified type to the requirement.
+     * @brief Appends a number of the specified Type to the requirement
+     * using the boundaries used for the last number generated of this Type.
      * @tparam Type The type of the number to be appended.
      */
     template <typename Type>
@@ -90,7 +91,9 @@ class C5Requirement {
     const C5Number<Type> &getNumber(int ordinal) const;
 
     /**
-     * @brief Gets a specific number from the requirement.
+     * @brief Gets the last number generated if matches the Type
+     * or throws and exception if there's no match in the Type.
+     *
      * @tparam Type The type of the number to be retrieved.
      * @return The C5Number object.
      */
@@ -98,7 +101,7 @@ class C5Requirement {
     const C5Number<Type> &getNumber() const;
 
     /**
-     * @brief Gets the most recently appended number from the requirement.
+     * @brief Gets the most recently appended number of the Type from the requirement.
      * @tparam Type The type of the number to be retrieved.
      * @return The C5Number object.
      */
