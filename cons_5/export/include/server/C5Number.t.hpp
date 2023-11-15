@@ -1,3 +1,14 @@
+/**
+ * @file    C5Number.t.hpp
+ * @brief   Template implementation file for the C5Number class template methods.
+ * 
+ * @details This file contains the implementation of the C5Number class template methods.
+ * 
+ * @version 1.0
+ * @date    2023-11-15
+ * @author  Juan Manuel Borquez
+ * @contact borquez.juan00@gmail.com
+ */
 #include "C5Number.h"
 #include "C5Exceptions.h"
 #include <random>
