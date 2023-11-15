@@ -1,3 +1,15 @@
+/**
+ * @file  C5NumberEngine.h
+ * @brief Implementation of the C5Number class.
+ * 
+ * @details Declaration of the C5Number class.
+ * 
+ * @version 1.0
+ * @date    2023-11-15
+ * @author  Juan Manuel Borquez
+ * @contact borquez.juan00@gmail.com
+ */
+
 #ifndef _C5NUMBER_H
 #define _C5NUMBER_H
 
