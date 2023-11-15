@@ -11,7 +11,13 @@
 
 using namespace XmlRpc;
 
-class UserValidate : public XmlRpcServerMethod{
+/**
+ * @brief XML-RPC server method for user validation.
+ *
+ * This class extends XmlRpcServerMethod and implements the 'userValidate' method.
+ * It interacts with the C5NumberEngine to perform user validation.
+ */
+class UserValidate : public XmlRpcServerMethod {
   public:
     UserValidate(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("userValidate", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
@@ -20,7 +26,13 @@ class UserValidate : public XmlRpcServerMethod{
     C5NumberEngine &engine;
 };
 
-class GetInt : public XmlRpcServerMethod{
+/**
+ * @brief XML-RPC server method for obtaining an integer.
+ *
+ * This class extends XmlRpcServerMethod and implements the 'getInt' method.
+ * It interacts with the C5NumberEngine to retrieve an integer.
+ */
+class GetInt : public XmlRpcServerMethod {
   public:
     GetInt(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getInt", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
@@ -29,7 +41,13 @@ class GetInt : public XmlRpcServerMethod{
     C5NumberEngine &engine;
 };
 
-class GetReal : public XmlRpcServerMethod{
+/**
+ * @brief XML-RPC server method for obtaining a real number.
+ *
+ * This class extends XmlRpcServerMethod and implements the 'getReal' method.
+ * It interacts with the C5NumberEngine to retrieve a real number.
+ */
+class GetReal : public XmlRpcServerMethod {
   public:
     GetReal(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getReal", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
@@ -38,7 +56,13 @@ class GetReal : public XmlRpcServerMethod{
     C5NumberEngine &engine;
 };
 
-class GetNumberOld : public XmlRpcServerMethod{
+/**
+ * @brief XML-RPC server method for obtaining a previous number.
+ *
+ * This class extends XmlRpcServerMethod and implements the 'getNumberOld' method.
+ * It interacts with the C5NumberEngine to retrieve a previous number.
+ */
+class GetNumberOld : public XmlRpcServerMethod {
   public:
     GetNumberOld(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getNumberOld", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
@@ -47,7 +71,13 @@ class GetNumberOld : public XmlRpcServerMethod{
     C5NumberEngine &engine;
 };
 
-class GetStat : public XmlRpcServerMethod{
+/**
+ * @brief XML-RPC server method for obtaining statistics.
+ *
+ * This class extends XmlRpcServerMethod and implements the 'getStat' method.
+ * It interacts with the C5NumberEngine to retrieve statistics.
+ */
+class GetStat : public XmlRpcServerMethod {
   public:
     GetStat(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getStat", s), engine(_engine){};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
@@ -56,7 +86,13 @@ class GetStat : public XmlRpcServerMethod{
     C5NumberEngine &engine;
 };
 
-class GetNumberList : public XmlRpcServerMethod{
+/**
+ * @brief XML-RPC server method for obtaining a list of numbers.
+ *
+ * This class extends XmlRpcServerMethod and implements the 'getNumberList' method.
+ * It interacts with the C5NumberEngine to retrieve a list of numbers.
+ */
+class GetNumberList : public XmlRpcServerMethod {
   public:
     GetNumberList(XmlRpcServer* s, C5NumberEngine &_engine) : XmlRpcServerMethod("getNumberList", s), engine(_engine) {};
     void execute(XmlRpcValue& params, XmlRpcValue& result);
@@ -65,7 +101,13 @@ class GetNumberList : public XmlRpcServerMethod{
     C5NumberEngine &engine;
 };
 
-class C5Server: public XmlRpcServer{
+/**
+ * @brief XML-RPC server class for the C5 system.
+ *
+ * This class extends XmlRpcServer and provides methods to handle different XML-RPC requests.
+ * It uses the C5NumberEngine for processing these requests.
+ */
+class C5Server: public XmlRpcServer {
   private:
     C5NumberEngine engine;
   public:
@@ -74,7 +116,7 @@ class C5Server: public XmlRpcServer{
     getReal(this, engine), getNumberOld(this, engine), getStat(this, engine),
     getNumberList(this, engine) {};
 
-    //bool userValidate(int userdId);
+    //bool userValidate(int userId);
     UserValidate userValidate;
 
     //int getInt(int bmin, int bmax);
