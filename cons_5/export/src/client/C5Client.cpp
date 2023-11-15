@@ -24,7 +24,7 @@ bool C5Client::parseResponse(XmlRpcValue& result){
         _response = "";
         return false;
     }
-    this->dumToFile(_response);// Dumpong to XmlFile
+    this->dumToFile(_response);// Dumping to XmlFile
     _response = "";
     return result.valid();
 }

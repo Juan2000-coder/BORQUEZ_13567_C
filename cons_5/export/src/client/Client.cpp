@@ -19,7 +19,7 @@ using namespace XmlRpc;
 int main(int argc, char* argv[]) {
     // main args checking.
     if (argc != 4) {
-        cerr << "Usage: Client IP PORT ID\n";
+        cerr << "Usage: Client IP PUERTO ID\n";
         return -1;
     }
 

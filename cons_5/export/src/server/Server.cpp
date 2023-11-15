@@ -6,20 +6,23 @@
 using namespace XmlRpc;
 
 int main(int argc, char* argv[]) {
-  if (argc != 2) {
-    std::cerr << "Usage: Server serverPort\n";
+  if (argc != 3) {
+    std::cerr << "Uso: Server Puerto verbosity\n";
     return -1;
   }
 
   int port = atoi(argv[1]);
+  int verbosity = atoi(argv[2]);
 
   C5Server myServer;
-  XmlRpc::setVerbosity(5);
+  XmlRpc::setVerbosity(verbosity);
 
   myServer.bindAndListen(port);
   myServer.enableIntrospection(true);
   myServer.work(-1.0);
-  //myServer.shutdown(); Método para terminar con el servidor
+  std::cout << "Presione 'q' para salir."<< std::endl;
+  
+  myServer.shutdown();
   return 0;
 }
 
