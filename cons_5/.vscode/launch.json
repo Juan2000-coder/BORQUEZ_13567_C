@@ -5,36 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch test",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}\\export\\test\\build\\${fileBasenameNoExtension}.exe",
-            "args": ["127.0.0.1","8000"],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
-            "miDebuggerPath": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                },
-                {
-                    "description": "Set Disassembly Flavor to Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
-                    "ignoreFailures": true
-                }
-            ]
-        },
-        {
             "name": "(gdb) Launch server",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}\\export\\build\\server.exe",
-            "args": ["8000"],
+            "program": "${workspaceFolder}\\C5\\build\\server.exe",
+            "args": ["8000","5"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
@@ -58,7 +33,7 @@
             "name": "(gdb) Launch client",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}\\export\\build\\client.exe",
+            "program": "${workspaceFolder}\\C5\\build\\client.exe",
             "args": ["127.0.0.1","8000","122"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

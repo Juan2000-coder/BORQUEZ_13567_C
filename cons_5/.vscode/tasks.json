@@ -2,20 +2,20 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "build server",
             "type": "shell",
             "command": "g++",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "-Wall",
-                "-I./export/include/",
-                "-I./export/include/xmlrpc/",
-                "./export/src/*.cpp",
-                "./export/build/libXmlRpc.a",
+                "-I./C5/include/server/",
+                "-I./C5/include/xmlrpc/",
+                "./C5/src/server/*.cpp",
+                "./C5/lib/xmlrpc.a",
                 "-lws2_32",
                 "-o",
-                "./export/build/Server",
+                "./C5/build/server",
             ],
             "problemMatcher": [
                 "$gcc"
@@ -30,31 +30,77 @@
             }
         },
         {
-            "label": "Build test module",
+            "label": "build client",
             "type": "shell",
             "command": "g++",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "-Wall",
-                "-I./include/",
+                "-I./C5/include/client/",
+                "-I./C5/include/xmlrpc/",
+                "./C5/src/client/*.cpp",
+                "./C5/lib/xmlrpc.a",
+                "-lws2_32",
                 "-o",
-                "./export/test/build/${fileBasenameNoExtension}.exe",
-                "./export/src/C5Requirement.cpp",
-                "./export/src/C5Exceptions.cpp",
-                "./export/test/src/${fileBasename}"
+                "./C5/build/client",
             ],
             "problemMatcher": [
                 "$gcc"
             ],
             "group": {
                 "kind": "build",
-                "isDefault": false
+                "isDefault": true
             },
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
             }
         },
+        {
+            "label": "build xmlrpcobjects",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-Wall",
+                "-I./C5/include/xmlrpc/",
+                "./C5/src/xmlrpc/*.cpp",
+                "-o",
+                "./C5/bin/xmlrpc/*.o",
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "build xmlrpc lib",
+            "type": "shell",
+            "command": "ar",
+            "args": [
+                "./C5/lib/xmlrpc.a",
+                "./C5/bin/xmlrpc/*.o",
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
     ]
 }
