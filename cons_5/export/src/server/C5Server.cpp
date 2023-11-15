@@ -45,7 +45,7 @@ void UserValidate::execute(XmlRpcValue& params, XmlRpcValue& result){
         }
     }
     else{
-        throw ServerException(ServerException::exceptionCodes::INV_SYN);
+        throw C5ServerException(C5ServerException::exceptionCodes::INV_SYN);
     }
 }
 
@@ -78,7 +78,7 @@ void GetInt::execute(XmlRpcValue& params, XmlRpcValue& result){
         }
     }
     else{
-        throw ServerException(ServerException::exceptionCodes::INV_SYN);
+        throw C5ServerException(C5ServerException::exceptionCodes::INV_SYN);
     }
 }
 
@@ -111,7 +111,7 @@ void GetReal::execute(XmlRpcValue& params, XmlRpcValue& result){
         }
     }
     else{
-        throw ServerException(ServerException::exceptionCodes::INV_SYN);
+        throw C5ServerException(C5ServerException::exceptionCodes::INV_SYN);
     }
 }
 
@@ -155,7 +155,7 @@ void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
         }
     }
     else{
-        throw ServerException(ServerException::exceptionCodes::INV_SYN);
+        throw C5ServerException(C5ServerException::exceptionCodes::INV_SYN);
     }
 }
 
@@ -181,7 +181,7 @@ void GetStat::execute(XmlRpcValue& params, XmlRpcValue& result){
         }
     }
     else{
-        throw ServerException(ServerException::exceptionCodes::INV_SYN);
+        throw C5ServerException(C5ServerException::exceptionCodes::INV_SYN);
     }
 }
 
@@ -233,6 +233,6 @@ void GetNumberList::execute(XmlRpcValue& params, XmlRpcValue& result){
         }
     }
     else{
-        throw ServerException(ServerException::exceptionCodes::INV_SYN);
+        throw C5ServerException(C5ServerException::exceptionCodes::INV_SYN);
     }
 }

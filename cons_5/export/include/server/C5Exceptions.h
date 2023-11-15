@@ -78,10 +78,10 @@ class C5NumberEngineException: public C5Exceptions {
 /**
  * @brief Derived class for C5Server-related exceptions.
  */
-class ServerException: public C5Exceptions {
+class C5ServerException: public C5Exceptions {
   public:
     enum exceptionCodes { INV_SYN };
-    ServerException(exceptionCodes code);
+    C5ServerException(exceptionCodes code);
     const char* where() const override { return "Server"; }
 };
 

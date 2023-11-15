@@ -67,7 +67,7 @@ C5NumberEngineException::C5NumberEngineException(exceptionCodes code){
             this->message = "No identificada";
     }
 }
-ServerException::ServerException(exceptionCodes code){
+C5ServerException::C5ServerException(exceptionCodes code){
     this->code = static_cast<unsigned int>(code);
     switch(code){
         case INV_SYN:
