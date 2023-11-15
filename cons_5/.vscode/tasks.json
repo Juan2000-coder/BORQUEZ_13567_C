@@ -66,9 +66,10 @@
                 "-g",
                 "-Wall",
                 "-I./C5/include/xmlrpc/",
-                "./C5/src/xmlrpc/*.cpp",
+                "./C5/src/xmlrpc/%.cpp",
+                "-c",
                 "-o",
-                "./C5/bin/xmlrpc/*.o",
+                "./C5/bin/xmlrpc/%.o",
             ],
             "problemMatcher": [
                 "$gcc"
