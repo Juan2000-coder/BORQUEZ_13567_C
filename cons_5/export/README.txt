@@ -1,28 +1,58 @@
-# C5 Number Generator
+# Cliente y Servidor XML-RPC con generador de numeros.
 
-## Overview
+## Descripción General
 
-C5 Number Generator is a C++ application designed to generate and manage random numbers based on user
-requirements. The application provides functionality for generating both integers and real numbers within
-specified ranges. It operates as a server using XML-RPC communication, allowing remote clients to request
-number generation, statistical information, listing of numbers, and more. The server and client components
-enable seamless communication over a local network.
+    Es una aplicación en C++ que opera en un servidor XML-RPC diseñada para generar números aleatorios 
+    segun las peticiones que hace un usuario a través de un cliente CML-RPC. La aplicación ofrece funcionalidades
+    para generar tanto enteros como números reales dentro de rangos especificados. Opera como un servidor
+    utilizando comunicación XML-RPC, lo que permite a clientes remotos solicitar generación de números,
+    información estadística, listado de números y más. Los componentes del servidor y del cliente permiten
+    una comunicación fluida sobre una red local.
 
-## Features
+## Características
 
-- Generate random integers and real numbers within specified ranges.
-- Server-client architecture using XML-RPC for remote communication.
-- Retrieve statistical information about the generated numbers.
-- List and return generated numbers.
-- Supports execution only on the local network.
+- Generación de números enteros y reales aleatorios dentro de rangos especificados.
+- Arquitectura cliente-servidor utilizando XML-RPC para comunicación remota.
+- Obtención de información estadística sobre los números generados.
+- Listado y retorno de números generados.
+- Soporte para ejecución únicamente en la red local.
 
-## Prerequisites
+## Requisitos Previos
 
-To build and run the XML-RPC Server Number Generator and the XML-RPC Client, you need the following:
+Para construir y ejecutar el *Generador de Números XML-RPC Server* y el *Cliente XML-RPC*, necesitarás lo siguiente:
 
-- C++ compiler that supports C++11 standard
-- CMake (version 3.12 or higher)
-
-## Installation
+- Compilador de C++ que admita el estándar C++11.
+- CMake (versión 3.12 o superior).
 
 
+## Instrucciones de Instalación
+
+A continuación se detallan los pasos necesarios para instalar la aplicación.
+Asegúrate de tener las dependencias necesarias antes de comenzar.
+
+### 1. Construcción de la Librería XML-RPC
+
+#### a. Construir la Librería xmlrpc (si no la tienes incorporada)
+
+    1. Navega al directorio raíz de la solución.
+    2. Ejecuta el siguiente comando para construir la librería XML-RPC:
+        make xmlrpc
+   
+#### b. Incorporar Archivos
+    Si ya tienes la librería xmlrpc.a construida, puedes omitir el paso anterior.
+    Incorpora los archivos de encabezado (headers) de XML-RPC++ en la carpeta ./include/xmlrpc
+    y sobrescribe los que alli se encuentran. Sobrescribe los archivos fuente en ./src/xmlrpc
+    con los archivos proporcionados por la libreria de XML-RPC++.
+
+### 2. Construcción del Cliente y del Servidor
+
+#### a. Construir el Cliente
+    Ejecuta el siguiente comando para construir el cliente:
+        make client
+
+#### b. Construir el Servidor
+    Ejecuta el siguiente comando para construir el servidor:
+        make server
+
+### 3. Localización de Ejecutables
+    Encuentra los ejecutables generados en la carpeta ./build.
