@@ -5,7 +5,9 @@
 #include <sstream>
 #include <iomanip>
 
-
+/**
+ * @brief Dictionary mapping command names to corresponding XML-RPC methods.
+ */
 const map<string, string> C5CLI::methods = {
     {"validar", "userValidate"},
     {"entero", "getInt"},
@@ -25,11 +27,13 @@ bool C5CLI::loop(C5Client& client, C5User& user)const{
 
     system("clear || cls");
     cout << this->menu();
-    while(true) {
-        cout << this->prompt();
 
+    while(true) {
+        // ... (input handling)
+        cout << this->prompt();
         getline(cin, line);
-        if (line == "q"){
+
+        if (line == "q"){  // quit
             break;
         }
         else if(line == "menu"){
@@ -40,14 +44,18 @@ bool C5CLI::loop(C5Client& client, C5User& user)const{
             cout << this->menu();
         }
         else{
+            // ... (parsing and executing XML-RPC request)
+
             args.clear();
+
             if (this->parseRequest(method, args, line, id)){
                 result.clear();
+
                 if (client.execute(method.c_str(), args, result)){
                     if (int(client.isFault()) == 0){
                         cout << this->parseResponse(method, result);
                     }
-                    else{
+                    else{//Fault Response
                         cout << this->parseFaultResponse(method, result);
                     }
                 }
@@ -60,7 +68,7 @@ bool C5CLI::loop(C5Client& client, C5User& user)const{
             }
         }
     }
-    cout << "\n- Hasta luego!\n" <<endl;
+    cout << "\n- Hasta luego!\n" << endl;
 
     return true;
 }
@@ -80,96 +88,106 @@ string C5CLI::menu()const{
     return menu.str();
 }
 
-bool C5CLI::parseRequest(string& method, XmlRpcValue& args, string& line, int id) const{
+bool C5CLI::parseRequest(string& method, XmlRpcValue& args, string& line, int id) const {
     stringstream input(line);
     string arg;
 
+    // Extract the method name from the input and map it to the corresponding XML-RPC method.
     input >> method;
     auto it = this->methods.find(method);
-    if (it == this->methods.end()){
+    if (it == this->methods.end()) {// Invalid method
         return false;
     }
-    method = it->second;
 
+    method = it->second;
     unsigned int i = 0;
-    if (method != "system.methodHelp"){
+
+    // For methods other than 'system.methodHelp', set the first argument to the user ID.
+    if (method != "system.methodHelp") {
         args[0] = id;
         i++;
     }
-    while(input >> arg){
+
+    // Parse the remaining arguments from the input.
+    while (input >> arg) {
         args[i] = arg;
         i++;
     }
-    if (method == "system.methodHelp"){
-        if (!args.valid()){
+
+    // Special handling for 'system.methodHelp' method.
+    if (method == "system.methodHelp") {
+        // If no arguments are provided, set "system.methodHelp" as the first argument.
+        if (!args.valid()) {
             args[0] = "system.methodHelp";
         }
-        else if(args.size() == 1){
+        // If one argument is provided, map it to the corresponding XML-RPC method.
+        else if (args.size() == 1) {
             it = this->methods.find(args[0]);
-            if (it != this->methods.end()){
+            if (it != this->methods.end()) {
                 args[0] = it->second;
             }
-            else{
+            else {
                 return false;
             }
         }
-        else{
+        else { // Invalid Syntax
             return false;
         }
     }
+
+    // Validate the arguments.
     return this->validateArgs(method, args);
 }
-bool C5CLI::validateArgs(string& method, XmlRpcValue& args) const{
-    if (method == this->methods.at("entero")){
-        if(args.size() == 1){
+
+bool C5CLI::validateArgs(string& method, XmlRpcValue& args) const {
+    if (method == this->methods.at("entero")) {
+        if (args.size() == 1) { // Just user id provided.
             return true;
-        }
-        else{
-            try{
-                for(unsigned int i = 1; i < args.size(); i++){
+        } else {
+            try {
+                // Convert each string argument to integer.
+                for (unsigned int i = 1; i < args.size(); i++) {
                     args[i] = stoi(args[i]);
                 }
                 return true;
-            }
-            catch(const std::invalid_argument& e){
+            } catch (const std::invalid_argument& e) {// Coudn´t cast to int.
                 return false;
             }
         }
-    }
-    else if (method == this->methods.at("real")){
-        if(args.size() == 1){
+    } else if (method == this->methods.at("real")) {
+        if (args.size() == 1) {// Just user id provided.
             return true;
-        }
-        else{
-            try{
-                for(unsigned int i = 1; i < args.size(); i++){
+        } else {
+            try {
+                // Convert each argument to float.
+                for (unsigned int i = 1; i < args.size(); i++) {
                     args[i] = stof(args[i]);
                 }
                 return true;
-            }
-            catch(const invalid_argument& e){
+            } catch (const std::invalid_argument& e) {// Coudn´t cast to float.
                 return false;
             }
         }
-    }
-    else if (method == this->methods.at("anterior")){
-        if(args.size() == 1){
+    } else if (method == this->methods.at("anterior")) {
+        if (args.size() == 1) {// Just user id provided.
             return true;
-        }
-        else{
-            try{
-                for(unsigned int i = 1; i < args.size(); i++){
+        } else {
+            try {
+                // Convert each argument to integer.
+                for (unsigned int i = 1; i < args.size(); i++) {
                     args[i] = stoi(args[i]);
                 }
                 return true;
-            }
-            catch(const invalid_argument& e){
+            } catch (const std::invalid_argument& e) {// Coudn´t cast to int.
                 return false;
             }
         }
     }
+
+    // Default case: No specific validation required for other methods.
     return true;
 }
+
 string C5CLI::prompt() const{
     stringstream prompt;
     prompt << '\n' <<">>> ";
