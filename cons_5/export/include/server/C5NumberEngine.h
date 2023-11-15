@@ -1,3 +1,14 @@
+/**
+ * @file    C5NumberEngine.h
+ * @brief   Header file for the C5NumberEngine class.
+ * 
+ * @details This file declares the C5NumberEngine class.
+ * 
+ * @version 1.0
+ * @date    2023-11-15
+ * @author  Juan Manuel Borquez
+ * @contact borquez.juan00@gmail.com
+ */
 #ifndef _C5NUMBERENGINE_H
 #define _C5NUMBERENGINE_H
 
