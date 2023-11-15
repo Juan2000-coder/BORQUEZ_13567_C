@@ -1,3 +1,18 @@
+/**
+ * @file C5ServerConnection.cpp
+ * @brief Implementation of the executeRequest method in the C5ServerConnection class.
+ * 
+ * @details This file contains the implementation of the executeRequest method,
+ * which is overridden from the XmlRpcConnection base class for custom exception
+ * handling purposes.
+ * 
+ * @version 1.0
+ * @date    2023-11-15
+ * @author  Juan Manuel Borquez
+ * @contact borquez.juan00@gmail.com
+ */
+
+
 #include "C5ServerConnection.h"
 #include "XmlRpcUtil.h"
 #include "XmlRpcException.h"
