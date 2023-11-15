@@ -30,7 +30,10 @@ CLIENTEXECUTABLE = $(BUILDDIR)/client
 
 
 
-all: $(LIB) $(SERVEREXECUTABLE) $(CLIENTEXECUTABLE)
+all: xmlrpc server client
+xmlrpc: $(LIB)
+client: $(CLIENTEXECUTABLE)
+server: $(SERVEREXECUTABLE)
 
 $(LIB):
 	cd $(LIBDIR) && $(MAKE)
