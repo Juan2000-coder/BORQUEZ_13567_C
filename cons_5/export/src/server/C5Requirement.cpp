@@ -30,6 +30,7 @@ int C5Requirement::getNumbersCount() const{
 }
 
 long C5Requirement::getCurrentStamp() const{
+    // Current Time Stamp: The number of seconds since the creation of the requirement.
     auto checkpoint = std::chrono::high_resolution_clock::now();
     auto duracion = std::chrono::duration_cast<std::chrono::seconds>(checkpoint-this->getInitialTime());
     long timestamp = duracion.count();
@@ -37,7 +38,6 @@ long C5Requirement::getCurrentStamp() const{
 }
 
 Stats C5Requirement::getStats()const{
-    //No sabemos si puede tirar excepciones a priori esta llamada
     double sum = 0;
     double mean = 0;
 
