@@ -1,3 +1,15 @@
+/**
+ * @file    C5Requirement.h
+ * @brief   Header file for the C5Requirement class.
+ * 
+ * @details This file declares the C5Requirement class.
+ * 
+ * @version 1.0
+ * @date    2023-11-15
+ * @author  Juan Manuel Borquez
+ * @contact borquez.juan00@gmail.com
+ */
+
 #ifndef _C5REQUIREMENT_H
 #define _C5REQUIREMENT_H
 
