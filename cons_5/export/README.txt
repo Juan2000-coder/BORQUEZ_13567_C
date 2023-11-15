@@ -69,3 +69,12 @@ Asegúrate de tener las dependencias necesarias antes de comenzar.
 ### 4. Limpiar ejecutables y objetos
     Se pueden eliminar los ejecutables y objetos generador haciendo:
         make clean
+
+### 5. Archivo de usuarios Registrados.
+    Los usuarios se registran con un número de 3 digitos.
+    El archivo se denomina users.txt y se encuentra en el directorio ./files.
+    Este archivo puede modificarse para incorporar nuevos usuario o eliminar los existentes.
+
+### 6. Archivo con respustas en formato XML
+    Las respuestas que el cliente reciba del servidor se almacenaran en formato XML
+    en un archivo denominado XmlFile en la carpeta ./files.
