@@ -1,0 +1,33 @@
+class GetInt
+!!!135682.cpp!!!	execute(inout params : XmlRpcValue, inout result : XmlRpcValue) : void
+
+    if (params.size() == 1){  // Id only without boundaries.
+        if(this->engine.userValidate(params[0])){
+            result = this->engine.getInt(); // Uses most recent integer number boundaries.
+        }
+        else{
+            result = false;         // Not valid user.
+        }
+    }
+    else if(params.size() == 3){ // Id and boundaries.
+        if(this->engine.userValidate(params[0])){
+            result  = this->engine.getInt(params[1], params[2]);
+        }
+        else{
+            result = false;         // Not valid user.
+        }
+    }
+    else{
+        throw C5ServerException(C5ServerException::exceptionCodes::INV_SYN);
+    }
+!!!135810.cpp!!!	help() : std::string
+
+    std::stringstream ayuda;
+    ayuda << "Descripcion: genera un numero entero aleatorio en un rango especificado.\n"
+          << "Parametros: "
+          << "{bmin(int) - limite inferior,"
+          << " bmax(int) - limite superior}.\n"
+          << "Returns: "
+          << "{resultado(int)}.\n"
+          << "Nota: si no se indica un rango se asume el de la ultima peticion.";
+    return ayuda.str();

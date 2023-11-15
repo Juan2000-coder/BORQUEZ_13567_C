@@ -1,0 +1,43 @@
+class C5Requirement
+!!!133506.cpp!!!	C5Requirement()
+
+    this->initialTime = std::chrono::high_resolution_clock::now();
+!!!133634.cpp!!!	C5Requirement(in userId : int)
+
+    this->userId = userId;
+!!!133762.cpp!!!	setUserId(in id : int) : void
+
+    this->userId = id;
+!!!134146.cpp!!!	getUserId() : int
+
+    return this->userId;
+!!!134274.cpp!!!	getInitialTime() : std::chrono::_V2::system_clock::time_point
+
+    return this->initialTime;
+!!!134402.cpp!!!	getCurrentStamp() : long
+
+    // Current Time Stamp: The number of seconds since the creation of the requirement.
+    auto checkpoint = std::chrono::high_resolution_clock::now();
+    auto duracion = std::chrono::duration_cast<std::chrono::seconds>(checkpoint-this->getInitialTime());
+    long timestamp = duracion.count();
+    return timestamp;
+!!!134530.cpp!!!	getNumbersCount() : int
+
+    return this->numbers.size();
+!!!134658.cpp!!!	getStats() : C5Stats
+
+    double sum = 0;
+    double mean = 0;
+
+    if(!this->numbers.empty()){
+        for(auto number: this->numbers){
+            if(std::holds_alternative<C5Number<int>>(number)){
+                sum += std::get<C5Number<int>>(number).getValue();
+            }
+            else{
+                sum += std::get<C5Number<double>>(number).getValue();
+            }
+        }
+        mean = sum/this->numbers.size();
+    }
+    return C5Stats(sum, mean, this->numbers.size());

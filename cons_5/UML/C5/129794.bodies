@@ -1,0 +1,11 @@
+class C5ServerException
+!!!131074.cpp!!!	C5ServerException(in code : C5ServerException::exceptionCodes)
+
+    this->code = static_cast<unsigned int>(code);
+    switch(code){
+        case INV_SYN:
+            this->message = "Sintaxis de orden incorrecta";
+            break;
+        default:
+            this->message = "No identificada";
+    }   

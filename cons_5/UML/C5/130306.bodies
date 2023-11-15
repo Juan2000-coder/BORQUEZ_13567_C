@@ -1,0 +1,19 @@
+class C5Stats
+!!!137986.cpp!!!	setSum(in sum : double) : void
+
+    this->sum = sum;
+!!!138114.cpp!!!	setMean(in mean : double) : void
+
+    this->mean = mean;
+!!!138242.cpp!!!	setCount(in count : int) : void
+
+    this->count = count;
+!!!138370.cpp!!!	getSum() : double
+
+    return this->sum;
+!!!138498.cpp!!!	getMean() : double
+
+    return this->mean;
+!!!138626.cpp!!!	getCount() : int
+
+    return this->count;

@@ -1,0 +1,11 @@
+class C5NumberEngineException
+!!!130818.cpp!!!	C5NumberEngineException(in code : C5NumberEngineException::exceptionCodes)
+
+    this->code = static_cast<unsigned int>(code);
+    switch(code){
+        case AT_OPEN:
+            this->message = "No se pudo abrir el archivo de validacion";
+            break;
+        default:
+            this->message = "No identificada";
+    }

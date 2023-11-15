@@ -1,0 +1,7 @@
+class C5Exceptions
+!!!130178.cpp!!!	operator <<(inout os : std::ostream, in myException : C5Exceptions) : std::ostream
+
+    os << "Excepcion en " << myException.where() << " con codigo "
+    << myException.getCode() << '\n' << "Mensaje: " << myException.what()
+    << std::endl;
+    return os;

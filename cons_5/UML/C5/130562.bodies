@@ -1,0 +1,23 @@
+class UserValidate
+!!!135298.cpp!!!	execute(inout params : XmlRpcValue, inout result : XmlRpcValue) : void
+
+    if (params.size() == 1){    // Only id
+        if(this->engine.userValidate(params[0])){
+            result = true;      // Valid user.
+        }
+        else{
+            result = false;     // Not valid user.
+        }
+    }
+    else{
+        throw C5ServerException(C5ServerException::exceptionCodes::INV_SYN);
+    }
+!!!135426.cpp!!!	help() : std::string
+
+    std::stringstream ayuda;
+    ayuda << "Descripcion: valida al usuario segun su id.\n"
+          << "Parametros: "
+          << "{id (int)}.\n"
+          << "Returns: "
+          << "{validacion - (1 == vaildo) | (0 == no valido)}.";
+    return ayuda.str();

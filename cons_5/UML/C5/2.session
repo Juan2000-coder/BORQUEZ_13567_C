@@ -1,0 +1,12 @@
+window_sizes 1280 637 371 904 591 0
+
+show_stereotypes
+selected classdiagram_ref 128002 // client
+open
+  classview_ref 128002 // client
+  
+  package_ref 128130 // xmlrpc
+  
+  package_ref 128258 // server
+end
+end

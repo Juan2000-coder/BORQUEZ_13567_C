@@ -1,0 +1,69 @@
+format 224
+
+classcanvas 128002 class_ref 128002 // C5CLI
+  classdiagramsettings member_max_width 0 end
+  xyz 58.5 308.5 2000
+end
+classcanvas 128130 class_ref 128130 // C5Client
+  classdiagramsettings member_max_width 0 end
+  xyz 52 143 2000
+end
+classcanvas 128258 class_ref 128258 // C5User
+  classdiagramsettings member_max_width 0 end
+  xyz 408.5 40.5 2000
+end
+classcanvas 128386 class_ref 128514 // XmlRpcClient
+  classdiagramsettings member_max_width 0 end
+  hidden_attributes
+    attribute_ref 131586 // REQUEST_BEGIN
+    attribute_ref 131714 // REQUEST_END_METHODNAME
+    attribute_ref 131842 // PARAMS_TAG
+    attribute_ref 131970 // PARAMS_ETAG
+    attribute_ref 132098 // PARAM_TAG
+    attribute_ref 132226 // PARAM_ETAG
+    attribute_ref 132354 // REQUEST_END
+    attribute_ref 132482 // METHODRESPONSE_TAG
+    attribute_ref 132610 // FAULT_TAG
+    attribute_ref 133506 // _host
+    attribute_ref 133634 // _uri
+    attribute_ref 133762 // _port
+    attribute_ref 133890 // _request
+    attribute_ref 134018 // _header
+    attribute_ref 134146 // _response
+    attribute_ref 134274 // _sendAttempts
+    attribute_ref 134402 // _bytesWritten
+    attribute_ref 134530 // _executing
+    attribute_ref 134658 // _eof
+    attribute_ref 134786 // _isFault
+    attribute_ref 134914 // _contentLength
+  hidden_operations
+    operation_ref 142594 // ~XmlRpcClient
+    operation_ref 142722 // execute
+    operation_ref 142850 // isFault
+    operation_ref 142978 // close
+    operation_ref 143106 // handleEvent
+    operation_ref 143234 // doConnect
+    operation_ref 143362 // setupConnection
+    operation_ref 143490 // generateRequest
+    operation_ref 143618 // generateHeader
+    operation_ref 143746 // writeRequest
+    operation_ref 143874 // readHeader
+    operation_ref 144002 // readResponse
+  xyz 39 40 2006
+end
+relationcanvas 128514 relation_ref 128002 // <generalisation>
+  from ref 128130 z 2007 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 134658 // <dependency>
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 134786 // <dependency>
+  from ref 128002 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

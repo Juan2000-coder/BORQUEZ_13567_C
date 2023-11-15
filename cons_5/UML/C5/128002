@@ -1,0 +1,570 @@
+format 224
+"client" // client
+  revision 1
+  modified_by 2 "Juan"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  cpp_h_dir "C:\\Users\\Public\\Documents\\UNCUYO\\4-Cuarto_anio\\2-Octavo_Semestre\\2-Programacion_Orientada_a_Objetos\\3-Trabajos_Practicos\\1-TP1\\BORQUEZ_13567_C\\BORQUEZ_13567_C\\cons_5\\C5\\include\\client/"
+  cpp_src_dir "C:\\Users\\Public\\Documents\\UNCUYO\\4-Cuarto_anio\\2-Octavo_Semestre\\2-Programacion_Orientada_a_Objetos\\3-Trabajos_Practicos\\1-TP1\\BORQUEZ_13567_C\\BORQUEZ_13567_C\\cons_5\\C5\\include\\client/"
+  classview 128002 "client"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 128002 "C5CLI"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@class C5CLI
+@brief Class representing the Command Line Interface (CLI) to interact with a server using XmlRpc.
+"
+      operation 128002 "loop"
+	preserve_cpp_body_indent const public explicit_return_type "bool"
+	nparams 2
+	  param inout name "client" type class_ref 128130 // C5Client
+	  param inout name "user" type class_ref 128258 // C5User
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Starts a loop of interaction with the provided client and user.
+@param client Reference to a C5Client object representing the connection to the server.
+@param user Reference to a C5User object representing user information.
+@return true if the loop runs successfully, false otherwise.
+"
+      end
+
+      operation 128130 "parseRequest"
+	preserve_cpp_body_indent const public explicit_return_type "bool"
+	nparams 4
+	  param inout name "method" explicit_type "string"
+	  param inout name "args" type class_ref 128386 // XmlRpcValue
+	  param inout name "line" explicit_type "string"
+	  param in name "id" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}, ${t2} & ${p2}${v2}, ${t3} ${p3}${v3}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Parses a provided request and extracts the method, arguments, and identifier.
+@param method Reference to a string that will store the extracted method.
+@param args Reference to an XmlRpcValue object that will store the extracted arguments.
+@param line Reference to a string representing the request line.
+@param id Identifier of the request.
+@return true if the request is parsed successfully, false otherwise.
+"
+      end
+
+      operation 128258 "validateArgs"
+	preserve_cpp_body_indent const public explicit_return_type "bool"
+	nparams 2
+	  param inout name "method" explicit_type "string"
+	  param inout name "args" type class_ref 128386 // XmlRpcValue
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Validates the arguments of a specific method.
+@param method String representing the method whose arguments are to be validated.
+@param args Reference to an XmlRpcValue object containing the arguments to validate.
+@return true if the arguments are valid, false otherwise.
+"
+      end
+
+      operation 128386 "menu"
+	preserve_cpp_body_indent const public explicit_return_type "string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Returns a menu of available options.
+@return String representing the menu of options.
+"
+      end
+
+      operation 128514 "parseResponse"
+	preserve_cpp_body_indent const public explicit_return_type "string"
+	nparams 2
+	  param inout name "method" explicit_type "string"
+	  param inout name "result" type class_ref 128386 // XmlRpcValue
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Parses the response of a request and returns the representation in string format.
+@param method String representing the method of the request.
+@param result Reference to an XmlRpcValue object containing the result of the request.
+@return String representing the parsed response.
+"
+      end
+
+      operation 128642 "parseFaultResponse"
+	preserve_cpp_body_indent const public explicit_return_type "string"
+	nparams 2
+	  param inout name "method" explicit_type "string"
+	  param inout name "result" type class_ref 128386 // XmlRpcValue
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Parses the response of an error request (fault) and returns the representation in string format.
+@param method String representing the method of the error request.
+@param result Reference to an XmlRpcValue object containing the result of the error request.
+@return String representing the parsed error response.
+"
+      end
+
+      operation 128770 "prompt"
+	preserve_cpp_body_indent const public explicit_return_type "string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Generates a prompt for the Command Line Interface (CLI).
+@return String representing the prompt.
+"
+      end
+
+      attribute 128002 "methods"
+	class_attribute const_attribute private explicit_type "string, string"
+	init_value "= {
+    {\"validar\", \"userValidate\"},
+    {\"entero\", \"getInt\"},
+    {\"real\", \"getReal\"},
+    {\"anterior\", \"getNumberOld\"},
+    {\"estadistica\", \"getStat\"},
+    {\"listar\", \"getNumberList\"},
+    {\"help\", \"system.methodHelp\"}
+}"
+	stereotype "map"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< Map associating method names with descriptions."
+      end
+
+      classrelation 134658 // <dependency>
+	relation 134658 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 134658 // <dependency>
+	  b parent class_ref 128130 // C5Client
+      end
+
+      classrelation 134786 // <dependency>
+	relation 134786 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 134786 // <dependency>
+	  b parent class_ref 128258 // C5User
+      end
+    end
+
+    class 128130 "C5Client"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief Inheritance specifically designed to override the parseResponse method
+in the base class to dump the responses in XML format to a file.
+"
+      classrelation 128002 // <generalisation>
+	relation 128002 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 128002 // <generalisation>
+	  b parent class_ref 128514 // XmlRpcClient
+      end
+
+      extra_member 128002 "using"
+	
+	cpp "  using XmlRpcClient::XmlRpcClient;" ""
+	java ""
+	php ""
+	python ""
+	idl ""
+	mysql ""
+      end
+
+      operation 128898 "parseResponse"
+	preserve_cpp_body_indent cpp_override public explicit_return_type "bool"
+	nparams 1
+	  param inout name "result" type class_ref 128386 // XmlRpcValue
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Same implementation in base class.
+But also dumps the response in XML format to the Xmlfile.
+"
+      end
+
+      operation 129026 "setXmlFile"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "file" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Sets the file to which the XML responses will be dumped.
+@param file The name of the XML file.
+"
+      end
+
+      operation 129154 "dumToFile"
+	preserve_cpp_body_indent public explicit_return_type "bool"
+	nparams 1
+	  param in name "response" explicit_type "std::string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Dumps the content to XmlFile.
+
+Dumps the content of the response.
+
+@param file The path to the file where the content will be dumped.
+@return True if the dump operation is successful, false otherwise.
+"
+      end
+
+      attribute 128130 "XmlFile"
+	private explicit_type "std::string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "< The path to the XML file  "
+      end
+    end
+
+    class 128258 "C5User"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief Represents a user.
+
+This class stores information about a user.
+"
+      operation 129282 "C5User"
+	cpp_inline public explicit_return_type ""
+	nparams 1
+	  param in name "_id" explicit_type "int"
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw}${abstract} : id(_id) {};
+"
+	
+	
+	
+	
+	comment "
+@brief Constructor for C5User.
+
+Initializes a C5User with the provided user ID.
+
+@param _id The ID of the user.
+"
+      end
+
+      operation 129410 "getId"
+	const cpp_inline public explicit_return_type "int"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} { return id; };
+"
+	
+	
+	
+	
+	comment "
+@brief Gets the user ID.
+
+Retrieves the ID of the user.
+
+@return The ID of the user.
+"
+      end
+
+      attribute 128258 "id"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "< The ID of the user. "
+      end
+    end
+
+    classdiagram 128002 "client"
+      classdiagramsettings show_members_full_definition yes show_members_visibility yes show_members_stereotype yes member_max_width 0 end
+      size A4
+    end
+  end
+
+  deploymentview 128002 "client"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    artifact 128002 "C5CLI"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 128002 // C5CLI
+      end
+    end
+
+    artifact 128130 "C5Client"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 128130 // C5Client
+      end
+    end
+
+    artifact 128258 "C5User"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 128258 // C5User
+      end
+    end
+
+    artifact 130818 "main"
+      stereotype "source"
+      cpp_src "//
+//@brief The main function for client part.
+//
+//Validates the main args, initializes a client, sets the XML file,
+//validates the user, and starts the command-line interface loop.
+//
+//@param argc The number of command-line arguments.
+//@param argv An array of command-line arguments.
+//@return Returns 0 on successful execution, -1 otherwise.
+//
+
+int main(int argc, char* argv[]) {
+    // main args checking.
+    if (argc != 4) {
+        cerr << \"Usage: Client IP PUERTO ID\\n\";
+        return -1;
+    }
+
+    // Initialize C5Client with the provided IP and port.
+    C5Client client(argv[1], atoi(argv[2]));
+    client.setXmlFile(\"Xmlfile.xml\"); // Set the XML file.
+
+    // Create a user with the provided ID.
+    C5User user(atoi(argv[3]));
+
+    // Validate the user.
+    XmlRpcValue validation;
+    if (client.execute(\"userValidate\", user.getId(), validation)) {
+        if (int(validation) == 1) {
+            C5CLI cli;
+            // Start the cli interface loop on validation.
+            if (cli.loop(client, user))
+                return 0;
+            else
+                return -1;
+        }
+        cout << \"Invalid user.\\n\";
+        return 0;
+    } else {
+        cout << \"Error validating user.\\n\";
+        return -1;
+    }
+}
+"
+      associated_elems
+      end
+    end
+  end
+end

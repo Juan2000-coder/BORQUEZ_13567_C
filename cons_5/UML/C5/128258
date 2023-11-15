@@ -1,0 +1,2537 @@
+format 224
+"server" // server
+  revision 1
+  modified_by 2 "Juan"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  cpp_h_dir "C:\\Users\\Public\\Documents\\UNCUYO\\4-Cuarto_anio\\2-Octavo_Semestre\\2-Programacion_Orientada_a_Objetos\\3-Trabajos_Practicos\\1-TP1\\BORQUEZ_13567_C\\BORQUEZ_13567_C\\cons_5\\C5\\include\\server/"
+  cpp_src_dir "C:\\Users\\Public\\Documents\\UNCUYO\\4-Cuarto_anio\\2-Octavo_Semestre\\2-Programacion_Orientada_a_Objetos\\3-Trabajos_Practicos\\1-TP1\\BORQUEZ_13567_C\\BORQUEZ_13567_C\\cons_5\\C5\\include\\server/"
+  classview 128258 "server"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 128642 "C5Exceptions"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief Base class for C5 exceptions, derived from std::exception.
+"
+      classrelation 128130 // <generalisation>
+	relation 128130 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 128130 // <generalisation>
+	  b parent class_ref 128770 // std::exception
+      end
+
+      class 128898 "exceptionCodes"
+	visibility package stereotype "enum"
+	cpp_decl "${comment}enum ${name} {
+${items}};
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	attribute 128386 "NOID"
+	  public type class_ref 128898 // exceptionCodes
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
+
+      operation 129538 "C5Exceptions"
+	cpp_inline public explicit_return_type ""
+	nparams 1
+	  param in name "_message" explicit_type "char"
+	cpp_decl "    ${comment}${inline}${name}${(}const ${t0} * ${p0}${v0}${)}${volatile}${throw}${abstract} : message(_message), code(static_cast<unsigned int>(NOID)){};
+"
+	
+	
+	
+	
+	comment "(NOID) No Identified"
+      end
+
+      operation 129666 "C5Exceptions"
+	cpp_inline public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${name}${(}${)}${volatile}${throw}${abstract} : message(\"No identified\"), code(static_cast<unsigned int>(NOID)){};
+"
+	
+	
+	
+	
+      end
+
+      operation 129794 "what"
+	const constvalue cpp_noexcept public explicit_return_type "char"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 129922 "where"
+	const constvalue cpp_virtual cpp_inline public explicit_return_type "char"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} * ${name}${(}${)}${const}${volatile}${throw}${abstract} { return \"base\"; };
+"
+	
+	
+	
+	
+      end
+
+      operation 130050 "getCode"
+	const cpp_inline public explicit_return_type "uint"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} { return this->code; };
+"
+	
+	
+	
+	
+	comment "
+@brief Getter method to retrieve the exception code.
+@return The exception code.
+"
+      end
+
+      operation 130178 "operator <<"
+	preserve_cpp_body_indent friend public explicit_return_type "std::ostream"
+	nparams 2
+	  param inout name "os" explicit_type "std::ostream"
+	  param in name "myException" type class_ref 128642 // C5Exceptions
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Friend function to overload the output stream operator for printing exceptions.
+@param os The output stream.
+@param myExceptions The C5Exceptions object to be printed.
+@return The output stream.
+"
+      end
+
+      attribute 128514 "message"
+	const_attribute protected explicit_type "char"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment " Exception message."
+      end
+
+      attribute 128642 "code"
+	protected explicit_type "uint"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment " Exception code."
+      end
+    end
+
+    class 128770 "std::exception"
+      visibility package stereotype "typedef" explicit_base_type "std::exception"
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 129026 "C5NumberException"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief Derived class for C5Number-related exceptions.
+"
+      classrelation 128258 // <generalisation>
+	relation 128258 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 128258 // <generalisation>
+	  b parent class_ref 128642 // C5Exceptions
+      end
+
+      class 129154 "exceptionCodes"
+	visibility package stereotype "enum"
+	cpp_decl "${comment}enum ${name} {
+${items}};
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	attribute 128770 "LIMIT"
+	  public type class_ref 129154 // exceptionCodes
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+
+	attribute 128898 "TYPE"
+	  public type class_ref 129154 // exceptionCodes
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
+
+      operation 130306 "C5NumberException"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 1
+	  param in name "code" type class_ref 129154 // exceptionCodes
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)}${volatile}${throw} {
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 130434 "where"
+	const constvalue cpp_override cpp_inline public explicit_return_type "char"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} * ${name}${(}${)}${const}${volatile}${throw}${abstract} { return \"C5Number\"; };
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 129282 "C5RequirementException"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief Derived class for C5Requirement-related exceptions.
+"
+      classrelation 128386 // <generalisation>
+	relation 128386 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 128386 // <generalisation>
+	  b parent class_ref 128642 // C5Exceptions
+      end
+
+      class 129410 "exceptionCodes"
+	visibility package stereotype "enum"
+	cpp_decl "${comment}enum ${name} {
+${items}};
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	attribute 129026 "OUT_OF_RNG"
+	  public type class_ref 129410 // exceptionCodes
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+
+	attribute 129154 "NO_PREV_REQ"
+	  public type class_ref 129410 // exceptionCodes
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+
+	attribute 129282 "NO_PREV_REQ_TYPE"
+	  public type class_ref 129410 // exceptionCodes
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
+
+      operation 130562 "C5RequirementException"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 1
+	  param in name "code" type class_ref 129410 // exceptionCodes
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)}${volatile}${throw} {
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 130690 "where"
+	const constvalue cpp_override cpp_inline public explicit_return_type "char"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} * ${name}${(}${)}${const}${volatile}${throw}${abstract} { return \"C5Requirement\"; };
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 129538 "C5NumberEngineException"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief Derived class for C5NumberEngine-related exceptions.
+"
+      classrelation 128514 // <generalisation>
+	relation 128514 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 128514 // <generalisation>
+	  b parent class_ref 128642 // C5Exceptions
+      end
+
+      class 129666 "exceptionCodes"
+	visibility package stereotype "enum"
+	cpp_decl "${comment}enum ${name} {
+${items}};
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	attribute 129410 "AT_OPEN"
+	  public type class_ref 129666 // exceptionCodes
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
+
+      operation 130818 "C5NumberEngineException"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 1
+	  param in name "code" type class_ref 129666 // exceptionCodes
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)}${volatile}${throw} {
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 130946 "where"
+	const constvalue cpp_override cpp_inline public explicit_return_type "char"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} * ${name}${(}${)}${const}${volatile}${throw}${abstract} { return \"C5NumberEngine\"; };
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 129794 "C5ServerException"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief Derived class for C5Server-related exceptions.
+"
+      classrelation 128642 // <generalisation>
+	relation 128642 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 128642 // <generalisation>
+	  b parent class_ref 128642 // C5Exceptions
+      end
+
+      class 129922 "exceptionCodes"
+	visibility package stereotype "enum"
+	cpp_decl "${comment}enum ${name} {
+${items}};
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	attribute 129538 "INV_SYN"
+	  public type class_ref 129922 // exceptionCodes
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
+
+      operation 131074 "C5ServerException"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 1
+	  param in name "code" type class_ref 129922 // exceptionCodes
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)}${volatile}${throw} {
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 131202 "where"
+	const constvalue cpp_override cpp_inline public explicit_return_type "char"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} * ${name}${(}${)}${const}${volatile}${throw}${abstract} { return \"Server\"; };
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 130050 "C5Number"
+      visibility package 
+      nformals 1
+      formal name "Type" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief Template class representing a numeric object.
+Type would be double or int for \"real\" or \"entero\" cases.
+
+@tparam Type The data type of the numeric value.
+"
+      operation 131330 "C5Number"
+	public explicit_return_type ""
+	nparams 3
+	  param in name "bmin" explicit_type "Type"
+	  param in name "bmax" explicit_type "Type"
+	  param in name "time" explicit_type "long"
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}${)}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+	comment "
+@brief Constructor for C5Number class.
+
+Initializes a C5Number instance with the provided bounds, ordinal, and timestamp.
+
+@param bmin Minimum bound for the numeric value.
+@param bmax Maximum bound for the numeric value.
+@param time Timestamp associated with the numeric value.
+"
+      end
+
+      operation 131458 "setOrdinal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "ordinal" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+	comment "
+@brief Sets the ordinal value for the C5Number instance.
+
+@param ordinal The ordinal value to be set.
+"
+      end
+
+      operation 131586 "getOrdinal"
+	const public explicit_return_type "int"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+	comment "
+@brief Gets the ordinal value of the C5Number instance.
+
+@return The ordinal value.
+"
+      end
+
+      operation 131714 "getType"
+	const public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+	comment "
+@brief Gets the data type of the C5Number instance.
+
+@return The data type as a string.
+"
+      end
+
+      operation 131842 "getValue"
+	const public explicit_return_type "Type"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+	comment "
+@brief Gets the numeric value of the C5Number instance.
+
+@return The numeric value.
+"
+      end
+
+      operation 131970 "getBmin"
+	const public explicit_return_type "Type"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+	comment "
+@brief Gets the minimum bound of the C5Number instance.
+
+@return The minimum bound.
+"
+      end
+
+      operation 132098 "getBmax"
+	const public explicit_return_type "Type"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+	comment "
+@brief Gets the maximum bound of the C5Number instance.
+
+@return The maximum bound.
+"
+      end
+
+      operation 132226 "getTime"
+	const public explicit_return_type "long"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+	comment "
+@brief Gets the timestamp associated with the instance.
+
+@return The timestamp.
+"
+      end
+
+      attribute 129666 "ordinal"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< Ordinal value of the C5Number."
+      end
+
+      attribute 129794 "type"
+	private explicit_type "std::string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< Data type of the C5Number (\"entero\" o \"real\")."
+      end
+
+      attribute 129922 "value"
+	private explicit_type "Type"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< Numeric value of the C5Number."
+      end
+
+      attribute 130050 "bmin"
+	private explicit_type "Type"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< Minimum bound of the C5Number."
+      end
+
+      attribute 130178 "bmax"
+	private explicit_type "Type"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< Maximum bound of the C5Number."
+      end
+
+      attribute 130306 "time"
+	private explicit_type "long"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< Timestamp associated with the C5Number."
+      end
+
+      classrelation 134914 // <aggregation>
+	relation 134914 o---
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 134914 // <aggregation>
+	  b role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135042 // <aggregation>
+      end
+
+      classrelation 135298 // <aggregation>
+	relation_ref 135042 // <aggregation>
+      end
+
+      classrelation 135682 // <unidirectional association>
+	relation 135426 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135682 // <unidirectional association>
+	  b parent class_ref 129026 // C5NumberException
+      end
+    end
+
+    class 130178 "C5NumberEngine"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief The C5NumberEngine class manages the generation of the numbers,
+       user validation, and retrieval of statistical information.
+"
+      operation 132354 "C5NumberEngine"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${)}${volatile}${throw} {
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Default constructor for C5NumberEngine.
+"
+      end
+
+      operation 132482 "userValidate"
+	preserve_cpp_body_indent public explicit_return_type "bool"
+	nparams 1
+	  param in name "userId" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Validates a user based on their user ID.
+
+@param userId The user ID to validate.
+@return True if the user is valid; otherwise, false.
+"
+      end
+
+      operation 132610 "getInt"
+	preserve_cpp_body_indent public explicit_return_type "int"
+	nparams 2
+	  param in name "bmin" explicit_type "int"
+	  param in name "bmax" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Generates a random integer within the specified range.
+
+@param bmin The minimum value of the range.
+@param bmax The maximum value of the range.
+@return A randomly generated integer.
+"
+      end
+
+      operation 132738 "getInt"
+	preserve_cpp_body_indent public explicit_return_type "int"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Generates a random integer when no boundary is specified.
+
+If there is a previous number of the same kind, it takes the boundaries of that number
+to generate the new number; otherwise, it throws an exception.
+@return A randomly generated integer.
+"
+      end
+
+      operation 132866 "getReal"
+	preserve_cpp_body_indent public explicit_return_type "double"
+	nparams 2
+	  param in name "bmin" explicit_type "double"
+	  param in name "bmax" explicit_type "double"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Generates a random real number within the specified range.
+
+@param bmin The minimum value of the range.
+@param bmax The maximum value of the range.
+@return A randomly generated real number.
+"
+      end
+
+      operation 132994 "getReal"
+	preserve_cpp_body_indent public explicit_return_type "double"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Generates a random real number.
+
+If there is a previous number of the same kind, it takes the boundaries of that number
+to generate the new number; otherwise, it throws an exception.
+@return A randomly generated real number.
+"
+      end
+
+      operation 133122 "getNumberOld"
+	stereotype "template"
+	const constvalue public explicit_return_type "C5Number<Type>"
+	nparams 1
+	  param in name "ordinal" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	nformals 1
+	formal name "Type" type "typename" explicit_default_value ""
+	  explicit_extends ""
+	
+	
+	
+	
+	comment "
+@brief Retrieves an old C5Number object based on its ordinal.
+
+@tparam Type The type of the C5Number object (int or double).
+@param ordinal The ordinal of the C5Number object to retrieve.
+@return A constant reference to the retrieved C5Number object.
+"
+      end
+
+      operation 133250 "getStat"
+	preserve_cpp_body_indent const public return_type class_ref 130306 // C5Stats
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Retrieves basic statistical information containing
+the number of numbers generated for a specified requirement
+the sum of the numbers and the mean of the numbers.
+
+@return A Stats object containing statistical information.
+"
+      end
+
+      operation 133378 "getNumberList"
+	preserve_cpp_body_indent const constvalue public return_type class_ref 130434 // C5Requirement
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Retrieves the list of numbers for a requirement.
+
+@return A constant reference to the C5Requirement object representing a requirement.
+"
+      end
+
+      classrelation 128770 // requirements (<directional composition>)
+	relation 128770 *-->
+	  stereotype "std::vector"
+	  a role_name "requirements" private
+	    comment "/< Vector to store requirements."
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 128770 // requirements (<directional composition>)
+	  b parent class_ref 130434 // C5Requirement
+      end
+
+      attribute 130434 "validUsersFile"
+	private explicit_type "std::string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< File path for storing valid user information."
+      end
+
+      attribute 130562 "requirementIndex"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< Index to keep track the current requirement."
+      end
+
+      classrelation 135938 // <unidirectional association>
+	relation 135682 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135938 // <unidirectional association>
+	  b parent class_ref 129538 // C5NumberEngineException
+      end
+    end
+
+    class 130306 "C5Stats"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief Represents statistical information including sum, mean, and count.
+
+This class encapsulates statistical information such as sum, mean, and count.
+It provides methods to set and retrieve these statistical values.
+"
+      operation 137858 "C5Stats"
+	cpp_inline public explicit_return_type ""
+	nparams 3
+	  param in name "_sum" explicit_type "double"
+	  param in name "_mean" explicit_type "double"
+	  param in name "_count" explicit_type "int"
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}${)}${volatile}${throw}${abstract} :sum(_sum), mean(_mean), count(_count){};
+"
+	
+	
+	
+	
+	comment "
+@brief Constructor to initialize statistical values.
+
+Initializes the Stats object with the provided sum, mean, and count.
+
+@param _sum   The sum value for the statistical information.
+@param _mean  The mean value for the statistical information.
+@param _count The count value for the statistical information.
+"
+      end
+
+      operation 137986 "setSum"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "sum" explicit_type "double"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "// Setters
+
+${inline}${typeprefix}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Sets the sum value in the statistical information.
+
+@param sum The sum value to be set.
+"
+      end
+
+      operation 138114 "setMean"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "mean" explicit_type "double"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Sets the mean value in the statistical information.
+
+@param mean The mean value to be set.
+"
+      end
+
+      operation 138242 "setCount"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "count" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Sets the count value in the statistical information.
+
+@param count The count value to be set.
+"
+      end
+
+      operation 138370 "getSum"
+	preserve_cpp_body_indent const public explicit_return_type "double"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "// Getters
+
+${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Retrieves the sum value from the statistical information.
+
+@return The sum value.
+"
+      end
+
+      operation 138498 "getMean"
+	preserve_cpp_body_indent const public explicit_return_type "double"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Retrieves the mean value from the statistical information.
+
+@return The mean value.
+"
+      end
+
+      operation 138626 "getCount"
+	preserve_cpp_body_indent const public explicit_return_type "int"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Retrieves the count value from the statistical information.
+
+@return The count value.
+"
+      end
+
+      attribute 131074 "sum"
+	private explicit_type "double"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< The sum value in the statistical information."
+      end
+
+      attribute 131202 "mean"
+	private explicit_type "double"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< The mean value in the statistical information."
+      end
+
+      attribute 131330 "count"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< The count value in the statistical information."
+      end
+    end
+
+    class 130434 "C5Requirement"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief Represents a user requirement for generating and managing numbers.
+
+This class encapsulates user-specific requirements for generating and managing
+numbers. It includes methods for setting and retrieving user-related information,
+appending numbers to the requirement, and obtaining statistical information.
+"
+      operation 133506 "C5Requirement"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "//constructors
+
+${inline}${typeprefix}${class}::${name}${(}${)}${throw}{
+${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Default constructor for C5Requirement.
+"
+      end
+
+      operation 133634 "C5Requirement"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 1
+	  param in name "userId" explicit_type "int"
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${class}::${name}${(}${t0} ${p0}${)}: C5Requirement()${throw}{
+${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Constructor for C5Requirement with a specified user ID.
+@param userId The ID of the user associated with the requirement.
+"
+      end
+
+      operation 133762 "setUserId"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "id" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "//setters
+
+${inline}${typeprefix}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Sets the user ID associated with the requirement.
+@param id The user ID to be set.
+"
+      end
+
+      operation 133890 "appendNumber"
+	stereotype "template"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	nformals 1
+	formal name "Type" type "typename" explicit_default_value ""
+	  explicit_extends ""
+	
+	
+	
+	
+	comment "
+@brief Appends a number of the specified Type to the requirement
+using the boundaries used for the last number generated of this Type.
+@tparam Type The type of the number to be appended.
+"
+      end
+
+      operation 134018 "appendNumber"
+	stereotype "template"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "bmin" explicit_type "Type"
+	  param in name "bmax" explicit_type "Type"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	nformals 1
+	formal name "Type" type "typename" explicit_default_value ""
+	  explicit_extends ""
+	
+	
+	
+	
+	comment "
+@brief Appends a number with specified boundaries to the requirement.
+@tparam Type The type of the number to be appended.
+@param bmin The minimum boundary for the number.
+@param bmax The maximum boundary for the number.
+"
+      end
+
+      operation 134146 "getUserId"
+	preserve_cpp_body_indent const public explicit_return_type "int"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "//getters
+
+${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Gets the user ID associated with the requirement.
+@return The user ID.
+"
+      end
+
+      operation 134274 "getInitialTime"
+	preserve_cpp_body_indent const public explicit_return_type "std::chrono::_V2::system_clock::time_point"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Gets the initial time when the requirement was created.
+@return The initial time as a chrono time point.
+"
+      end
+
+      operation 134402 "getCurrentStamp"
+	preserve_cpp_body_indent const public explicit_return_type "long"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Gets the current time stamp.
+@return The current time stamp.
+"
+      end
+
+      operation 134530 "getNumbersCount"
+	preserve_cpp_body_indent const public explicit_return_type "int"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Gets the count of numbers associated with the requirement.
+@return The count of numbers.
+"
+      end
+
+      operation 134658 "getStats"
+	preserve_cpp_body_indent const public return_type class_ref 130306 // C5Stats
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "
+@brief Gets the statistical information about the numbers associated with the requirement.
+@return The statistical information.
+"
+      end
+
+      operation 134786 "getNumber"
+	stereotype "template"
+	const constvalue public explicit_return_type "C5Number<Type>"
+	nparams 1
+	  param in name "ordinal" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	nformals 1
+	formal name "Type" type "typename" explicit_default_value ""
+	  explicit_extends ""
+	
+	
+	
+	
+	comment "
+@brief Gets a specific number from the requirement by ordinal.
+@tparam Type The type of the number to be retrieved.
+@param ordinal The ordinal position of the number.
+@return The C5Number object.
+"
+      end
+
+      operation 134914 "getNumber"
+	stereotype "template"
+	const constvalue public explicit_return_type "C5Number<Type>"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	nformals 1
+	formal name "Type" type "typename" explicit_default_value ""
+	  explicit_extends ""
+	
+	
+	
+	
+	comment "
+@brief Gets the last number generated if matches the Type
+or throws and exception if there's no match in the Type.
+
+@tparam Type The type of the number to be retrieved.
+@return The C5Number object.
+"
+      end
+
+      operation 135042 "getRecent"
+	stereotype "template"
+	const constvalue public explicit_return_type "C5Number<Type>"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} & ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	nformals 1
+	formal name "Type" type "typename" explicit_default_value ""
+	  explicit_extends ""
+	
+	
+	
+	
+	comment "
+@brief Gets the most recently appended number of the Type from the requirement.
+@tparam Type The type of the number to be retrieved.
+@return The C5Number object.
+"
+      end
+
+      attribute 130690 "userId"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< The user ID associated with the requirement."
+      end
+
+      attribute 130818 "initialTime"
+	private explicit_type "std::chrono::_V2::system_clock::time_point"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< The initial time when the requirement was created."
+      end
+
+      attribute 130946 "numbers"
+	private explicit_type "std::variant<C5Number<int>, C5Number<double>>"
+	stereotype "std::vector"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "/< Vector to store both \"real\" and \"integer\" numbers."
+      end
+
+      classrelation 135042 // <aggregation>
+	relation_ref 134914 // <aggregation>
+      end
+
+      classrelation 135170 // <aggregation>
+	relation 135042 o---
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135170 // <aggregation>
+	  b role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135298 // <aggregation>
+      end
+
+      classrelation 135554 // <unidirectional association>
+	relation 135298 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135554 // <unidirectional association>
+	  b parent class_ref 129282 // C5RequirementException
+      end
+    end
+
+    class 130562 "UserValidate"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief XML-RPC server method for user validation.
+
+This class extends XmlRpcServerMethod and implements the 'userValidate' method.
+It interacts with the C5NumberEngine to perform user validation.
+"
+      classrelation 128898 // <generalisation>
+	relation 128898 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 128898 // <generalisation>
+	  b parent class_ref 130690 // XmlRpcServerMethod
+      end
+
+      operation 135170 "UserValidate"
+	cpp_inline public explicit_return_type ""
+	nparams 2
+	  param inout name "s" type class_ref 130818 // XmlRpcServer
+	  param inout name "_engine" type class_ref 130178 // C5NumberEngine
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} * ${p0}${v0}, ${t1} & ${p1}${v1}${)}${volatile}${throw}${abstract} : XmlRpcServerMethod(\"userValidate\", s), engine(_engine){};
+"
+	
+	
+	
+	
+      end
+
+      operation 135298 "execute"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param inout name "params" type class_ref 128386 // XmlRpcValue
+	  param inout name "result" type class_ref 128386 // XmlRpcValue
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 135426 "help"
+	preserve_cpp_body_indent cpp_override public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 129026 // engine (<unidirectional association>)
+	relation 129026 --->
+	  a role_name "engine" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} & ${name}${value};
+"
+	    classrelation_ref 129026 // engine (<unidirectional association>)
+	  b parent class_ref 130178 // C5NumberEngine
+      end
+    end
+
+    class 130946 "GetInt"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief XML-RPC server method for obtaining an integer.
+
+This class extends XmlRpcServerMethod and implements the 'getInt' method.
+It interacts with the C5NumberEngine to retrieve an integer.
+"
+      classrelation 129154 // <generalisation>
+	relation 129154 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 129154 // <generalisation>
+	  b parent class_ref 130690 // XmlRpcServerMethod
+      end
+
+      operation 135554 "GetInt"
+	cpp_inline public explicit_return_type ""
+	nparams 2
+	  param inout name "s" type class_ref 130818 // XmlRpcServer
+	  param inout name "_engine" type class_ref 130178 // C5NumberEngine
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} * ${p0}${v0}, ${t1} & ${p1}${v1}${)}${volatile}${throw}${abstract} : XmlRpcServerMethod(\"getInt\", s), engine(_engine){};
+"
+	
+	
+	
+	
+      end
+
+      operation 135682 "execute"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param inout name "params" type class_ref 128386 // XmlRpcValue
+	  param inout name "result" type class_ref 128386 // XmlRpcValue
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 135810 "help"
+	preserve_cpp_body_indent cpp_override public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 129282 // engine (<unidirectional association>)
+	relation 129282 --->
+	  a role_name "engine" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} & ${name}${value};
+"
+	    classrelation_ref 129282 // engine (<unidirectional association>)
+	  b parent class_ref 130178 // C5NumberEngine
+      end
+    end
+
+    class 131074 "GetReal"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief XML-RPC server method for obtaining a real number.
+
+This class extends XmlRpcServerMethod and implements the 'getReal' method.
+It interacts with the C5NumberEngine to retrieve a real number.
+"
+      classrelation 129410 // <generalisation>
+	relation 129410 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 129410 // <generalisation>
+	  b parent class_ref 130690 // XmlRpcServerMethod
+      end
+
+      operation 135938 "GetReal"
+	cpp_inline public explicit_return_type ""
+	nparams 2
+	  param inout name "s" type class_ref 130818 // XmlRpcServer
+	  param inout name "_engine" type class_ref 130178 // C5NumberEngine
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} * ${p0}${v0}, ${t1} & ${p1}${v1}${)}${volatile}${throw}${abstract} : XmlRpcServerMethod(\"getReal\", s), engine(_engine){};
+"
+	
+	
+	
+	
+      end
+
+      operation 136066 "execute"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param inout name "params" type class_ref 128386 // XmlRpcValue
+	  param inout name "result" type class_ref 128386 // XmlRpcValue
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 136194 "help"
+	preserve_cpp_body_indent cpp_override public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 129538 // engine (<unidirectional association>)
+	relation 129538 --->
+	  a role_name "engine" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} & ${name}${value};
+"
+	    classrelation_ref 129538 // engine (<unidirectional association>)
+	  b parent class_ref 130178 // C5NumberEngine
+      end
+    end
+
+    class 131202 "GetNumberOld"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief XML-RPC server method for obtaining a previous number.
+
+This class extends XmlRpcServerMethod and implements the 'getNumberOld' method.
+It interacts with the C5NumberEngine to retrieve a previous number.
+"
+      classrelation 129666 // <generalisation>
+	relation 129666 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 129666 // <generalisation>
+	  b parent class_ref 130690 // XmlRpcServerMethod
+      end
+
+      operation 136322 "GetNumberOld"
+	cpp_inline public explicit_return_type ""
+	nparams 2
+	  param inout name "s" type class_ref 130818 // XmlRpcServer
+	  param inout name "_engine" type class_ref 130178 // C5NumberEngine
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} * ${p0}${v0}, ${t1} & ${p1}${v1}${)}${volatile}${throw}${abstract} : XmlRpcServerMethod(\"getNumberOld\", s), engine(_engine){};
+"
+	
+	
+	
+	
+      end
+
+      operation 136450 "execute"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param inout name "params" type class_ref 128386 // XmlRpcValue
+	  param inout name "result" type class_ref 128386 // XmlRpcValue
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 136578 "help"
+	preserve_cpp_body_indent cpp_override public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 129794 // engine (<unidirectional association>)
+	relation 129794 --->
+	  a role_name "engine" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} & ${name}${value};
+"
+	    classrelation_ref 129794 // engine (<unidirectional association>)
+	  b parent class_ref 130178 // C5NumberEngine
+      end
+    end
+
+    class 131330 "GetStat"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief XML-RPC server method for obtaining statistics.
+
+This class extends XmlRpcServerMethod and implements the 'getStat' method.
+It interacts with the C5NumberEngine to retrieve statistics.
+"
+      classrelation 129922 // <generalisation>
+	relation 129922 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 129922 // <generalisation>
+	  b parent class_ref 130690 // XmlRpcServerMethod
+      end
+
+      operation 136706 "GetStat"
+	cpp_inline public explicit_return_type ""
+	nparams 2
+	  param inout name "s" type class_ref 130818 // XmlRpcServer
+	  param inout name "_engine" type class_ref 130178 // C5NumberEngine
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} * ${p0}${v0}, ${t1} & ${p1}${v1}${)}${volatile}${throw}${abstract} : XmlRpcServerMethod(\"getStat\", s), engine(_engine){};
+"
+	
+	
+	
+	
+      end
+
+      operation 136834 "execute"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param inout name "params" type class_ref 128386 // XmlRpcValue
+	  param inout name "result" type class_ref 128386 // XmlRpcValue
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 136962 "help"
+	preserve_cpp_body_indent cpp_override public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 130050 // engine (<unidirectional association>)
+	relation 130050 --->
+	  a role_name "engine" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} & ${name}${value};
+"
+	    classrelation_ref 130050 // engine (<unidirectional association>)
+	  b parent class_ref 130178 // C5NumberEngine
+      end
+    end
+
+    class 131458 "GetNumberList"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief XML-RPC server method for obtaining a list of numbers.
+
+This class extends XmlRpcServerMethod and implements the 'getNumberList' method.
+It interacts with the C5NumberEngine to retrieve a list of numbers.
+"
+      classrelation 130178 // <generalisation>
+	relation 130178 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 130178 // <generalisation>
+	  b parent class_ref 130690 // XmlRpcServerMethod
+      end
+
+      operation 137090 "GetNumberList"
+	cpp_inline public explicit_return_type ""
+	nparams 2
+	  param inout name "s" type class_ref 130818 // XmlRpcServer
+	  param inout name "_engine" type class_ref 130178 // C5NumberEngine
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} * ${p0}${v0}, ${t1} & ${p1}${v1}${)}${volatile}${throw}${abstract} : XmlRpcServerMethod(\"getNumberList\", s), engine(_engine) {};
+"
+	
+	
+	
+	
+      end
+
+      operation 137218 "execute"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param inout name "params" type class_ref 128386 // XmlRpcValue
+	  param inout name "result" type class_ref 128386 // XmlRpcValue
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 137346 "help"
+	preserve_cpp_body_indent cpp_override public explicit_return_type "std::string"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 130306 // engine (<unidirectional association>)
+	relation 130306 --->
+	  a role_name "engine" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} & ${name}${value};
+"
+	    classrelation_ref 130306 // engine (<unidirectional association>)
+	  b parent class_ref 130178 // C5NumberEngine
+      end
+    end
+
+    class 131586 "C5Server"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief XML-RPC server class for the C5 system.
+
+This class extends XmlRpcServer and provides methods to handle different XML-RPC requests.
+It uses the C5NumberEngine for processing these requests.
+"
+      classrelation 130434 // <generalisation>
+	relation 130434 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 130434 // <generalisation>
+	  b parent class_ref 130818 // XmlRpcServer
+      end
+
+      classrelation 130562 // engine (<directional composition>)
+	relation 130562 *-->
+	  a role_name "engine" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 130562 // engine (<directional composition>)
+	  b parent class_ref 130178 // C5NumberEngine
+      end
+
+      operation 137474 "C5Server"
+	cpp_inline public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${name}${(}${)}${volatile}${throw}${abstract} : XmlRpcServer(), engine(), userValidate(this, engine), getInt(this, engine),
+    getReal(this, engine), getNumberOld(this, engine), getStat(this, engine),
+    getNumberList(this, engine) {};
+"
+	
+	
+	
+	
+	comment "Constructor"
+      end
+
+      classrelation 130690 // userValidate (<directional composition>)
+	relation 130690 *-->
+	  a role_name "userValidate" public
+	    comment "bool userValidate(int userId);
+"
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 130690 // userValidate (<directional composition>)
+	  b parent class_ref 130562 // UserValidate
+      end
+
+      classrelation 130818 // getInt (<directional composition>)
+	relation 130818 *-->
+	  a role_name "getInt" public
+	    comment "int getInt(int bmin, int bmax);
+int getInt();
+"
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 130818 // getInt (<directional composition>)
+	  b parent class_ref 130946 // GetInt
+      end
+
+      classrelation 130946 // getReal (<directional composition>)
+	relation 130946 *-->
+	  a role_name "getReal" public
+	    comment "double getReal(double bmin, double bmax);
+double getReal();
+"
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 130946 // getReal (<directional composition>)
+	  b parent class_ref 131074 // GetReal
+      end
+
+      classrelation 131074 // getNumberOld (<directional composition>)
+	relation 131074 *-->
+	  a role_name "getNumberOld" public
+	    comment "getNumberOld(int ordinal);
+"
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 131074 // getNumberOld (<directional composition>)
+	  b parent class_ref 131202 // GetNumberOld
+      end
+
+      classrelation 131202 // getStat (<directional composition>)
+	relation 131202 *-->
+	  a role_name "getStat" public
+	    comment "getStat(int userId);
+"
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 131202 // getStat (<directional composition>)
+	  b parent class_ref 131330 // GetStat
+      end
+
+      classrelation 131330 // getNumberList (<directional composition>)
+	relation 131330 *-->
+	  a role_name "getNumberList" public
+	    comment "getNumberList(int userid);
+"
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 131330 // getNumberList (<directional composition>)
+	  b parent class_ref 131458 // GetNumberList
+      end
+
+      operation 137602 "createConnection"
+	preserve_cpp_body_indent cpp_override public return_type class_ref 131714 // C5ServerConnection
+	nparams 1
+	  param in name "socket" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} * ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 135810 // <unidirectional association>
+	relation 135554 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135810 // <unidirectional association>
+	  b parent class_ref 129794 // C5ServerException
+      end
+    end
+
+    class 131714 "C5ServerConnection"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "
+@brief Custom server connection class.
+
+This class extends XmlRpcServerConnection to overrides the executeRequest method.
+"
+      classrelation 131458 // <generalisation>
+	relation 131458 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 131458 // <generalisation>
+	  b parent class_ref 131842 // XmlRpcServerConnection
+      end
+
+      extra_member 128130 "using"
+	
+	cpp "  using XmlRpcServerConnection::XmlRpcServerConnection;" ""
+	java ""
+	php ""
+	python ""
+	idl ""
+	mysql ""
+      end
+
+      operation 137730 "executeRequest"
+	preserve_cpp_body_indent cpp_override private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment " Use Base class constructors.
+
+@brief Overrides the execution of an XML-RPC request.
+
+It overrides the base class method to provide custom exception
+handling specific to C5.
+"
+      end
+
+      classrelation 135426 // <unidirectional association>
+	relation 135170 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135426 // <unidirectional association>
+	  b parent class_ref 128642 // C5Exceptions
+      end
+    end
+
+    classdiagram 128130 "server"
+      classdiagramsettings hide_getset_operations yes show_members_full_definition no show_members_visibility yes show_members_stereotype yes member_max_width 0 end
+      size D
+    end
+
+    classdiagram 128258 "C5consigna"
+      classdiagramsettings draw_all_relations no hide_getset_operations yes show_members_visibility yes show_members_stereotype yes member_max_width 0 end
+      size A4
+    end
+
+    classdiagram 128386 "excepciones"
+      classdiagramsettings draw_all_relations no member_max_width 0 end
+      size B-Landscape
+    end
+
+    classdiagram 128514 "C5Server"
+      classdiagramsettings draw_all_relations no member_max_width 0 end
+      size B
+    end
+  end
+
+  deploymentview 128130 "server"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    artifact 128386 "C5Exceptions"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 128770 // std::exception
+	class_ref 128642 // C5Exceptions
+	class_ref 129026 // C5NumberException
+	class_ref 129282 // C5RequirementException
+	class_ref 129538 // C5NumberEngineException
+	class_ref 129794 // C5ServerException
+      end
+    end
+
+    artifact 128514 "C5Number"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 130050 // C5Number
+      end
+    end
+
+    artifact 128642 "C5NumberEngine"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 130178 // C5NumberEngine
+      end
+    end
+
+    artifact 128770 "C5Requirement"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 130434 // C5Requirement
+      end
+    end
+
+    artifact 128898 "C5Server"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 130562 // UserValidate
+	class_ref 130946 // GetInt
+	class_ref 131074 // GetReal
+	class_ref 131202 // GetNumberOld
+	class_ref 131330 // GetStat
+	class_ref 131458 // GetNumberList
+	class_ref 131586 // C5Server
+      end
+    end
+
+    artifact 129026 "C5ServerConnection"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 131714 // C5ServerConnection
+      end
+    end
+
+    artifact 129154 "C5Stats"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 130306 // C5Stats
+      end
+    end
+
+    artifact 130946 "main"
+      stereotype "source"
+      cpp_src "int main(int argc, char* argv[]) {
+  if (argc != 3) {
+    std::cerr << \"Uso: ./server <puerto> <verbosity>\\n\";
+    return -1;
+  }
+  std::cout << \"Presione 'CTRL + C' para salir.\"<< std::endl;
+
+  int port = atoi(argv[1]);
+  int verbosity = atoi(argv[2]);
+
+  C5Server myServer;
+  XmlRpc::setVerbosity(verbosity);
+  myServer.bindAndListen(port);
+  
+  // Enable introspection for help in the server methods.
+  myServer.enableIntrospection(true);
+  myServer.work(-10);   // Listen to requirement for ever.
+  return 0;
+}
+"
+      associated_elems
+      end
+    end
+  end
+end

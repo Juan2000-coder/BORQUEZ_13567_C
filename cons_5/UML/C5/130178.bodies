@@ -1,0 +1,67 @@
+class C5NumberEngine
+!!!132354.cpp!!!	C5NumberEngine()
+
+    // Path relative to the buid folder.
+    this->validUsersFile = "../files/users.txt";
+!!!132482.cpp!!!	userValidate(in userId : int) : bool
+
+    int index = 0;
+    for(C5Requirement &requirement: this->requirements){
+        // Checks if the user is already in the list of requirements.
+        if (requirement.getUserId() == userId){
+            this->requirementIndex = index;
+            return true; // User already in the list of requirements.
+        }
+        index++;
+    }
+
+    std::ifstream validUsers(this->validUsersFile);
+    if (!validUsers.is_open()){
+        throw C5NumberEngineException(C5NumberEngineException::exceptionCodes::AT_OPEN);
+    }
+    std::string idRequest = std::to_string(userId);
+    std::string id;
+
+    while (std::getline(validUsers, id)){// Checks if the user is in the file.
+        if (id == idRequest){// Valid user.
+            this->requirements.push_back(C5Requirement(userId)); // Creates a new Requirement.
+            this->requirementIndex = this->requirements.size() - 1;
+            return true;
+        }
+    }
+    return false; // Not valid user.
+!!!132610.cpp!!!	getInt(in bmin : int, in bmax : int) : int
+
+    auto &requirement = this->requirements.at(this->requirementIndex);
+
+    // Creates a new number and then returns it's value.
+    requirement.appendNumber<int>(bmin, bmax);
+    return requirement.getNumber<int>().getValue();
+!!!132738.cpp!!!	getInt() : int
+
+    auto &requirement = this->requirements.at(this->requirementIndex);
+
+    // Creates a new number and then returns it's value.
+    requirement.appendNumber<int>();
+    return requirement.getNumber<int>().getValue();
+!!!132866.cpp!!!	getReal(in bmin : double, in bmax : double) : double
+
+    auto &requirement = this->requirements.at(this->requirementIndex);
+
+    // Creates a new number and then returns it's value.
+    requirement.appendNumber<double>(bmin, bmax);
+    return requirement.getNumber<double>().getValue();
+!!!132994.cpp!!!	getReal() : double
+
+    auto &requirement = this->requirements.at(this->requirementIndex);
+
+    // Creates a new number and then returns it's value.
+    requirement.appendNumber<double>();
+    return requirement.getNumber<double>().getValue();
+!!!133250.cpp!!!	getStat() : C5Stats
+
+    auto requirement = this->requirements.at(this->requirementIndex);
+    return requirement.getStats();
+!!!133378.cpp!!!	getNumberList() : C5Requirement
+
+    return this->requirements.at(this->requirementIndex);

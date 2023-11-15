@@ -1,0 +1,17 @@
+class C5RequirementException
+!!!130562.cpp!!!	C5RequirementException(in code : C5RequirementException::exceptionCodes)
+
+    this->code = static_cast<unsigned int>(code);
+    switch(code){
+        case OUT_OF_RNG:
+            this->message = "Ordinal fuera de rango";
+            break;
+        case NO_PREV_REQ:
+            this->message = "Sin requerimientos previos";
+            break;
+        case NO_PREV_REQ_TYPE:
+            this->message = "Sin requerimientos previos del tipo indicado";
+            break;
+        default:
+            this->message = "No identificada";
+    }

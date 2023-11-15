@@ -1,0 +1,4 @@
+class C5Server
+!!!137602.cpp!!!	createConnection(in socket : int) : C5ServerConnection
+
+    return new C5ServerConnection(socket, this, true);

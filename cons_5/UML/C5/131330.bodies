@@ -1,0 +1,26 @@
+class GetStat
+!!!136834.cpp!!!	execute(inout params : XmlRpcValue, inout result : XmlRpcValue) : void
+
+    if (params.size() == 1){ // User id only.
+        if(this->engine.userValidate(params[0])){ // Valid user.
+            auto stat = this->engine.getStat();   // Calculates de stats.
+            result[0] = stat.getCount();
+            result[1] = stat.getMean();
+            result[2] = stat.getSum();
+        }
+        else{
+            result = false; // Not valid user.
+        }
+    }
+    else{
+        throw C5ServerException(C5ServerException::exceptionCodes::INV_SYN);
+    }
+!!!136962.cpp!!!	help() : std::string
+
+    std::stringstream ayuda;
+    ayuda << "Descripcion: devuelve la estadistica basica de los numeros generados.\n"
+          << "Returns: "
+          << "{estadistica - {cantidad(int),"
+          << " media(double),"
+          << " suma(int|double)}}.";
+    return ayuda.str();

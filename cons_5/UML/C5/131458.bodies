@@ -1,0 +1,52 @@
+class GetNumberList
+!!!137218.cpp!!!	execute(inout params : XmlRpcValue, inout result : XmlRpcValue) : void
+
+    if (params.size() == 1){ // User id only.
+        if(this->engine.userValidate(params[0])){ // Valid user.
+            // Obtains the requirement for the user
+            const C5Requirement & list = this->engine.getNumberList();
+            for(int i = 0; i < list.getNumbersCount(); i++){// Iterates over the list of nubers.
+                try{
+                    const C5Number<int> & number = list.getNumber<int>(i + 1);
+                    result[i][0] = number.getValue();
+                    result[i][1] = number.getBmin();
+                    result[i][2] = number.getBmax();
+                    result[i][3] = std::to_string(number.getTime());
+                    result[i][4] = number.getType();
+                }
+                catch(std::bad_variant_access){
+                    const C5Number<double> & number = list.getNumber<double>(i + 1);
+                    result[i][0] = number.getValue();
+                    result[i][1] = number.getBmin();
+                    result[i][2] = number.getBmax();
+                    result[i][3] = std::to_string(number.getTime());
+                    result[i][4] = number.getType();
+                }
+            }
+            auto stamp = std::chrono::high_resolution_clock::now();
+            auto duration = std::chrono::duration_cast<std::chrono::seconds>(stamp-list.getInitialTime());
+
+            // Appends the current time stamp to the result.
+            result[result.size()] = std::to_string(duration.count()); 
+        }
+        else{
+            result = false; // Not valid user.
+        }
+    }
+    else{
+        throw C5ServerException(C5ServerException::exceptionCodes::INV_SYN);
+    }
+!!!137346.cpp!!!	help() : std::string
+
+    std::stringstream ayuda;
+    ayuda << "Descripcion: devuelve la lista de los numeros generados.\n"
+          << "Returns: "
+          << "{lista - {{valor(int|double),"
+          << " bmin(int|double),"
+          << " bmax(int|double),"
+          << " timeStamp(string),"
+          << " tipo(entero|real)},"
+          << "...},"
+          << " timeStamp(string)}.\n"
+          << "Nota: timeStamp en segundos desde el inicio del proceso.";
+    return ayuda.str();

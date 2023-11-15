@@ -1,0 +1,18 @@
+class XmlRpcSource
+!!!152194.cpp!!!	XmlRpcSource(in fd : int = -1, in deleteOnClose : bool = false)
+
+!!!152322.cpp!!!	~XmlRpcSource()
+
+!!!152962.cpp!!!	close() : void
+
+    if (_fd != -1) {
+      XmlRpcUtil::log(2,"XmlRpcSource::close: closing socket %d.", _fd);
+      XmlRpcSocket::close(_fd);
+      XmlRpcUtil::log(2,"XmlRpcSource::close: done closing socket %d.", _fd);
+      _fd = -1;
+    }
+    if (_deleteOnClose) {
+      XmlRpcUtil::log(2,"XmlRpcSource::close: deleting this");
+      _deleteOnClose = false;
+      delete this;
+    }

@@ -1,0 +1,14 @@
+class C5NumberException
+!!!130306.cpp!!!	C5NumberException(in code : C5NumberException::exceptionCodes)
+
+    this->code = static_cast<unsigned int>(code);
+    switch(code){
+        case LIMIT:
+            this->message = "Limite de numero invalido para el constructor";
+            break;
+        case TYPE:
+            this->message = "Tipo de dato de limite invalido para el constructor";
+            break;
+        default:
+            this->message = "No identificada.";
+    }

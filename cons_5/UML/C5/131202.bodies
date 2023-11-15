@@ -1,0 +1,44 @@
+class GetNumberOld
+!!!136450.cpp!!!	execute(inout params : XmlRpcValue, inout result : XmlRpcValue) : void
+
+    if (params.size() == 2){ // Id and ordinal.
+        if(this->engine.userValidate(params[0])){  // Valid user.
+            try{// Is a "integer" number.
+                const C5Number<int>& number = this->engine.getNumberOld<int>(params[1]);
+                result[0] = number.getValue();
+                result[1] = number.getBmin();
+                result[2] = number.getBmax();
+                result[3] = std::to_string(number.getTime());
+                result[4] = number.getType();
+                
+            }
+            catch(std::bad_variant_access){// Is a "real" number.
+                const C5Number<double>& number = this->engine.getNumberOld<double>(params[1]);
+                result[0] = number.getValue();
+                result[1] = number.getBmin();
+                result[2] = number.getBmax();
+                result[3] = std::to_string(number.getTime());
+                result[4] = number.getType();
+            }
+        }
+        else{
+            result = false;     // Not valid user.
+        }
+    }
+    else{
+        throw C5ServerException(C5ServerException::exceptionCodes::INV_SYN);
+    }
+!!!136578.cpp!!!	help() : std::string
+
+    std::stringstream ayuda;
+    ayuda << "Descripcion: devuelve informacion de un numero anterior.\n"
+          << "Parametros: "
+          << " {ordinal(int) - orden de la peticion}.\n"
+          << "Returns:"
+          << "{{valor(int|double),"
+          << " bmin(int|double),"
+          << " bmax(int|double),"
+          << " timeStamp(string),"
+          << " tipo(real|entero)}}.\n"
+          << "Nota: timeStamp en segundos desde el inicio del proceso.";
+    return ayuda.str();
