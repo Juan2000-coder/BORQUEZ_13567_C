@@ -18,7 +18,7 @@ public:
      * @param _mean  The mean value for the statistical information.
      * @param _count The count value for the statistical information.
      */
-    Stats(double _sum, double _mean, int _count);
+    Stats(double _sum, double _mean, int _count):sum(_sum), mean(_mean), count(_count){};
 
     /**
      * @brief Sets the sum value in the statistical information.
