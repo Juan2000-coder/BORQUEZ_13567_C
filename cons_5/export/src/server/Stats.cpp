@@ -1,5 +1,6 @@
 #include "Stats.h"
 
+// Setters
 void Stats::setSum(double sum){
     this->sum = sum;
 }
@@ -12,6 +13,7 @@ void Stats::setCount(int count){
     this->count = count;
 }
 
+// Getters
 double Stats::getSum()const{
     return this->sum;
 }
