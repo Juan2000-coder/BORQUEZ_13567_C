@@ -46,7 +46,7 @@ class C5Exceptions: public std::exception {
 };
 
 /**
- * @brief Derived class for C5 number-related exceptions.
+ * @brief Derived class for C5Number-related exceptions.
  */
 class C5NumberException: public C5Exceptions {
   public:
@@ -56,7 +56,7 @@ class C5NumberException: public C5Exceptions {
 };
 
 /**
- * @brief Derived class for C5 requirement-related exceptions.
+ * @brief Derived class for C5Requirement-related exceptions.
  */
 class C5RequirementException: public C5Exceptions {
   public:
@@ -66,7 +66,7 @@ class C5RequirementException: public C5Exceptions {
 };
 
 /**
- * @brief Derived class for C5 number engine-related exceptions.
+ * @brief Derived class for C5NumberEngine-related exceptions.
  */
 class C5NumberEngineException: public C5Exceptions {
   public:
@@ -76,7 +76,7 @@ class C5NumberEngineException: public C5Exceptions {
 };
 
 /**
- * @brief Derived class for server-related exceptions.
+ * @brief Derived class for C5Server-related exceptions.
  */
 class ServerException: public C5Exceptions {
   public:

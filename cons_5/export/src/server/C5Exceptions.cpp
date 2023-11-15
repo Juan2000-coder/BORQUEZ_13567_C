@@ -1,3 +1,23 @@
+/**
+ * @file  C5Exceptions.cpp
+ * @brief Implementation of exception-related classes.
+ * 
+ * @details This file contains the implementation of custom exceptions classes.
+ *          
+ * Includes the definition of operator<< for C5Exceptions objects,
+ * 
+ * Implementation of constructors for:
+ * - C5NumberException
+ * - C5RequirementException
+ * - C5NumberEngineException
+ * - ServerException
+ * 
+ * @version 1.0
+ * @date    2023-11-15
+ * @author  Juan Manuel Borquez
+ * @contact borquez.juan00@gmail.com
+ */
+
 #include "C5Exceptions.h"
 
 std::ostream& operator<<(std::ostream& os, const C5Exceptions& myException){
