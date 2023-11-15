@@ -2,14 +2,15 @@
 #include "C5Exceptions.h"
 #include <random>
 
-template<class Type>
-C5Number<Type>::C5Number(Type bmin, Type bmax, long time){
-    std::random_device rd;
-    std::mt19937 generator(rd());
 
-    if (std::is_same<Type, double>::value){
+template<class Type>
+C5Number<Type>::C5Number(Type bmin, Type bmax, long time){ // Constructor
+    std::random_device rd;
+    std::mt19937 generator(rd()); // Random number generator.
+
+    if (std::is_same<Type, double>::value){ // Real number.
         this->type = "real";
-        if (bmin <= bmax){
+        if (bmin <= bmax){ // Boundary verification.
             std::uniform_real_distribution<double> doubleDistribution(bmin, bmax);
             this->value = doubleDistribution(generator);
 
@@ -18,9 +19,9 @@ C5Number<Type>::C5Number(Type bmin, Type bmax, long time){
             throw C5NumberException(C5NumberException::exceptionCodes::LIMIT);
         }
     }
-    else if(std::is_same<Type, int>::value){
+    else if(std::is_same<Type, int>::value){ // Integer number.
         this->type = "entero";
-        if (bmin <= bmax){
+        if (bmin <= bmax){ // Boundary verification.
             std::uniform_int_distribution<int> intDistribution(bmin, bmax);
             this->value = intDistribution(generator);
 
@@ -37,12 +38,13 @@ C5Number<Type>::C5Number(Type bmin, Type bmax, long time){
     this->bmax = bmax;
 }
 
-//setters
+//setters.
 template<class Type>
 void C5Number<Type>::setOrdinal(int ordinal){
     this->ordinal = ordinal;
 }
 
+//getters.
 template<class Type>
 int C5Number<Type>::getOrdinal() const{
     return this->ordinal;
