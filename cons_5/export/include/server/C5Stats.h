@@ -1,3 +1,14 @@
+/**
+ * @file    C5Stats.h
+ * @brief   Header file for the C5Stats class.
+ * 
+ * @details This file declares the C5Stats class.
+ * 
+ * @version 1.0
+ * @date    2023-11-15
+ * @author  Juan Manuel Borquez
+ * @contact borquez.juan00@gmail.com
+ */
 #ifndef _C5STATS_H
 #define _C5STATS_H
 
