@@ -1,3 +1,18 @@
+/**
+ * @file    C5CLI.cpp
+ * @brief   Implementation of the C5CLI class.
+ * 
+ * @details This file contains the implementation of the C5CLI class, which
+ * is responsible for handling the command-line interface of the XML-RPC client.
+ * It includes methods for processing user input, executing XML-RPC requests,
+ * and displaying the results.
+ * 
+ * @version 1.0
+ * @date    2023-11-15
+ * @author  Juan Manuel Borquez
+ * @contact borquez.juan00@gmail.com
+ */
+
 #include "C5CLI.h"
 #include <limits> 
 #include <cstdlib> 
