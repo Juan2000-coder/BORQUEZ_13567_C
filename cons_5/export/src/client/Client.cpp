@@ -1,3 +1,24 @@
+/**
+ * @file    main.cpp
+ * @brief   Main program for the C5 XML-RPC client.
+ * 
+ * @details This file contains the main function for the C5 XML-RPC client.
+ * It validates command-line arguments, initializes the C5Client, sets the XML file,
+ * validates the user, and starts the command-line interface loop if the user is valid.
+ * 
+ * @param argc The number of command-line arguments.
+ * @param argv An array of command-line arguments.
+ * @return Returns 0 on successful execution, -1 otherwise.
+ * 
+ * @calling
+ * ./client <ip> <port> <id>
+ * 
+ * @version 1.0
+ * @date    2023-11-15
+ * @author  Juan Manuel Borquez
+ * @contact borquez.juan00@gmail.com
+ */
+
 #include "C5User.h"
 #include "C5CLI.h"
 #include "XmlRpc.h"
