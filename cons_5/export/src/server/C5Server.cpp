@@ -23,12 +23,12 @@ std::string UserValidate::help(){
     return ayuda.str();
 }
 void UserValidate::execute(XmlRpcValue& params, XmlRpcValue& result){
-    if (params.size() == 1){
+    if (params.size() == 1){    // Only id
         if(this->engine.userValidate(params[0])){
-            result = true;
+            result = true;      // Valid user.
         }
         else{
-            result = false;
+            result = false;     // Not valid user.
         }
     }
     else{
@@ -48,21 +48,20 @@ std::string GetInt::help(){
     return ayuda.str();
 }
 void GetInt::execute(XmlRpcValue& params, XmlRpcValue& result){
-    /*FALTA: Falta verificación del número de parámetros y verificación de tipos*/
-    if (params.size() == 1){
+    if (params.size() == 1){  // Id only without boundaries.
         if(this->engine.userValidate(params[0])){
-            result = this->engine.getInt();
+            result = this->engine.getInt(); // Uses most recent integer number boundaries.
         }
         else{
-            result = false;
+            result = false;         // Not valid user.
         }
     }
-    else if(params.size() == 3){
+    else if(params.size() == 3){ // Id and boundaries.
         if(this->engine.userValidate(params[0])){
             result  = this->engine.getInt(params[1], params[2]);
         }
         else{
-            result = false;
+            result = false;         // Not valid user.
         }
     }
     else{
@@ -82,21 +81,20 @@ std::string GetReal::help(){
     return ayuda.str();
 }
 void GetReal::execute(XmlRpcValue& params, XmlRpcValue& result){
-    /*FALTA: Falta verificación del número de parámetros y verificación de tipos*/
-    if (params.size() == 1){
+    if (params.size() == 1){    // User id only without boundares.
         if(this->engine.userValidate(params[0])){
-            result = this->engine.getReal();
+            result = this->engine.getReal(); // Uses most recent real number boundaries.
         }
         else{
-            result = false;
+            result = false;     // Not valid user.
         }
     }
-    else if(params.size() == 3){
+    else if(params.size() == 3){// Id and boundaries.
         if(this->engine.userValidate(params[0])){
             result = this->engine.getReal(params[1], params[2]);
         }
         else{
-            result = false;
+            result = false;     // Not valid user.
         }
     }
     else{
@@ -119,10 +117,9 @@ std::string GetNumberOld::help(){
     return ayuda.str();
 }
 void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
-    /*FALTA: Falta verificación del número de parámetros y verificación de tipos*/
-    if (params.size() == 2){
-        if(this->engine.userValidate(params[0])){
-            try{
+    if (params.size() == 2){ // Id and ordinal.
+        if(this->engine.userValidate(params[0])){  // Valid user.
+            try{// Is a "integer" number.
                 const C5Number<int>& number = this->engine.getNumberOld<int>(params[1]);
                 result[0] = number.getValue();
                 result[1] = number.getBmin();
@@ -131,7 +128,7 @@ void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
                 result[4] = number.getType();
                 
             }
-            catch(std::bad_variant_access){
+            catch(std::bad_variant_access){// Is a "real" number.
                 const C5Number<double>& number = this->engine.getNumberOld<double>(params[1]);
                 result[0] = number.getValue();
                 result[1] = number.getBmin();
@@ -141,7 +138,7 @@ void GetNumberOld::execute(XmlRpcValue& params, XmlRpcValue& result){
             }
         }
         else{
-            result = false;
+            result = false;     // Not valid user.
         }
     }
     else{
@@ -159,16 +156,15 @@ std::string GetStat::help(){
     return ayuda.str();
 }
 void GetStat::execute(XmlRpcValue& params, XmlRpcValue& result){
-    /*FALTA: Falta verificación del número de parámetros y verificación de tipos*/
-    if (params.size() == 1){
-        if(this->engine.userValidate(params[0])){
-            auto stat = this->engine.getStat();
+    if (params.size() == 1){ // User id only.
+        if(this->engine.userValidate(params[0])){ // Valid user.
+            auto stat = this->engine.getStat();   // Calculates de stats.
             result[0] = stat.getCount();
             result[1] = stat.getMean();
             result[2] = stat.getSum();
         }
         else{
-            result = false;
+            result = false; // Not valid user.
         }
     }
     else{
@@ -191,10 +187,11 @@ std::string GetNumberList::help(){
     return ayuda.str();
 }
 void GetNumberList::execute(XmlRpcValue& params, XmlRpcValue& result){
-    if (params.size() == 1){
-        if(this->engine.userValidate(params[0])){
+    if (params.size() == 1){ // User id only.
+        if(this->engine.userValidate(params[0])){ // Valid user.
+            // Obtains the requirement for the user
             const C5Requirement & list = this->engine.getNumberList();
-            for(int i = 0; i < list.getNumbersCount(); i++){
+            for(int i = 0; i < list.getNumbersCount(); i++){// Iterates over the list of nubers.
                 try{
                     const C5Number<int> & number = list.getNumber<int>(i + 1);
                     result[i][0] = number.getValue();
@@ -214,10 +211,12 @@ void GetNumberList::execute(XmlRpcValue& params, XmlRpcValue& result){
             }
             auto stamp = std::chrono::high_resolution_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::seconds>(stamp-list.getInitialTime());
-            result[result.size()] = std::to_string(duration.count());
+
+            // Appends the current time stamp to the result.
+            result[result.size()] = std::to_string(duration.count()); 
         }
         else{
-            result = false;
+            result = false; // Not valid user.
         }
     }
     else{
