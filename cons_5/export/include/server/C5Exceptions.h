@@ -1,3 +1,22 @@
+/**
+ * @file  C5Exceptions.h
+ * @brief Declaration of exception-related classes.
+ * 
+ * @details This file contains the declaration of custom exceptions classes.
+ * 
+ * Classes here declared:
+ * - C5Exception (Base Class)
+ * 
+ * - C5NumberException       (Derived class)
+ * - C5RequirementException  (Derived class)
+ * - C5NumberEngineException (Derived class)
+ * - ServerException         (Derived class)
+ * 
+ * @version 1.0
+ * @date    2023-11-15
+ * @author  Juan Manuel Borquez
+ * @contact borquez.juan00@gmail.com
+ */
 #ifndef _C5EXCEPTIONS_H
 #define _C5EXCEPTIONS_H
 
