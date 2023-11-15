@@ -3,7 +3,7 @@
 
 #include "C5Requirement.h"
 #include "C5Number.h"
-#include "Stats.h"
+#include "C5Stats.h"
 #include <string>
 #include <vector>
 #include <fstream>
@@ -80,7 +80,7 @@ public:
      *
      * @return A Stats object containing statistical information.
      */
-    Stats getStat() const;
+    C5Stats getStat() const;
 
     /**
      * @brief Retrieves the list of numbers for a requirement.

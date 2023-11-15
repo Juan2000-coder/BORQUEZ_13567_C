@@ -2,7 +2,7 @@
 #define _C5REQUIREMENT_H
 
 #include "C5Number.h"
-#include "Stats.h"
+#include "C5Stats.h"
 #include <vector>
 #include <variant>
 #include <string>
@@ -79,7 +79,7 @@ class C5Requirement {
      * @brief Gets the statistical information about the numbers associated with the requirement.
      * @return The statistical information.
      */
-    Stats getStats() const;
+    C5Stats getStats() const;
 
     /**
      * @brief Gets a specific number from the requirement by ordinal.

@@ -1,5 +1,5 @@
 #include "C5NumberEngine.h"
-#include <iostream>
+
 template<typename Type>
 const C5Number<Type> &C5NumberEngine::getNumberOld(int ordinal)const{
     //Throws a bad_access exception in case the Type is not the correct type.

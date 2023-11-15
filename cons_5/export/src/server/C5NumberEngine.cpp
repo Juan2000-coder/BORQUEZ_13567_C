@@ -68,7 +68,7 @@ double C5NumberEngine::getReal(){
     requirement.appendNumber<double>();
     return requirement.getNumber<double>().getValue();
 }
-Stats C5NumberEngine::getStat() const{
+C5Stats C5NumberEngine::getStat() const{
     auto requirement = this->requirements.at(this->requirementIndex);
     return requirement.getStats();
 }

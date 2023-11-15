@@ -37,7 +37,7 @@ long C5Requirement::getCurrentStamp() const{
     return timestamp;
 }
 
-Stats C5Requirement::getStats()const{
+C5Stats C5Requirement::getStats()const{
     double sum = 0;
     double mean = 0;
 
@@ -52,5 +52,5 @@ Stats C5Requirement::getStats()const{
         }
         mean = sum/this->numbers.size();
     }
-    return Stats(sum, mean, this->numbers.size());
+    return C5Stats(sum, mean, this->numbers.size());
 }

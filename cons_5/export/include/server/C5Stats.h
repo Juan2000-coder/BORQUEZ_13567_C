@@ -1,5 +1,5 @@
-#ifndef _STATS_H
-#define _STATS_H
+#ifndef _C5STATS_H
+#define _C5STATS_H
 
 /**
  * @brief Represents statistical information including sum, mean, and count.
@@ -7,7 +7,7 @@
  * This class encapsulates statistical information such as sum, mean, and count.
  * It provides methods to set and retrieve these statistical values.
  */
-class Stats {
+class C5Stats {
 public:
     /**
      * @brief Constructor to initialize statistical values.
@@ -18,7 +18,7 @@ public:
      * @param _mean  The mean value for the statistical information.
      * @param _count The count value for the statistical information.
      */
-    Stats(double _sum, double _mean, int _count):sum(_sum), mean(_mean), count(_count){};
+    C5Stats(double _sum, double _mean, int _count):sum(_sum), mean(_mean), count(_count){};
 
     /**
      * @brief Sets the sum value in the statistical information.
