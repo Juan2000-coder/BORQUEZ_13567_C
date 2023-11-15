@@ -22,7 +22,7 @@
 Para construir y ejecutar el *Generador de Números XML-RPC Server* y el *Cliente XML-RPC*, necesitarás lo siguiente:
 
 - Compilador de C++ que admita el estándar C++11.
-- CMake (versión 3.12 o superior).
+- GNU Make.
 
 
 ## Instrucciones de Instalación
