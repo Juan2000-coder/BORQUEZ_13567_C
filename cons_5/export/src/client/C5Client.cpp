@@ -1,3 +1,15 @@
+/**
+ * @file    C5Client.cpp
+ * @brief   Implementation of the C5Client class.
+ * 
+ * @details This file contains the implementation of the C5Client class methods.
+ * 
+ * @version 1.0
+ * @date    2023-11-15
+ * @author  Juan Manuel Borquez
+ * @contact borquez.juan00@gmail.com
+ */
+
 #include "C5Client.h"
 #include <iostream>
 
