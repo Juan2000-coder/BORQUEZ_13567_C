@@ -8,32 +8,108 @@
 #include <string>
 #include <chrono>
 
+/**
+ * @brief Represents a user requirement for generating and managing numbers.
+ *
+ * This class encapsulates user-specific requirements for generating and managing
+ * numbers. It includes methods for setting and retrieving user-related information,
+ * appending numbers to the requirement, and obtaining statistical information.
+ */
 class C5Requirement {
   public:
-    //constructor
+    /**
+     * @brief Default constructor for C5Requirement.
+     */
     C5Requirement();
+
+    /**
+     * @brief Constructor for C5Requirement with a specified user ID.
+     * @param userId The ID of the user associated with the requirement.
+     */
     C5Requirement(int userId);
 
-    //setters
+    /**
+     * @brief Sets the user ID associated with the requirement.
+     * @param id The user ID to be set.
+     */
     void setUserId(int id);
-    template <typename Type> void appendNumber();
-    template <typename Type> void appendNumber(Type bmin, Type bmax);
 
-    //getters
+    /**
+     * @brief Appends a number of the specified type to the requirement.
+     * @tparam Type The type of the number to be appended.
+     */
+    template <typename Type>
+    void appendNumber();
+
+    /**
+     * @brief Appends a number with specified boundaries to the requirement.
+     * @tparam Type The type of the number to be appended.
+     * @param bmin The minimum boundary for the number.
+     * @param bmax The maximum boundary for the number.
+     */
+    template <typename Type>
+    void appendNumber(Type bmin, Type bmax);
+
+    /**
+     * @brief Gets the user ID associated with the requirement.
+     * @return The user ID.
+     */
     int getUserId() const;
+
+    /**
+     * @brief Gets the initial time when the requirement was created.
+     * @return The initial time as a chrono time point.
+     */
     std::chrono::_V2::system_clock::time_point getInitialTime() const;
+
+    /**
+     * @brief Gets the current time stamp.
+     * @return The current time stamp.
+     */
     long getCurrentStamp() const;
+
+    /**
+     * @brief Gets the count of numbers associated with the requirement.
+     * @return The count of numbers.
+     */
     int getNumbersCount() const;
+
+    /**
+     * @brief Gets the statistical information about the numbers associated with the requirement.
+     * @return The statistical information.
+     */
     Stats getStats() const;
 
-    template<typename Type> const C5Number<Type> &getNumber(int ordinal) const;
-    template<typename Type> const C5Number<Type> &getNumber() const;
-    template<typename Type> const C5Number<Type> &getRecent() const;
+    /**
+     * @brief Gets a specific number from the requirement by ordinal.
+     * @tparam Type The type of the number to be retrieved.
+     * @param ordinal The ordinal position of the number.
+     * @return The C5Number object.
+     */
+    template<typename Type>
+    const C5Number<Type> &getNumber(int ordinal) const;
+
+    /**
+     * @brief Gets a specific number from the requirement.
+     * @tparam Type The type of the number to be retrieved.
+     * @return The C5Number object.
+     */
+    template<typename Type>
+    const C5Number<Type> &getNumber() const;
+
+    /**
+     * @brief Gets the most recently appended number from the requirement.
+     * @tparam Type The type of the number to be retrieved.
+     * @return The C5Number object.
+     */
+    template<typename Type>
+    const C5Number<Type> &getRecent() const;
 
   private:
-    int userId;
-    std::chrono::_V2::system_clock::time_point initialTime;
-    std::vector<std::variant<C5Number<int>, C5Number<double>>>numbers;
+    int userId; ///< The user ID associated with the requirement.
+    std::chrono::_V2::system_clock::time_point initialTime; ///< The initial time when the requirement was created.
+    std::vector<std::variant<C5Number<int>, C5Number<double>>> numbers; ///< Vector to store both "real" and "integer" numbers.
 };
+
 #include "C5Requirement.t.hpp"
 #endif
