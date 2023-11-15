@@ -1,3 +1,15 @@
+/**
+ * @file    C5Server.h
+ * @brief   Header file for the C5Server class and related classes.
+ * 
+ * @details This file declares the C5Server class and
+ *          the XmlRpcServerMethods classes.
+ * 
+ * @version 1.0
+ * @date    2023-11-15
+ * @author  Juan Manuel Borquez
+ * @contact borquez.juan00@gmail.com
+ */
 #ifndef _C5SERVER_H
 #define _C5SERVER_H
 
