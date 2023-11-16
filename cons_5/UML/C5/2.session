@@ -1,12 +1,20 @@
-window_sizes 1280 637 371 904 591 0
+window_sizes 1280 637 400 875 591 0
 
+diagrams
+  classdiagram_ref 128002 // client
+    723 472 110 A4 0 0
+  active  classdiagram_ref 128130 // server
+    875 591 75 D 0 123
+  classdiagram_ref 128258 // C5consigna
+    114 86 90 A-Landscape 16 0
+  classdiagram_ref 128386 // excepciones
+    114 86 80 B-Landscape 247 0
+  classdiagram_ref 128514 // C5Server
+    114 86 90 B 0 0
+end
 show_stereotypes
-selected classdiagram_ref 128002 // client
-open
-  classview_ref 128002 // client
-  
-  package_ref 128130 // xmlrpc
-  
+selected 
   package_ref 128258 // server
+open
 end
 end

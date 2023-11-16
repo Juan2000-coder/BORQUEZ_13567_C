@@ -1,6 +1,6 @@
 format 224
 "server" // server
-  revision 1
+  revision 2
   modified_by 2 "Juan"
   // class settings
   
@@ -110,7 +110,7 @@ ${items}};
 	
 	
 	
-	comment "(NOID) No Identified"
+	comment "(NOID) No Identified"
       end
 
       operation 129666 "C5Exceptions"
@@ -196,7 +196,7 @@ ${items}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment " Exception message."
+	comment " Exception message."
       end
 
       attribute 128642 "code"
@@ -209,7 +209,7 @@ ${items}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment " Exception code."
+	comment " Exception code."
       end
     end
 
@@ -727,7 +727,7 @@ Initializes a C5Number instance with the provided bounds, ordinal, and timestamp
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< Ordinal value of the C5Number."
+	comment "/< Ordinal value of the C5Number."
       end
 
       attribute 129794 "type"
@@ -740,7 +740,7 @@ Initializes a C5Number instance with the provided bounds, ordinal, and timestamp
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< Data type of the C5Number (\"entero\" o \"real\")."
+	comment "/< Data type of the C5Number (\"entero\" o \"real\")."
       end
 
       attribute 129922 "value"
@@ -753,7 +753,7 @@ Initializes a C5Number instance with the provided bounds, ordinal, and timestamp
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< Numeric value of the C5Number."
+	comment "/< Numeric value of the C5Number."
       end
 
       attribute 130050 "bmin"
@@ -766,7 +766,7 @@ Initializes a C5Number instance with the provided bounds, ordinal, and timestamp
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< Minimum bound of the C5Number."
+	comment "/< Minimum bound of the C5Number."
       end
 
       attribute 130178 "bmax"
@@ -779,7 +779,7 @@ Initializes a C5Number instance with the provided bounds, ordinal, and timestamp
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< Maximum bound of the C5Number."
+	comment "/< Maximum bound of the C5Number."
       end
 
       attribute 130306 "time"
@@ -792,7 +792,7 @@ Initializes a C5Number instance with the provided bounds, ordinal, and timestamp
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< Timestamp associated with the C5Number."
+	comment "/< Timestamp associated with the C5Number."
       end
 
       classrelation 134914 // <aggregation>
@@ -1031,7 +1031,7 @@ the sum of the numbers and the mean of the numbers.
 	relation 128770 *-->
 	  stereotype "std::vector"
 	  a role_name "requirements" private
-	    comment "/< Vector to store requirements."
+	    comment "/< Vector to store requirements."
 	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
 "
 	    classrelation_ref 128770 // requirements (<directional composition>)
@@ -1048,7 +1048,7 @@ the sum of the numbers and the mean of the numbers.
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< File path for storing valid user information."
+	comment "/< File path for storing valid user information."
       end
 
       attribute 130562 "requirementIndex"
@@ -1061,7 +1061,7 @@ the sum of the numbers and the mean of the numbers.
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< Index to keep track the current requirement."
+	comment "/< Index to keep track the current requirement."
       end
 
       classrelation 135938 // <unidirectional association>
@@ -1247,7 +1247,7 @@ ${body}}
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< The sum value in the statistical information."
+	comment "/< The sum value in the statistical information."
       end
 
       attribute 131202 "mean"
@@ -1260,7 +1260,7 @@ ${body}}
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< The mean value in the statistical information."
+	comment "/< The mean value in the statistical information."
       end
 
       attribute 131330 "count"
@@ -1273,7 +1273,7 @@ ${body}}
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< The count value in the statistical information."
+	comment "/< The count value in the statistical information."
       end
     end
 
@@ -1565,7 +1565,7 @@ or throws and exception if there's no match in the Type.
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< The user ID associated with the requirement."
+	comment "/< The user ID associated with the requirement."
       end
 
       attribute 130818 "initialTime"
@@ -1578,7 +1578,7 @@ or throws and exception if there's no match in the Type.
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< The initial time when the requirement was created."
+	comment "/< The initial time when the requirement was created."
       end
 
       attribute 130946 "numbers"
@@ -1592,7 +1592,7 @@ or throws and exception if there's no match in the Type.
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< Vector to store both \"real\" and \"integer\" numbers."
+	comment "/< Vector to store both \"real\" and \"integer\" numbers."
       end
 
       classrelation 135042 // <aggregation>
@@ -2148,7 +2148,7 @@ It uses the C5NumberEngine for processing these requests.
 	
 	
 	
-	comment "Constructor"
+	comment "Constructor"
       end
 
       classrelation 130690 // userValidate (<directional composition>)
@@ -2312,13 +2312,13 @@ handling specific to C5.
     end
 
     classdiagram 128130 "server"
-      classdiagramsettings hide_getset_operations yes show_members_full_definition no show_members_visibility yes show_members_stereotype yes member_max_width 0 end
+      classdiagramsettings draw_all_relations no hide_getset_operations yes show_members_full_definition no show_members_visibility yes show_members_stereotype yes member_max_width 0 end
       size D
     end
 
     classdiagram 128258 "C5consigna"
-      classdiagramsettings draw_all_relations no hide_getset_operations yes show_members_visibility yes show_members_stereotype yes member_max_width 0 end
-      size A4
+      classdiagramsettings draw_all_relations no hide_getset_operations yes show_members_full_definition yes show_members_visibility yes show_members_stereotype yes member_max_width 0 end
+      size A-Landscape
     end
 
     classdiagram 128386 "excepciones"

@@ -1,0 +1,392 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{ratondbiblioteca-ebc}{online}{}
+      \name{author}{1}{}{%
+        {{hash=9fe6a4e92c32ed42f7ef1b0157a4cf89}{%
+           family={Biblioteca},
+           familyi={B\bibinitperiod},
+           given={Ratón},
+           giveni={R\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \strng{namehash}{9fe6a4e92c32ed42f7ef1b0157a4cf89}
+      \strng{fullhash}{9fe6a4e92c32ed42f7ef1b0157a4cf89}
+      \strng{bibnamehash}{9fe6a4e92c32ed42f7ef1b0157a4cf89}
+      \strng{authorbibnamehash}{9fe6a4e92c32ed42f7ef1b0157a4cf89}
+      \strng{authornamehash}{9fe6a4e92c32ed42f7ef1b0157a4cf89}
+      \strng{authorfullhash}{9fe6a4e92c32ed42f7ef1b0157a4cf89}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{El Bibliotecario: Enciclopedia de C y C++}
+      \verb{urlraw}
+      \verb https://www.ratondbiblioteca.com/ebc
+      \endverb
+      \verb{url}
+      \verb https://www.ratondbiblioteca.com/ebc
+      \endverb
+    \endentry
+    \entry{microsoft-commtimeouts}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7f9051f65ec30f927c6348e15a2dd4c8}{%
+           family={Docs},
+           familyi={D\bibinitperiod},
+           given={Microsoft},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{fullhash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{bibnamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authorbibnamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authornamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authorfullhash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \field{extraname}{1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{COMMTIMEOUTS structure}
+      \verb{urlraw}
+      \verb https://learn.microsoft.com/en-us/windows/win32/api/winbase/ns-winbase-commtimeouts
+      \endverb
+      \verb{url}
+      \verb https://learn.microsoft.com/en-us/windows/win32/api/winbase/ns-winbase-commtimeouts
+      \endverb
+    \endentry
+    \entry{microsoft-getcommtimeouts}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7f9051f65ec30f927c6348e15a2dd4c8}{%
+           family={Docs},
+           familyi={D\bibinitperiod},
+           given={Microsoft},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{fullhash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{bibnamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authorbibnamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authornamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authorfullhash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{GetCommTimeouts function}
+      \verb{urlraw}
+      \verb https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcommtimeouts
+      \endverb
+      \verb{url}
+      \verb https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcommtimeouts
+      \endverb
+    \endentry
+    \entry{microsoft-fileio}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7f9051f65ec30f927c6348e15a2dd4c8}{%
+           family={Docs},
+           familyi={D\bibinitperiod},
+           given={Microsoft},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{fullhash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{bibnamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authorbibnamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authornamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authorfullhash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \field{extraname}{3}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Opening a File for Reading or Writing}
+      \verb{urlraw}
+      \verb https://learn.microsoft.com/en-us/windows/win32/fileio/opening-a-file-for-reading-or-writing
+      \endverb
+      \verb{url}
+      \verb https://learn.microsoft.com/en-us/windows/win32/fileio/opening-a-file-for-reading-or-writing
+      \endverb
+    \endentry
+    \entry{microsoft-readfile}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7f9051f65ec30f927c6348e15a2dd4c8}{%
+           family={Docs},
+           familyi={D\bibinitperiod},
+           given={Microsoft},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{fullhash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{bibnamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authorbibnamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authornamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authorfullhash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \field{extraname}{4}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{ReadFile function}
+      \verb{urlraw}
+      \verb https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-readfile
+      \endverb
+      \verb{url}
+      \verb https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-readfile
+      \endverb
+    \endentry
+    \entry{microsoft-setcommtimeouts}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7f9051f65ec30f927c6348e15a2dd4c8}{%
+           family={Docs},
+           familyi={D\bibinitperiod},
+           given={Microsoft},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{fullhash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{bibnamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authorbibnamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authornamehash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \strng{authorfullhash}{7f9051f65ec30f927c6348e15a2dd4c8}
+      \field{extraname}{5}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{SetCommTimeouts function}
+      \verb{urlraw}
+      \verb https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setcommtimeouts
+      \endverb
+      \verb{url}
+      \verb https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setcommtimeouts
+      \endverb
+    \endentry
+    \entry{python-csv-doc}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b5974a957ed1e1804ac85e61d4114275}{%
+           family={Documentation},
+           familyi={D\bibinitperiod},
+           given={Python\bibnamedelima Official},
+           giveni={P\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+      }
+      \strng{namehash}{b5974a957ed1e1804ac85e61d4114275}
+      \strng{fullhash}{b5974a957ed1e1804ac85e61d4114275}
+      \strng{bibnamehash}{b5974a957ed1e1804ac85e61d4114275}
+      \strng{authorbibnamehash}{b5974a957ed1e1804ac85e61d4114275}
+      \strng{authornamehash}{b5974a957ed1e1804ac85e61d4114275}
+      \strng{authorfullhash}{b5974a957ed1e1804ac85e61d4114275}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{CSV File Reading and Writing}
+      \verb{urlraw}
+      \verb https://docs.python.org/es/3/library/csv.html
+      \endverb
+      \verb{url}
+      \verb https://docs.python.org/es/3/library/csv.html
+      \endverb
+    \endentry
+    \entry{geeksforgeeks-file-handling}{online}{}
+      \name{author}{1}{}{%
+        {{hash=f1e069787ece74531d112559945c6871}{%
+           family={GeeksforGeeks},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{f1e069787ece74531d112559945c6871}
+      \strng{fullhash}{f1e069787ece74531d112559945c6871}
+      \strng{bibnamehash}{f1e069787ece74531d112559945c6871}
+      \strng{authorbibnamehash}{f1e069787ece74531d112559945c6871}
+      \strng{authornamehash}{f1e069787ece74531d112559945c6871}
+      \strng{authorfullhash}{f1e069787ece74531d112559945c6871}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{File Handling in C++}
+      \verb{urlraw}
+      \verb https://www.geeksforgeeks.org/file-handling-c-classes/
+      \endverb
+      \verb{url}
+      \verb https://www.geeksforgeeks.org/file-handling-c-classes/
+      \endverb
+    \endentry
+    \entry{miro-diagrama-uml}{online}{}
+      \name{author}{1}{}{%
+        {{hash=902970ad35f67070d4a8d72f018856a5}{%
+           family={Miro},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{902970ad35f67070d4a8d72f018856a5}
+      \strng{fullhash}{902970ad35f67070d4a8d72f018856a5}
+      \strng{bibnamehash}{902970ad35f67070d4a8d72f018856a5}
+      \strng{authorbibnamehash}{902970ad35f67070d4a8d72f018856a5}
+      \strng{authornamehash}{902970ad35f67070d4a8d72f018856a5}
+      \strng{authorfullhash}{902970ad35f67070d4a8d72f018856a5}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{¿Qué es un diagrama UML?}
+      \verb{urlraw}
+      \verb https://miro.com/es/diagrama/que-es-diagrama-uml/
+      \endverb
+      \verb{url}
+      \verb https://miro.com/es/diagrama/que-es-diagrama-uml/
+      \endverb
+    \endentry
+    \entry{mygreatlearning-file-handling}{online}{}
+      \name{author}{1}{}{%
+        {{hash=1b5f6f2b6db3a524d00591ecf68c3e13}{%
+           family={MyGreatLearning},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1b5f6f2b6db3a524d00591ecf68c3e13}
+      \strng{fullhash}{1b5f6f2b6db3a524d00591ecf68c3e13}
+      \strng{bibnamehash}{1b5f6f2b6db3a524d00591ecf68c3e13}
+      \strng{authorbibnamehash}{1b5f6f2b6db3a524d00591ecf68c3e13}
+      \strng{authornamehash}{1b5f6f2b6db3a524d00591ecf68c3e13}
+      \strng{authorfullhash}{1b5f6f2b6db3a524d00591ecf68c3e13}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{File Handling in C++}
+      \verb{urlraw}
+      \verb https://www.mygreatlearning.com/blog/file-handling-in-cpp/
+      \endverb
+      \verb{url}
+      \verb https://www.mygreatlearning.com/blog/file-handling-in-cpp/
+      \endverb
+    \endentry
+    \entry{upv-uml}{online}{}
+      \name{author}{1}{}{%
+        {{hash=c56c721b7cd5011b8f6b584eb9291d5b}{%
+           family={País\bibnamedelima Vasco},
+           familyi={P\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={Universidad},
+           giveni={U\bibinitperiod},
+           prefix={del},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \strng{namehash}{c56c721b7cd5011b8f6b584eb9291d5b}
+      \strng{fullhash}{c56c721b7cd5011b8f6b584eb9291d5b}
+      \strng{bibnamehash}{c56c721b7cd5011b8f6b584eb9291d5b}
+      \strng{authorbibnamehash}{c56c721b7cd5011b8f6b584eb9291d5b}
+      \strng{authornamehash}{c56c721b7cd5011b8f6b584eb9291d5b}
+      \strng{authorfullhash}{c56c721b7cd5011b8f6b584eb9291d5b}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Introducción a UML}
+      \verb{urlraw}
+      \verb http://www.vc.ehu.es/jiwotvim/IngenieriaSoftware/Teoria/BloqueII/UML-3.pdf
+      \endverb
+      \verb{url}
+      \verb http://www.vc.ehu.es/jiwotvim/IngenieriaSoftware/Teoria/BloqueII/UML-3.pdf
+      \endverb
+    \endentry
+    \entry{realpython-csv}{online}{}
+      \name{author}{1}{}{%
+        {{hash=63d3284055f00b0562e3fc54273a2507}{%
+           family={Python},
+           familyi={P\bibinitperiod},
+           given={Real},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{63d3284055f00b0562e3fc54273a2507}
+      \strng{fullhash}{63d3284055f00b0562e3fc54273a2507}
+      \strng{bibnamehash}{63d3284055f00b0562e3fc54273a2507}
+      \strng{authorbibnamehash}{63d3284055f00b0562e3fc54273a2507}
+      \strng{authornamehash}{63d3284055f00b0562e3fc54273a2507}
+      \strng{authorfullhash}{63d3284055f00b0562e3fc54273a2507}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Reading and Writing CSV Files in Python}
+      \verb{urlraw}
+      \verb https://realpython.com/python-csv/
+      \endverb
+      \verb{url}
+      \verb https://realpython.com/python-csv/
+      \endverb
+    \endentry
+    \entry{rishabhpandey-youtube}{online}{}
+      \name{author}{1}{}{%
+        {{hash=3dfab52e3bc186c49764a209013720b2}{%
+           family={RishabhPandey},
+           familyi={R\bibinitperiod},
+           given={YouTube\bibnamedelima -},
+           giveni={Y\bibinitperiod\bibinitdelim \bibinithyphendelim \bibinitperiod}}}%
+      }
+      \strng{namehash}{3dfab52e3bc186c49764a209013720b2}
+      \strng{fullhash}{3dfab52e3bc186c49764a209013720b2}
+      \strng{bibnamehash}{3dfab52e3bc186c49764a209013720b2}
+      \strng{authorbibnamehash}{3dfab52e3bc186c49764a209013720b2}
+      \strng{authornamehash}{3dfab52e3bc186c49764a209013720b2}
+      \strng{authorfullhash}{3dfab52e3bc186c49764a209013720b2}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{File Handling in C++}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=x_5g8-i7rlw&ab_channel=RishabhPandey
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=x_5g8-i7rlw&ab_channel=RishabhPandey
+      \endverb
+    \endentry
+    \entry{rmb1905-youtube}{online}{}
+      \name{author}{1}{}{%
+        {{hash=fbe7fe8302af849227da6bc375498efb}{%
+           family={rmb1905},
+           familyi={r\bibinitperiod},
+           given={YouTube\bibnamedelima -},
+           giveni={Y\bibinitperiod\bibinitdelim \bibinithyphendelim \bibinitperiod}}}%
+      }
+      \strng{namehash}{fbe7fe8302af849227da6bc375498efb}
+      \strng{fullhash}{fbe7fe8302af849227da6bc375498efb}
+      \strng{bibnamehash}{fbe7fe8302af849227da6bc375498efb}
+      \strng{authorbibnamehash}{fbe7fe8302af849227da6bc375498efb}
+      \strng{authornamehash}{fbe7fe8302af849227da6bc375498efb}
+      \strng{authorfullhash}{fbe7fe8302af849227da6bc375498efb}
+      \field{sortinit}{r}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{File Handling in C++}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=OhAqfaaZpes&ab_channel=rmb1905
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=OhAqfaaZpes&ab_channel=rmb1905
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

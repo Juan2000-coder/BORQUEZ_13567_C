@@ -1,7 +1,11 @@
 window_sizes 1362 705 115 1242 605 54
 
+diagrams
+  active  classdiagram_ref 128002 // Diagrama de clases
+    1084 565 100 A4 0 0
+end
 show_stereotypes
-selected class_ref 128514 // C4File
+selected classdiagram_ref 128002 // Diagrama de clases
 open
   class_ref 128770 // asciiGenerator
 end

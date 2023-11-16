@@ -1,6 +1,6 @@
 format 224
 "client" // client
-  revision 1
+  revision 2
   modified_by 2 "Juan"
   // class settings
   
@@ -239,7 +239,7 @@ ${inlines}
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-	comment "/< Map associating method names with descriptions."
+	comment "/< Map associating method names with descriptions."
       end
 
       classrelation 134658 // <dependency>
