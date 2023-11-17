@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.16)  16 NOV 2023 00:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.16)  16 NOV 2023 23:19
 entering extended mode
 **c:/Users/Public/Documents/UNCUYO/4-Cuarto_anio/2-Octavo_Semestre/2-Programacion_Orientada_a_Objetos/3-Trabajos_Practicos/1-TP1/BORQUEZ_13567_C/BORQUEZ_13567_C/informe/Informe_Trabajo_Practico-Borquez_Juan.tex
 (c:/Users/Public/Documents/UNCUYO/4-Cuarto_anio/2-Octavo_Semestre/2-Programacion_Orientada_a_Objetos/3-Trabajos_Practicos/1-TP1/BORQUEZ_13567_C/BORQUEZ_13567_C/informe/Informe_Trabajo_Practico-Borquez_Juan.tex
@@ -708,11 +708,11 @@ File: ./img/año.PNG Graphic file (type png)
 Package pdftex.def Info: ./img/año.PNG  used on input line 181.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
 [5]
-<./img/C5/Esquema_general_C5_cliente_panel.PNG, id=143, 277.035pt x 111.41624pt>
-File: ./img/C5/Esquema_general_C5_cliente_panel.PNG Graphic file (type png)
-<use ./img/C5/Esquema_general_C5_cliente_panel.PNG>
-Package pdftex.def Info: ./img/C5/Esquema_general_C5_cliente_panel.PNG  used on input line 206.
-(pdftex.def)             Requested size: 227.62206pt x 91.54381pt.
+<./img/C5/Esquema_general_C5_cliente.PNG, id=143, 442.65375pt x 363.60844pt>
+File: ./img/C5/Esquema_general_C5_cliente.PNG Graphic file (type png)
+<use ./img/C5/Esquema_general_C5_cliente.PNG>
+Package pdftex.def Info: ./img/C5/Esquema_general_C5_cliente.PNG  used on input line 206.
+(pdftex.def)             Requested size: 455.24411pt x 373.97159pt.
 File: ./img/escudo.PNG Graphic file (type png)
 <use ./img/escudo.PNG>
 Package pdftex.def Info: ./img/escudo.PNG  used on input line 209.
@@ -730,53 +730,51 @@ File: ./img/año.PNG Graphic file (type png)
 Package pdftex.def Info: ./img/año.PNG  used on input line 209.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
 [6 <./img/C4/Esquema_general_C4.PNG>]
-<./img/C5/Esquema_general_C5_server_todo.PNG, id=159, 481.04718pt x 417.05812pt>
-File: ./img/C5/Esquema_general_C5_server_todo.PNG Graphic file (type png)
-<use ./img/C5/Esquema_general_C5_server_todo.PNG>
-Package pdftex.def Info: ./img/C5/Esquema_general_C5_server_todo.PNG  used on input line 213.
-(pdftex.def)             Requested size: 455.24411pt x 394.69475pt.
+<./img/C5/Esquema_general_C5_cliente_panel.PNG, id=159, 277.035pt x 111.41624pt>
 File: ./img/C5/Esquema_general_C5_cliente_panel.PNG Graphic file (type png)
 <use ./img/C5/Esquema_general_C5_cliente_panel.PNG>
-Package pdftex.def Info: ./img/C5/Esquema_general_C5_cliente_panel.PNG  used on input line 220.
+Package pdftex.def Info: ./img/C5/Esquema_general_C5_cliente_panel.PNG  used on input line 213.
 (pdftex.def)             Requested size: 227.62206pt x 91.54381pt.
-<./img/C5/Esquema_general_C5_server_panel.PNG, id=160, 244.66406pt x 387.69844pt>
+<./img/C5/Esquema_general_C5_server_todo.PNG, id=160, 481.04718pt x 417.05812pt>
+File: ./img/C5/Esquema_general_C5_server_todo.PNG Graphic file (type png)
+<use ./img/C5/Esquema_general_C5_server_todo.PNG>
+Package pdftex.def Info: ./img/C5/Esquema_general_C5_server_todo.PNG  used on input line 220.
+(pdftex.def)             Requested size: 455.24411pt x 394.69475pt.
+<./img/C5/Esquema_general_C5_server_panel.PNG, id=161, 244.66406pt x 387.69844pt>
 File: ./img/C5/Esquema_general_C5_server_panel.PNG Graphic file (type png)
 <use ./img/C5/Esquema_general_C5_server_panel.PNG>
 Package pdftex.def Info: ./img/C5/Esquema_general_C5_server_panel.PNG  used on input line 227.
 (pdftex.def)             Requested size: 227.62206pt x 360.7037pt.
-<./img/C5/Esquema_general_C5_server_consigna.PNG, id=161, 742.27313pt x 377.15906pt>
+<./img/C5/Esquema_general_C5_server_consigna.PNG, id=162, 742.27313pt x 377.15906pt>
 File: ./img/C5/Esquema_general_C5_server_consigna.PNG Graphic file (type png)
 <use ./img/C5/Esquema_general_C5_server_consigna.PNG>
 Package pdftex.def Info: ./img/C5/Esquema_general_C5_server_consigna.PNG  used on input line 234.
 (pdftex.def)             Requested size: 455.24411pt x 231.32127pt.
-<./img/C5/Esquema_general_C5_server_excepciones_1.PNG, id=162, 664.73344pt x 386.19281pt>
+<./img/C5/Esquema_general_C5_server_excepciones_1.PNG, id=163, 664.73344pt x 386.19281pt>
 File: ./img/C5/Esquema_general_C5_server_excepciones_1.PNG Graphic file (type png)
 <use ./img/C5/Esquema_general_C5_server_excepciones_1.PNG>
 Package pdftex.def Info: ./img/C5/Esquema_general_C5_server_excepciones_1.PNG  used on input line 241.
 (pdftex.def)             Requested size: 455.24411pt x 264.48743pt.
-<./img/C5/Esquema_general_C5_server_excepciones_2.PNG, id=163, 657.95813pt x 375.65344pt>
+<./img/C5/Esquema_general_C5_server_excepciones_2.PNG, id=164, 657.95813pt x 375.65344pt>
 File: ./img/C5/Esquema_general_C5_server_excepciones_2.PNG Graphic file (type png)
 <use ./img/C5/Esquema_general_C5_server_excepciones_2.PNG>
 Package pdftex.def Info: ./img/C5/Esquema_general_C5_server_excepciones_2.PNG  used on input line 248.
 (pdftex.def)             Requested size: 455.24411pt x 259.92337pt.
-<./img/C5/Esquema_general_C5_server_server_1.PNG, id=164, 565.36218pt x 401.24907pt>
+<./img/C5/Esquema_general_C5_server_server_1.PNG, id=165, 565.36218pt x 401.24907pt>
 File: ./img/C5/Esquema_general_C5_server_server_1.PNG Graphic file (type png)
 <use ./img/C5/Esquema_general_C5_server_server_1.PNG>
 Package pdftex.def Info: ./img/C5/Esquema_general_C5_server_server_1.PNG  used on input line 255.
 (pdftex.def)             Requested size: 455.24411pt x 323.09972pt.
-<./img/C5/Esquema_general_C5_server_server_2.PNG, id=165, 546.54187pt x 332.74312pt>
+<./img/C5/Esquema_general_C5_server_server_2.PNG, id=166, 546.54187pt x 332.74312pt>
 File: ./img/C5/Esquema_general_C5_server_server_2.PNG Graphic file (type png)
 <use ./img/C5/Esquema_general_C5_server_server_2.PNG>
 Package pdftex.def Info: ./img/C5/Esquema_general_C5_server_server_2.PNG  used on input line 262.
 (pdftex.def)             Requested size: 455.24411pt x 277.1617pt.
-
-
-LaTeX Warning: Reference `anexo:diagramas_clases' on page 7 undefined on input line 267.
-
 File: ./img/escudo.PNG Graphic file (type png)
 <use ./img/escudo.PNG>
-Package pdftex.def Info: ./img/escudo.PNG  used on input line 270.
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 267.
 (pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
+
 
 Package fancyhdr Warning: \headheight is too small (30.0pt): 
 (fancyhdr)                Make it at least 38.07542pt, for example:
@@ -786,12 +784,12 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 File: ./img/año.PNG Graphic file (type png)
 <use ./img/año.PNG>
-Package pdftex.def Info: ./img/año.PNG  used on input line 270.
+Package pdftex.def Info: ./img/año.PNG  used on input line 267.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
-[7 <./img/C5/Esquema_general_C5_cliente_panel.PNG>]
+[7 <./img/C5/Esquema_general_C5_cliente.PNG>]
 File: ./img/escudo.PNG Graphic file (type png)
 <use ./img/escudo.PNG>
-Package pdftex.def Info: ./img/escudo.PNG  used on input line 270.
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 267.
 (pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
 
 
@@ -803,12 +801,12 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 File: ./img/año.PNG Graphic file (type png)
 <use ./img/año.PNG>
-Package pdftex.def Info: ./img/año.PNG  used on input line 270.
+Package pdftex.def Info: ./img/año.PNG  used on input line 267.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
-[8 <./img/C5/Esquema_general_C5_server_todo.PNG>]
+[8 <./img/C5/Esquema_general_C5_cliente_panel.PNG> <./img/C5/Esquema_general_C5_server_todo.PNG>]
 File: ./img/escudo.PNG Graphic file (type png)
 <use ./img/escudo.PNG>
-Package pdftex.def Info: ./img/escudo.PNG  used on input line 270.
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 267.
 (pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
 
 
@@ -820,12 +818,12 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 File: ./img/año.PNG Graphic file (type png)
 <use ./img/año.PNG>
-Package pdftex.def Info: ./img/año.PNG  used on input line 270.
+Package pdftex.def Info: ./img/año.PNG  used on input line 267.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
 [9 <./img/C5/Esquema_general_C5_server_panel.PNG> <./img/C5/Esquema_general_C5_server_consigna.PNG>]
 File: ./img/escudo.PNG Graphic file (type png)
 <use ./img/escudo.PNG>
-Package pdftex.def Info: ./img/escudo.PNG  used on input line 270.
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 267.
 (pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
 
 
@@ -837,12 +835,12 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 File: ./img/año.PNG Graphic file (type png)
 <use ./img/año.PNG>
-Package pdftex.def Info: ./img/año.PNG  used on input line 270.
+Package pdftex.def Info: ./img/año.PNG  used on input line 267.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
 [10 <./img/C5/Esquema_general_C5_server_excepciones_1.PNG> <./img/C5/Esquema_general_C5_server_excepciones_2.PNG>]
 File: ./img/escudo.PNG Graphic file (type png)
 <use ./img/escudo.PNG>
-Package pdftex.def Info: ./img/escudo.PNG  used on input line 270.
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 267.
 (pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
 
 
@@ -854,61 +852,34 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 File: ./img/año.PNG Graphic file (type png)
 <use ./img/año.PNG>
-Package pdftex.def Info: ./img/año.PNG  used on input line 270.
+Package pdftex.def Info: ./img/año.PNG  used on input line 267.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
 [11 <./img/C5/Esquema_general_C5_server_server_1.PNG> <./img/C5/Esquema_general_C5_server_server_2.PNG>]
-<./img/C4/S1_C4.PNG, id=194, 545.03625pt x 243.91125pt>
+<./img/C4/S1_C4.PNG, id=196, 545.03625pt x 243.91125pt>
 File: ./img/C4/S1_C4.PNG Graphic file (type png)
 <use ./img/C4/S1_C4.PNG>
-Package pdftex.def Info: ./img/C4/S1_C4.PNG  used on input line 279.
+Package pdftex.def Info: ./img/C4/S1_C4.PNG  used on input line 277.
 (pdftex.def)             Requested size: 545.03493pt x 243.91064pt.
-<./img/C4/S2_C4.PNG, id=195, 672.26157pt x 433.62pt>
+<./img/C4/S2_C4.PNG, id=197, 672.26157pt x 433.62pt>
 File: ./img/C4/S2_C4.PNG Graphic file (type png)
 <use ./img/C4/S2_C4.PNG>
-Package pdftex.def Info: ./img/C4/S2_C4.PNG  used on input line 282.
+Package pdftex.def Info: ./img/C4/S2_C4.PNG  used on input line 280.
 (pdftex.def)             Requested size: 672.25992pt x 433.61894pt.
-<./img/C4/S3_C4.PNG, id=196, 492.33937pt x 453.19313pt>
+<./img/C4/S3_C4.PNG, id=198, 492.33937pt x 453.19313pt>
 File: ./img/C4/S3_C4.PNG Graphic file (type png)
 <use ./img/C4/S3_C4.PNG>
-Package pdftex.def Info: ./img/C4/S3_C4.PNG  used on input line 289.
+Package pdftex.def Info: ./img/C4/S3_C4.PNG  used on input line 287.
 (pdftex.def)             Requested size: 492.33815pt x 453.19202pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./img/C4/S4_C4.PNG, id=197, 492.33937pt x 344.78813pt>
+<./img/C4/S4_C4.PNG, id=199, 492.33937pt x 344.78813pt>
 File: ./img/C4/S4_C4.PNG Graphic file (type png)
 <use ./img/C4/S4_C4.PNG>
-Package pdftex.def Info: ./img/C4/S4_C4.PNG  used on input line 294.
+Package pdftex.def Info: ./img/C4/S4_C4.PNG  used on input line 292.
 (pdftex.def)             Requested size: 492.33815pt x 344.78728pt.
-<./img/C4/S5_C4.PNG, id=198, 514.17094pt x 522.45187pt>
-File: ./img/C4/S5_C4.PNG Graphic file (type png)
-<use ./img/C4/S5_C4.PNG>
-Package pdftex.def Info: ./img/C4/S5_C4.PNG  used on input line 300.
-(pdftex.def)             Requested size: 514.1697pt x 522.45059pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./img/C4/S6_C4.PNG, id=199, 515.67656pt x 523.9575pt>
-File: ./img/C4/S6_C4.PNG Graphic file (type png)
-<use ./img/C4/S6_C4.PNG>
-Package pdftex.def Info: ./img/C4/S6_C4.PNG  used on input line 305.
-(pdftex.def)             Requested size: 515.6753pt x 523.95622pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./img/C4/S7_C4.PNG, id=200, 455.45157pt x 209.28188pt>
-File: ./img/C4/S7_C4.PNG Graphic file (type png)
-<use ./img/C4/S7_C4.PNG>
-Package pdftex.def Info: ./img/C4/S7_C4.PNG  used on input line 310.
-(pdftex.def)             Requested size: 455.45045pt x 209.28134pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 File: ./img/escudo.PNG Graphic file (type png)
 <use ./img/escudo.PNG>
-Package pdftex.def Info: ./img/escudo.PNG  used on input line 355.
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 295.
 (pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
+
 
 Package fancyhdr Warning: \headheight is too small (30.0pt): 
 (fancyhdr)                Make it at least 38.07542pt, for example:
@@ -918,12 +889,12 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 File: ./img/año.PNG Graphic file (type png)
 <use ./img/año.PNG>
-Package pdftex.def Info: ./img/año.PNG  used on input line 355.
+Package pdftex.def Info: ./img/año.PNG  used on input line 295.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
 [12 <./img/C4/S1_C4.PNG> <./img/C4/S2_C4.PNG>]
 File: ./img/escudo.PNG Graphic file (type png)
 <use ./img/escudo.PNG>
-Package pdftex.def Info: ./img/escudo.PNG  used on input line 363.
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 295.
 (pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
 
 
@@ -935,12 +906,12 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 File: ./img/año.PNG Graphic file (type png)
 <use ./img/año.PNG>
-Package pdftex.def Info: ./img/año.PNG  used on input line 363.
+Package pdftex.def Info: ./img/año.PNG  used on input line 295.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
 [13 <./img/C4/S3_C4.PNG>]
 File: ./img/escudo.PNG Graphic file (type png)
 <use ./img/escudo.PNG>
-Package pdftex.def Info: ./img/escudo.PNG  used on input line 374.
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 295.
 (pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
 
 
@@ -952,12 +923,27 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 File: ./img/año.PNG Graphic file (type png)
 <use ./img/año.PNG>
-Package pdftex.def Info: ./img/año.PNG  used on input line 374.
+Package pdftex.def Info: ./img/año.PNG  used on input line 295.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
 [14 <./img/C4/S4_C4.PNG>]
+<./img/C4/S5_C4.PNG, id=217, 514.17094pt x 522.45187pt>
+File: ./img/C4/S5_C4.PNG Graphic file (type png)
+<use ./img/C4/S5_C4.PNG>
+Package pdftex.def Info: ./img/C4/S5_C4.PNG  used on input line 298.
+(pdftex.def)             Requested size: 514.1697pt x 522.45059pt.
+<./img/C4/S6_C4.PNG, id=218, 515.67656pt x 523.9575pt>
+File: ./img/C4/S6_C4.PNG Graphic file (type png)
+<use ./img/C4/S6_C4.PNG>
+Package pdftex.def Info: ./img/C4/S6_C4.PNG  used on input line 303.
+(pdftex.def)             Requested size: 515.6753pt x 523.95622pt.
+<./img/C4/S7_C4.PNG, id=219, 455.45157pt x 209.28188pt>
+File: ./img/C4/S7_C4.PNG Graphic file (type png)
+<use ./img/C4/S7_C4.PNG>
+Package pdftex.def Info: ./img/C4/S7_C4.PNG  used on input line 308.
+(pdftex.def)             Requested size: 455.45045pt x 209.28134pt.
 File: ./img/escudo.PNG Graphic file (type png)
 <use ./img/escudo.PNG>
-Package pdftex.def Info: ./img/escudo.PNG  used on input line 384.
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 312.
 (pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
 
 
@@ -969,12 +955,14 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 File: ./img/año.PNG Graphic file (type png)
 <use ./img/año.PNG>
-Package pdftex.def Info: ./img/año.PNG  used on input line 384.
+Package pdftex.def Info: ./img/año.PNG  used on input line 312.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
-[15 <./img/C4/S5_C4.PNG>]
+[15
+
+ <./img/C4/S5_C4.PNG>]
 File: ./img/escudo.PNG Graphic file (type png)
 <use ./img/escudo.PNG>
-Package pdftex.def Info: ./img/escudo.PNG  used on input line 390.
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 312.
 (pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
 
 
@@ -986,12 +974,92 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 File: ./img/año.PNG Graphic file (type png)
 <use ./img/año.PNG>
-Package pdftex.def Info: ./img/año.PNG  used on input line 390.
+Package pdftex.def Info: ./img/año.PNG  used on input line 312.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
 [16 <./img/C4/S6_C4.PNG>]
+<./img/C5/Linea_ejecucion_cliente.PNG, id=230, 479.54156pt x 57.21375pt>
+File: ./img/C5/Linea_ejecucion_cliente.PNG Graphic file (type png)
+<use ./img/C5/Linea_ejecucion_cliente.PNG>
+Package pdftex.def Info: ./img/C5/Linea_ejecucion_cliente.PNG  used on input line 322.
+(pdftex.def)             Requested size: 479.54039pt x 57.2136pt.
+<./img/C5/Linea_ejecucion_servidor.PNG, id=231, 479.54156pt x 54.9553pt>
+File: ./img/C5/Linea_ejecucion_servidor.PNG Graphic file (type png)
+<use ./img/C5/Linea_ejecucion_servidor.PNG>
+Package pdftex.def Info: ./img/C5/Linea_ejecucion_servidor.PNG  used on input line 328.
+(pdftex.def)             Requested size: 479.54039pt x 54.95515pt.
+<./img/C5/Servidor_cliente_1.PNG, id=232, 953.81343pt x 79.04532pt>
+File: ./img/C5/Servidor_cliente_1.PNG Graphic file (type png)
+<use ./img/C5/Servidor_cliente_1.PNG>
+Package pdftex.def Info: ./img/C5/Servidor_cliente_1.PNG  used on input line 334.
+(pdftex.def)             Requested size: 953.8111pt x 79.0451pt.
+<./img/C5/Servidor_cliente_2.PNG, id=233, 873.2625pt x 378.66469pt>
+File: ./img/C5/Servidor_cliente_2.PNG Graphic file (type png)
+<use ./img/C5/Servidor_cliente_2.PNG>
+Package pdftex.def Info: ./img/C5/Servidor_cliente_2.PNG  used on input line 340.
+(pdftex.def)             Requested size: 873.26036pt x 378.66376pt.
+<./img/C5/Servidor_cliente_3.PNG, id=234, 862.72313pt x 462.22687pt>
+File: ./img/C5/Servidor_cliente_3.PNG Graphic file (type png)
+<use ./img/C5/Servidor_cliente_3.PNG>
+Package pdftex.def Info: ./img/C5/Servidor_cliente_3.PNG  used on input line 345.
+(pdftex.def)             Requested size: 862.72102pt x 462.22574pt.
+<./img/C5/Servidor_cliente_4.PNG, id=235, 870.25125pt x 470.50781pt>
+File: ./img/C5/Servidor_cliente_4.PNG Graphic file (type png)
+<use ./img/C5/Servidor_cliente_4.PNG>
+Package pdftex.def Info: ./img/C5/Servidor_cliente_4.PNG  used on input line 350.
+(pdftex.def)             Requested size: 870.24913pt x 470.50665pt.
+<./img/C5/Servidor_cliente_5.PNG, id=236, 880.03781pt x 475.7775pt>
+File: ./img/C5/Servidor_cliente_5.PNG Graphic file (type png)
+<use ./img/C5/Servidor_cliente_5.PNG>
+Package pdftex.def Info: ./img/C5/Servidor_cliente_5.PNG  used on input line 355.
+(pdftex.def)             Requested size: 880.03566pt x 475.77632pt.
+<./img/C5/Servidor_cliente_6.PNG, id=237, 866.48718pt x 470.50781pt>
+File: ./img/C5/Servidor_cliente_6.PNG Graphic file (type png)
+<use ./img/C5/Servidor_cliente_6.PNG>
+Package pdftex.def Info: ./img/C5/Servidor_cliente_6.PNG  used on input line 360.
+(pdftex.def)             Requested size: 866.48506pt x 470.50665pt.
+<./img/C5/Servidor_cliente_7.PNG, id=238, 864.98157pt x 465.99094pt>
+File: ./img/C5/Servidor_cliente_7.PNG Graphic file (type png)
+<use ./img/C5/Servidor_cliente_7.PNG>
+Package pdftex.def Info: ./img/C5/Servidor_cliente_7.PNG  used on input line 365.
+(pdftex.def)             Requested size: 864.97946pt x 465.98979pt.
+<./img/C5/Servidor_cliente_8.PNG, id=239, 870.25125pt x 472.01344pt>
+File: ./img/C5/Servidor_cliente_8.PNG Graphic file (type png)
+<use ./img/C5/Servidor_cliente_8.PNG>
+Package pdftex.def Info: ./img/C5/Servidor_cliente_8.PNG  used on input line 370.
+(pdftex.def)             Requested size: 870.24913pt x 472.01228pt.
+<./img/C5/Servidor_cliente_9.PNG, id=240, 869.49844pt x 469.755pt>
+File: ./img/C5/Servidor_cliente_9.PNG Graphic file (type png)
+<use ./img/C5/Servidor_cliente_9.PNG>
+Package pdftex.def Info: ./img/C5/Servidor_cliente_9.PNG  used on input line 375.
+(pdftex.def)             Requested size: 869.49632pt x 469.75386pt.
+<./img/C5/Servidor_cliente_10.PNG, id=241, 867.24pt x 466.74374pt>
+File: ./img/C5/Servidor_cliente_10.PNG Graphic file (type png)
+<use ./img/C5/Servidor_cliente_10.PNG>
+Package pdftex.def Info: ./img/C5/Servidor_cliente_10.PNG  used on input line 380.
+(pdftex.def)             Requested size: 867.2379pt x 466.7426pt.
+<./img/C5/Servidor_cliente_11.PNG, id=242, 865.73438pt x 468.24937pt>
+File: ./img/C5/Servidor_cliente_11.PNG Graphic file (type png)
+<use ./img/C5/Servidor_cliente_11.PNG>
+Package pdftex.def Info: ./img/C5/Servidor_cliente_11.PNG  used on input line 385.
+(pdftex.def)             Requested size: 865.73227pt x 468.24821pt.
+<./img/C5/Servidor_cliente_12.PNG, id=243, 868.74562pt x 468.24937pt>
+File: ./img/C5/Servidor_cliente_12.PNG Graphic file (type png)
+<use ./img/C5/Servidor_cliente_12.PNG>
+Package pdftex.def Info: ./img/C5/Servidor_cliente_12.PNG  used on input line 390.
+(pdftex.def)             Requested size: 868.7435pt x 468.24821pt.
+<./img/C5/Servidor_cliente_13.PNG, id=244, 864.98157pt x 471.26062pt>
+File: ./img/C5/Servidor_cliente_13.PNG Graphic file (type png)
+<use ./img/C5/Servidor_cliente_13.PNG>
+Package pdftex.def Info: ./img/C5/Servidor_cliente_13.PNG  used on input line 395.
+(pdftex.def)             Requested size: 864.97946pt x 471.25948pt.
+<./img/C5/Servidor_cliente_14.PNG, id=245, 937.25156pt x 468.24937pt>
+File: ./img/C5/Servidor_cliente_14.PNG Graphic file (type png)
+<use ./img/C5/Servidor_cliente_14.PNG>
+Package pdftex.def Info: ./img/C5/Servidor_cliente_14.PNG  used on input line 400.
+(pdftex.def)             Requested size: 937.24927pt x 468.24821pt.
 File: ./img/escudo.PNG Graphic file (type png)
 <use ./img/escudo.PNG>
-Package pdftex.def Info: ./img/escudo.PNG  used on input line 407.
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 403.
 (pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
 
 
@@ -1003,12 +1071,12 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 File: ./img/año.PNG Graphic file (type png)
 <use ./img/año.PNG>
-Package pdftex.def Info: ./img/año.PNG  used on input line 407.
+Package pdftex.def Info: ./img/año.PNG  used on input line 403.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
-[17 <./img/C4/S7_C4.PNG>]
+[17 <./img/C4/S7_C4.PNG> <./img/C5/Linea_ejecucion_cliente.PNG> <./img/C5/Linea_ejecucion_servidor.PNG>]
 File: ./img/escudo.PNG Graphic file (type png)
 <use ./img/escudo.PNG>
-Package pdftex.def Info: ./img/escudo.PNG  used on input line 449.
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 403.
 (pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
 
 
@@ -1020,12 +1088,12 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 File: ./img/año.PNG Graphic file (type png)
 <use ./img/año.PNG>
-Package pdftex.def Info: ./img/año.PNG  used on input line 449.
+Package pdftex.def Info: ./img/año.PNG  used on input line 403.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
-[18]
+[18 <./img/C5/Servidor_cliente_1.PNG> <./img/C5/Servidor_cliente_2.PNG> <./img/C5/Servidor_cliente_3.PNG>]
 File: ./img/escudo.PNG Graphic file (type png)
 <use ./img/escudo.PNG>
-Package pdftex.def Info: ./img/escudo.PNG  used on input line 454.
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 403.
 (pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
 
 
@@ -1037,12 +1105,170 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 File: ./img/año.PNG Graphic file (type png)
 <use ./img/año.PNG>
-Package pdftex.def Info: ./img/año.PNG  used on input line 454.
+Package pdftex.def Info: ./img/año.PNG  used on input line 403.
 (pdftex.def)             Requested size: 64.13847pt x 20.175pt.
-[19] (Informe_Trabajo_Practico-Borquez_Juan.aux)
+[19 <./img/C5/Servidor_cliente_4.PNG> <./img/C5/Servidor_cliente_5.PNG>]
+File: ./img/escudo.PNG Graphic file (type png)
+<use ./img/escudo.PNG>
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 403.
+(pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
 
-LaTeX Warning: There were undefined references.
 
+Package fancyhdr Warning: \headheight is too small (30.0pt): 
+(fancyhdr)                Make it at least 38.07542pt, for example:
+(fancyhdr)                \setlength{\headheight}{38.07542pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.07542pt}.
+
+File: ./img/año.PNG Graphic file (type png)
+<use ./img/año.PNG>
+Package pdftex.def Info: ./img/año.PNG  used on input line 403.
+(pdftex.def)             Requested size: 64.13847pt x 20.175pt.
+[20 <./img/C5/Servidor_cliente_6.PNG> <./img/C5/Servidor_cliente_7.PNG>]
+File: ./img/escudo.PNG Graphic file (type png)
+<use ./img/escudo.PNG>
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 403.
+(pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
+
+
+Package fancyhdr Warning: \headheight is too small (30.0pt): 
+(fancyhdr)                Make it at least 38.07542pt, for example:
+(fancyhdr)                \setlength{\headheight}{38.07542pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.07542pt}.
+
+File: ./img/año.PNG Graphic file (type png)
+<use ./img/año.PNG>
+Package pdftex.def Info: ./img/año.PNG  used on input line 403.
+(pdftex.def)             Requested size: 64.13847pt x 20.175pt.
+[21 <./img/C5/Servidor_cliente_8.PNG> <./img/C5/Servidor_cliente_9.PNG>]
+File: ./img/escudo.PNG Graphic file (type png)
+<use ./img/escudo.PNG>
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 403.
+(pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
+
+
+Package fancyhdr Warning: \headheight is too small (30.0pt): 
+(fancyhdr)                Make it at least 38.07542pt, for example:
+(fancyhdr)                \setlength{\headheight}{38.07542pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.07542pt}.
+
+File: ./img/año.PNG Graphic file (type png)
+<use ./img/año.PNG>
+Package pdftex.def Info: ./img/año.PNG  used on input line 403.
+(pdftex.def)             Requested size: 64.13847pt x 20.175pt.
+[22 <./img/C5/Servidor_cliente_10.PNG> <./img/C5/Servidor_cliente_11.PNG>]
+File: ./img/escudo.PNG Graphic file (type png)
+<use ./img/escudo.PNG>
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 403.
+(pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
+
+
+Package fancyhdr Warning: \headheight is too small (30.0pt): 
+(fancyhdr)                Make it at least 38.07542pt, for example:
+(fancyhdr)                \setlength{\headheight}{38.07542pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.07542pt}.
+
+File: ./img/año.PNG Graphic file (type png)
+<use ./img/año.PNG>
+Package pdftex.def Info: ./img/año.PNG  used on input line 403.
+(pdftex.def)             Requested size: 64.13847pt x 20.175pt.
+[23 <./img/C5/Servidor_cliente_12.PNG> <./img/C5/Servidor_cliente_13.PNG>]
+File: ./img/escudo.PNG Graphic file (type png)
+<use ./img/escudo.PNG>
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 427.
+(pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
+
+
+Package fancyhdr Warning: \headheight is too small (30.0pt): 
+(fancyhdr)                Make it at least 38.07542pt, for example:
+(fancyhdr)                \setlength{\headheight}{38.07542pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.07542pt}.
+
+File: ./img/año.PNG Graphic file (type png)
+<use ./img/año.PNG>
+Package pdftex.def Info: ./img/año.PNG  used on input line 427.
+(pdftex.def)             Requested size: 64.13847pt x 20.175pt.
+[24 <./img/C5/Servidor_cliente_14.PNG>]
+File: ./img/escudo.PNG Graphic file (type png)
+<use ./img/escudo.PNG>
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 468.
+(pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
+
+
+Package fancyhdr Warning: \headheight is too small (30.0pt): 
+(fancyhdr)                Make it at least 38.07542pt, for example:
+(fancyhdr)                \setlength{\headheight}{38.07542pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.07542pt}.
+
+File: ./img/año.PNG Graphic file (type png)
+<use ./img/año.PNG>
+Package pdftex.def Info: ./img/año.PNG  used on input line 468.
+(pdftex.def)             Requested size: 64.13847pt x 20.175pt.
+[25]
+File: ./img/escudo.PNG Graphic file (type png)
+<use ./img/escudo.PNG>
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 492.
+(pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
+
+
+Package fancyhdr Warning: \headheight is too small (30.0pt): 
+(fancyhdr)                Make it at least 38.07542pt, for example:
+(fancyhdr)                \setlength{\headheight}{38.07542pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.07542pt}.
+
+File: ./img/año.PNG Graphic file (type png)
+<use ./img/año.PNG>
+Package pdftex.def Info: ./img/año.PNG  used on input line 492.
+(pdftex.def)             Requested size: 64.13847pt x 20.175pt.
+[26]
+File: ./img/escudo.PNG Graphic file (type png)
+<use ./img/escudo.PNG>
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 534.
+(pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
+
+
+Package fancyhdr Warning: \headheight is too small (30.0pt): 
+(fancyhdr)                Make it at least 38.07542pt, for example:
+(fancyhdr)                \setlength{\headheight}{38.07542pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.07542pt}.
+
+File: ./img/año.PNG Graphic file (type png)
+<use ./img/año.PNG>
+Package pdftex.def Info: ./img/año.PNG  used on input line 534.
+(pdftex.def)             Requested size: 64.13847pt x 20.175pt.
+[27]
+Overfull \hbox (21.97618pt too wide) in paragraph at lines 547--547
+[]\OT1/cmr/m/n/12 Microsoft. \OT1/cmr/m/it/12 Source Code Or-ga-ni-za-tion: C++ Tem-plates\OT1/cmr/m/n/12 . \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : []$\OT1/cmtt/m/n/12 https : / / learn . microsoft .
+ []
+
+
+Overfull \hbox (26.36615pt too wide) in paragraph at lines 547--547
+[]\OT1/cmr/m/it/12 Why can tem-plates only be im-ple-mented in the header file? \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : []$\OT1/cmtt/m/n/12 https : / / stackoverflow .
+ []
+
+File: ./img/escudo.PNG Graphic file (type png)
+<use ./img/escudo.PNG>
+Package pdftex.def Info: ./img/escudo.PNG  used on input line 550.
+(pdftex.def)             Requested size: 194.82442pt x 33.72539pt.
+
+Package fancyhdr Warning: \headheight is too small (30.0pt): 
+(fancyhdr)                Make it at least 38.07542pt, for example:
+(fancyhdr)                \setlength{\headheight}{38.07542pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.07542pt}.
+
+File: ./img/año.PNG Graphic file (type png)
+<use ./img/año.PNG>
+Package pdftex.def Info: ./img/año.PNG  used on input line 550.
+(pdftex.def)             Requested size: 64.13847pt x 20.175pt.
+[28] (Informe_Trabajo_Practico-Borquez_Juan.aux)
 Package rerunfilecheck Info: File `Informe_Trabajo_Practico-Borquez_Juan.out' has not changed.
 (rerunfilecheck)             Checksum: 173C3A07BA9DEA8F61A62FAC56CB06FB;3305.
 Package logreq Info: Writing requests to 'Informe_Trabajo_Practico-Borquez_Juan.run.xml'.
@@ -1050,45 +1276,17 @@ Package logreq Info: Writing requests to 'Informe_Trabajo_Practico-Borquez_Juan.
 
  ) 
 Here is how much of TeX's memory you used:
- 17118 strings out of 479321
- 299091 string characters out of 2857060
- 1018082 words of memory out of 3000000
- 34292 multiletter control sequences out of 15000+600000
- 409136 words of font info for 46 fonts, out of 8000000 for 9000
+ 17225 strings out of 479321
+ 302350 string characters out of 2857060
+ 1019948 words of memory out of 3000000
+ 34378 multiletter control sequences out of 15000+600000
+ 409784 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,22n,74p,1103b,1198s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{cite.0@ratondbiblioteca-ebc} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.0@rishabhpandey-youtube} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.0@rmb1905-youtube} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.0@mygreatlearning-file-handling} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.0@geeksforgeeks-file-handling} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.0@microsoft-setcommtimeouts} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.0@microsoft-getcommtimeouts} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.0@microsoft-commtimeouts} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.0@microsoft-readfile} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.0@microsoft-fileio} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.0@upv-uml} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.0@miro-diagrama-uml} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.0@realpython-csv} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.0@python-csv-doc} has been referenced but does not exist, replaced by a fixed one
-
- <C:\Users\Juan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Juan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1728.pk><C:/Users/Juan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Juan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Juan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Juan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Juan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Informe_Trabajo_Practico-Borquez_Juan.pdf (20 pages, 554426 bytes).
+ 73i,22n,74p,1103b,1335s stack positions out of 5000i,500n,10000p,200000b,80000s
+ <C:\Users\Juan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Juan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1728.pk><C:/Users/Juan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Juan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Juan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Juan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Juan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Juan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Juan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Informe_Trabajo_Practico-Borquez_Juan.pdf (29 pages, 1091038 bytes).
 PDF statistics:
- 311 PDF objects out of 1000 (max. 8388607)
- 64 named destinations out of 1000 (max. 500000)
- 274 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 389 PDF objects out of 1000 (max. 8388607)
+ 66 named destinations out of 1000 (max. 500000)
+ 359 words of extra memory for PDF output out of 10000 (max. 10000000)
 

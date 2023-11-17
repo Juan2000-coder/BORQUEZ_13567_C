@@ -203,16 +203,9 @@ Las figuras \ref{fig:relaciones_rpc1} y \ref{fig:relaciones_rpc2} representan la
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{C5/Esquema_general_C5_cliente_panel.PNG}
+    \includegraphics[width=\textwidth]{C5/Esquema_general_C5_cliente.PNG}
     \caption{Diagrama de clases para la parte del cliente.}
     \label{fig:cliente}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{C5/Esquema_general_C5_server_todo.PNG}
-    \caption{Diagrama completo para la parte del servidor.}
-    \label{fig:servidor}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -220,6 +213,13 @@ Las figuras \ref{fig:relaciones_rpc1} y \ref{fig:relaciones_rpc2} representan la
     \includegraphics[width=0.5\textwidth]{C5/Esquema_general_C5_cliente_panel.PNG}
     \caption{Captura del panel de navegación en BOUML para acceder al diagrama del cliente.}
     \label{fig:navegacion_cliente}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{C5/Esquema_general_C5_server_todo.PNG}
+    \caption{Diagrama completo para la parte del servidor.}
+    \label{fig:servidor}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -243,7 +243,7 @@ Las figuras \ref{fig:relaciones_rpc1} y \ref{fig:relaciones_rpc2} representan la
     \label{fig:excepciones_personalizadas1}
 \end{figure}
 
-\begin{figure}[thbp]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{C5/Esquema_general_C5_server_excepciones_2.PNG}
     \caption{Diagrama de relaciones entre clases asociadas a excepciones personalizadas.}
@@ -264,16 +264,14 @@ Las figuras \ref{fig:relaciones_rpc1} y \ref{fig:relaciones_rpc2} representan la
     \label{fig:relaciones_rpc2}
 \end{figure}
 
-Para ver el esquema completo, consulta el Anexo~\ref{anexo:diagramas_clases},
-donde se muestran en varias fotos todos los diagramas de clases.
-
 \newpage
 \section{Interfaces de Usuario}
 \subsection{Consigna 4}
 %Interfaces de usuario: captura de pantallas de entrada/salida resultantes para una ejecución completa.
 Secuencia de capturas para una ejecución completa y sin errores.
 
-\begin{figure}[h!]
+
+\begin{figure}[htbp]
     \centering
     \begin{adjustbox}{max width=\textwidth, center}
         \includegraphics{C4/S1_C4.PNG}
@@ -283,69 +281,126 @@ Secuencia de capturas para una ejecución completa y sin errores.
     \end{adjustbox}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[htbp]
     \centering
     \begin{adjustbox}{max width=\textwidth, center}
         \includegraphics{C4/S3_C4.PNG}
     \end{adjustbox}
 \end{figure}
-\begin{figure}[t!]
+\begin{figure}[htbp]
     \begin{adjustbox}{max width=\textwidth}
         \includegraphics{C4/S4_C4.PNG}
     \end{adjustbox}
 \end{figure}
-
-\begin{figure}[h!]
+\clearpage
+\begin{figure}[htbp]
     \begin{adjustbox}{max width=\textwidth, center}
         \includegraphics{C4/S5_C4.PNG}
     \end{adjustbox}
 \end{figure}
-\begin{figure}[h!]
+\begin{figure}[htbp]
     \begin{adjustbox}{max width=\textwidth, center}
         \includegraphics{C4/S6_C4.PNG}
     \end{adjustbox}
 \end{figure}
-\begin{figure}[h!]
+\begin{figure}[htbp]
     \begin{adjustbox}{max width=\textwidth, center}
         \includegraphics{C4/S7_C4.PNG}
     \end{adjustbox}
 \end{figure}
 
-
+\newpage
 \subsection{Consigna 5}
 Secuencia de Capturas para una ejecución completa y sin errores.
-\begin{comment}
-\begin{figure}[h]
+
+En las captura, en la parte derecha se muestra la ventana del cleinte y en
+la parte izquierda la ventana del servidor. En este caso la verbosidad del servidor
+está seteada en su máximo valor (5).
+\begin{figure}[htbp]
     \centering
     \begin{adjustbox}{max width=\textwidth, center}
-        \includegraphics{C3_UI1.PNG}
+        \includegraphics{C5/Linea_ejecucion_cliente.PNG}
     \end{adjustbox}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[htbp]
     \centering
     \begin{adjustbox}{max width=\textwidth, center}
-        \includegraphics{C3_UI2.PNG}
+        \includegraphics{C5/Linea_ejecucion_servidor.PNG}
     \end{adjustbox}
 \end{figure}
-\clearpage
-\begin{figure}[h]
+\begin{figure}[htbp]
     \centering
     \begin{adjustbox}{max width=\textwidth, center}
-        \includegraphics{C3_UI3.PNG}
+        \includegraphics{C5/Servidor_cliente_1.PNG}
     \end{adjustbox}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[htbp]
     \centering
     \begin{adjustbox}{max width=\textwidth, center}
-        \includegraphics{C3_UI4.PNG}
+        \includegraphics{C5/Servidor_cliente_2.PNG}
     \end{adjustbox}
 \end{figure}
-\begin{figure}[h!]
+\begin{figure}[htbp]
     \begin{adjustbox}{max width=\textwidth, center}
-        \includegraphics{C3_UI5.PNG}
+        \includegraphics{C5/Servidor_cliente_3.PNG}
     \end{adjustbox}
 \end{figure}
-\end{comment}
+\begin{figure}[htbp]
+    \begin{adjustbox}{max width=\textwidth, center}
+        \includegraphics{C5/Servidor_cliente_4.PNG}
+    \end{adjustbox}
+\end{figure}
+\begin{figure}[htbp]
+    \begin{adjustbox}{max width=\textwidth, center}
+        \includegraphics{C5/Servidor_cliente_5.PNG}
+    \end{adjustbox}
+\end{figure}
+\begin{figure}[htbp]
+    \begin{adjustbox}{max width=\textwidth, center}
+        \includegraphics{C5/Servidor_cliente_6.PNG}
+    \end{adjustbox}
+\end{figure}
+\begin{figure}[htbp]
+    \begin{adjustbox}{max width=\textwidth, center}
+        \includegraphics{C5/Servidor_cliente_7.PNG}
+    \end{adjustbox}
+\end{figure}
+\begin{figure}[htbp]
+    \begin{adjustbox}{max width=\textwidth, center}
+        \includegraphics{C5/Servidor_cliente_8.PNG}
+    \end{adjustbox}
+\end{figure}
+\begin{figure}[htbp]
+    \begin{adjustbox}{max width=\textwidth, center}
+        \includegraphics{C5/Servidor_cliente_9.PNG}
+    \end{adjustbox}
+\end{figure}
+\begin{figure}[htbp]
+    \begin{adjustbox}{max width=\textwidth, center}
+        \includegraphics{C5/Servidor_cliente_10.PNG}
+    \end{adjustbox}
+\end{figure}
+\begin{figure}[htbp]
+    \begin{adjustbox}{max width=\textwidth, center}
+        \includegraphics{C5/Servidor_cliente_11.PNG}
+    \end{adjustbox}
+\end{figure}
+\begin{figure}[htbp]
+    \begin{adjustbox}{max width=\textwidth, center}
+        \includegraphics{C5/Servidor_cliente_12.PNG}
+    \end{adjustbox}
+\end{figure}
+\begin{figure}[htbp]
+    \begin{adjustbox}{max width=\textwidth, center}
+        \includegraphics{C5/Servidor_cliente_13.PNG}
+    \end{adjustbox}
+\end{figure}
+\begin{figure}[htbp]
+    \begin{adjustbox}{max width=\textwidth, center}
+        \includegraphics{C5/Servidor_cliente_14.PNG}
+    \end{adjustbox}
+\end{figure}
+\newpage
 \section{Uso}
 %Uso: descripción de las consideraciones a tener en cuenta por un usuario que desea hacer uso del aplicativo resultante y/o reutilizar su código.
 
@@ -374,6 +429,24 @@ El manejo de errores se realiza principalmente en los métodos de comandos de la
 
 
 \subsection{Consigna 5}
+Una explicación detallada sobre el uso de la aplicación se puede encontrar en el archivo
+\texttt{README.txt} ubicado en la carpeta de la solución en \texttt{cons\_5/C5}. Del mismo modo, durante la ejecución,
+se proporcionan instrucciones de ayuda al usuario que utiliza la interfaz de línea de comandos (CLI).
+
+En relación con la extensión del código o el acceso a especificaciones más detalladas sobre el código
+fuente y su implementación, existe un archivo de configuración de documentación llamado 'DoxyFile' en
+la carpeta 'doc' en \texttt{cons\_5/C5}. Puede utilizarse este archivo para llevar a cabo la documentación
+automática del código. Los archivos de documentación se generarán en la misma carpeta 'doc'. Posteriormente,
+es posible abrir la carpeta con un visor de HTML, como la extensión Live Server para VSCode, para visualizar
+la documentación de las clases, métodos, etc.
+
+Para generar la documentación, es necesario ejecutar el siguiente comando desde una terminal
+en donde se encuentra el archivo de configuración (es necesario tener doxygen instalado):
+
+\begin{verbatim}
+    doxygen DoxyFile.
+\end{verbatim}
+
 
 \section{Conclusiones}
 \subsection{Cambios Realizados/Particularidades}
@@ -409,46 +482,69 @@ En \texttt{C4}:
 
 
 \subsubsection{Consigna 5}
+La mayoría de los cambios realizados en el código se encuentran indicados en el código fuente de la aplicación como comentarios de línea.
+A continuación se puede mencionar algunas de las particularidades de la implementación.
 
-En \texttt{C3Report}:
+Uso de  \texttt{Templates}:
 
-\textbf{Atributos:}
 \begin{itemize}
-    \item \texttt{fileroute}: La ruta de la carpeta que 
-\end{itemize}
-En \texttt{C3File}:
-
-\textbf{Atributos:}
-\begin{itemize}
-    \item \texttt{file}: El archivo en sí o un manejador 
+    \item La clase C5Number se define como un template para abarcar las dos posibilidades de un objeto almacenando un número entero o un número real correspondientes a un tipo de dato int o double respectivamente.
+    \item Debido al uso de los templates, algunas funciones son implementadas en archivos con extensión t.hpp. De echo, al archivo C5Number.h no hay asociado un archivo .cpp pero sí un archivo .t.hpp.
+    \item Dado que existen en el modelo otras clases que hacen uso de los métodos de los objetos de la clase C5Number, para estas también se pueden encontrar archivos .t.hpp donde se implementan métodos template.
 \end{itemize}
 
-\textbf{Métodos:}
+Uso de \texttt{Variants}:
+
 \begin{itemize}
-    \item Los últimos tres métodos que se indican en el diagrama lógico para la consigna 3 se utilizan para obtener las líneas de borde superior, inferior y las que separan los campos de la tabla de las filas con datos.
+    \item Se usaron variants para la lista (vector) de números para cada requerimiento. Cada objeto variant entonces puede almacenar bien un C5Number de tipo entero o un C5Number de tipo double.
 \end{itemize}
+
+Herencia de clases propias de la la libreria de \texttt{XmlRpc}.
+\begin{itemize}
+    \item En algunas oportunidades, algunas clases se definieron heredando de clases propias en la libreria Xmlrpc con el objeto principal de sobreescribir métodos para personalizarlos a la aplicación.
+    \item En conreto, esto se hace en la definición del C5Server y otras clases asociadas a los XmlRpcServer.
+    \item Por ejemplo, en una de las ocasiones se hizo esto con el objeto de hacer el manejo de las excepciones propias definidas y el envío de los mensajes de error asociados.
+    \item En estos casos, el resto de la funcionalidad que aporta la libreria es aprovechada.
+\end{itemize}
+
+\texttt{Ayuda} para los métodos RPC en el servidor.
+En lugar de implementarse la ayuda para los métodos RPC en el cliente RPC se optó por aprovechar una funcionalidad ya aportada en la libreria de XmlRpc para brindar ayuda de los métodos.
+En concreto, se habilitó la introspección del servidor para la aceptación de llamadas remotas a métodos de ayuda para los métodos RPC.
+Para hacer uso de esta funcionalidad se definieron, para cada objeto de XmlRpcServerMethod un método de ayuda ya incorporado en la declaración de al clase con la calificación virtual,
+lo que indica que en principio no tienen implementación.
 
 \subsection{Dificultades Encontradas}
 
-
+Se intentó hacer multithreading para el funcionamiento del servidor en paralelo
+con una función que espera ala presión de alguna tecla para terminar con la ejecución
+de modo que al presionar el boton se llame a un método del server que permite la desconexión
+controlada del mismo. Como no se pudo lograr, la aplicación del server se termina con CTRL + C.
 
 \subsection{Comentario/Extensiones}
 %Comentario indicando de qué manera puede ser extendido cada uno de los temas del trabajo (si corresponde).
-En la \textbf{consigna 4} se podría agregar un comando más que permita la operación de generación de un archivo de arte ASCII a partir de un mensaje dado por el usuario, lo que se lograría llamando a otro método de la aplicación auxiliar.
 
-En cuanto al manejo de excepciones, este se limita a mostrar en pantalla mensajes de error asociados a las excepciones. Se podría realizar un proceso de traceback de las excepciones con el objeto de obtener información más relevante o más completa. Se vio que tener esta información es especialmente útil durante el proceso de desarrollo. En principio, no se sabe si se ha logrado un adecuado manejo de las excepciones.
+\begin{itemize}
+    \item
+        En algunas partes del código para el acceso a los objetos C5Number en la lista de números de cada requerimento C5Requirement,
+    se hace uso de una excepción bad variant access para determinar el tipo del C5Number (entero o real)
+    que contiene un variant en una posición de la lista de requerimientos. Si bien esto sirve,
+    tal vez no sea la opción más adecuada para hacer el acceso a los elementos de la lista de números del requerimiento.
+    Tal vez la opción no sea tan descabellada en este caso en el que los los objetos variant
+    a lo sumo pueden guardan dos tipos de dato, pero en otros casos en los que se tengan mas tipos de dato esta alternativa no es buena.
+    \item Se podría utilizar otro tipo de extensión para el archivo de usuarios registrados.
+    \item No se tiene un manejo de excepciones propios para la parte del cliente, que en caso de ser necesario habría que agregar.
+\end{itemize}
+
 
 \subsection{Valoración Personal/Observaciones}
 %Resumen de observaciones/valoración personal a trabajo realizado. 
 
 Considero que he logrado cumplir con los requisitos establecidos en las consignas aplicando los conceptos de Programación Orientada a Objetos. Entre los aspectos que destacaría:
 
-\begin{itemize}
-    \item En ambas soluciones, se podría mejorar la gestión de las excepciones que puedan surgir durante la ejecución del programa.
-    \item Es importante profundizar en la comprensión de las relaciones entre clases a través de la práctica.
-    \item Se requiere un mejor entendimiento de los estereotipos de clases, como control, interfaz y entidad, así como su implementación.
-\end{itemize}
+\cite{stack-overflow-template-class}, \cite{msvc-template-class}, \cite{codeproject-template-class}, \cite{isocpp-template-faq}, \cite{stack-overflow-template-header}, \cite{chatgpt}
 
-\cite{python-csv-doc}, \cite{realpython-csv}, \cite{miro-diagrama-uml}, \cite{upv-uml}, \cite{microsoft-fileio}, \cite{microsoft-readfile}, \cite{microsoft-commtimeouts}, \cite{microsoft-getcommtimeouts}, \cite{microsoft-setcommtimeouts}, \cite{geeksforgeeks-file-handling}, \cite{mygreatlearning-file-handling}, \cite{rmb1905-youtube}, \cite{rishabhpandey-youtube}, \cite{ratondbiblioteca-ebc}
+
+\printbibliography[title={Bibliografía}]
+
 
 \end{document}

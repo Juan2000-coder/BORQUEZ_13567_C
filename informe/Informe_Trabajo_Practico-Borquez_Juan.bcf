@@ -2344,20 +2344,12 @@
     <bcf:datasource type="file" datatype="bibtex">bibliografia.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">python-csv-doc</bcf:citekey>
-    <bcf:citekey order="2">realpython-csv</bcf:citekey>
-    <bcf:citekey order="3">miro-diagrama-uml</bcf:citekey>
-    <bcf:citekey order="4">upv-uml</bcf:citekey>
-    <bcf:citekey order="5">microsoft-fileio</bcf:citekey>
-    <bcf:citekey order="6">microsoft-readfile</bcf:citekey>
-    <bcf:citekey order="7">microsoft-commtimeouts</bcf:citekey>
-    <bcf:citekey order="8">microsoft-getcommtimeouts</bcf:citekey>
-    <bcf:citekey order="9">microsoft-setcommtimeouts</bcf:citekey>
-    <bcf:citekey order="10">geeksforgeeks-file-handling</bcf:citekey>
-    <bcf:citekey order="11">mygreatlearning-file-handling</bcf:citekey>
-    <bcf:citekey order="12">rmb1905-youtube</bcf:citekey>
-    <bcf:citekey order="13">rishabhpandey-youtube</bcf:citekey>
-    <bcf:citekey order="14">ratondbiblioteca-ebc</bcf:citekey>
+    <bcf:citekey order="1">stack-overflow-template-class</bcf:citekey>
+    <bcf:citekey order="2">msvc-template-class</bcf:citekey>
+    <bcf:citekey order="3">codeproject-template-class</bcf:citekey>
+    <bcf:citekey order="4">isocpp-template-faq</bcf:citekey>
+    <bcf:citekey order="5">stack-overflow-template-header</bcf:citekey>
+    <bcf:citekey order="6">chatgpt</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
@@ -2389,4 +2381,13 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="nty/global//global/global"
+                type="entry"
+                sortingtemplatename="nty"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
 </bcf:controlfile>
